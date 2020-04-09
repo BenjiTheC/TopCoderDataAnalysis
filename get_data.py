@@ -54,16 +54,17 @@ def select_and_strip_detailed_requirements(cursor):
     striped_requirements = []
 
     for challenge_id, detailed_requirements in cursor:
+        print(f'Selecting challenge {challenge_id}')
         striped_requirements.append(
             {
                 'challenge_id': str(challenge_id),
-                'requirements': ' '.join(BeautifulSoup(detailed_requirements, 'html.parser').get_text().decode(errors='ignore').lower().split()),
+                'requirements': ' '.join(BeautifulSoup(detailed_requirements, 'html.parser').get_text().lower().split()),
             }
         )
 
     print(f'Selected {len(striped_requirements)} challenges.')
     with open(os.path.join(PATH, 'detail_requirements.json'), 'w') as fwrite:
-        json.dump(striped_requirements, fwrite)
+        json.dump(striped_requirements, fwrite, indent=4)
 
     cursor.close()
 
