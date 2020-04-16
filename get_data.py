@@ -21,6 +21,10 @@ def create_data_folder():
     if os.path.exists(PATH) is False or os.path.isdir(PATH) is False:
         os.mkdir(PATH)
 
+def fmt_date(dt, fmt='%Y-%m-%d'):
+    """ Format the date object to string."""
+    return dt.strftime(fmt)
+
 def get_db_cnx():
     """ Connect to the databse if database is not connected
         Return a database cursor
@@ -100,7 +104,7 @@ def get_tech_by_start_date(cursor):
         print(f'Counting tech on {registration_start_date}')
         for tech_term in [tech_term.lower() for tech_term in tech_string.split(', ')]:
             print(f'\t{tech_term}')
-            tech_by_start_date[registration_start_date][tech_term] += 1
+            tech_by_start_date[fmt_date(registration_start_date)][tech_term] += 1
 
     with open(os.path.join(PATH, 'tech_by_start_date.json'), 'w') as fwrite:
         json.dump(tech_by_start_date, fwrite, indent=4)
@@ -126,7 +130,7 @@ def get_total_prize_of_track_by_date(cursor):
         print(f'{dt} | dev {develop} | des {design} | ds {data_science}')
         prize_of_track_by_date.append(
             {
-                'date': dt,
+                'date': fmt_date(dt),
                 'develop': develop,
                 'design': design,
                 'data_science': data_science
@@ -157,7 +161,7 @@ def get_number_of_track_by_date(cursor):
     for dt, develop, design, data_science in cursor:
         print(f'{dt} | dev {develop} | des {design} | ds {data_science}')
         number_of_track_by_date.append({
-            'date': dt,
+            'date': fmt_date(dt),
             'develop': develop,
             'design': design,
             'data_science': data_science
@@ -196,7 +200,7 @@ def get_total_prize_of_dev_subtrack_by_date(cursor):
     prize_of_dev_subtrack_by_dt = []
     for dt, architecture, assembly, bug_hunt, code, conceptual, ctn_creation, copilot, marathon, f2f, spec, test_scenario, test_suite, ui_proto in cursor:
         prize_of_dev_subtrack_by_dt.append({
-            'date': dt,
+            'date': fmt_date(dt),
             'architecture': architecture,
             'assembly_competition': assembly,
             'bug_hunt': bug_hunt,
@@ -245,7 +249,7 @@ def get_number_of_dev_subtrack_by_date(cursor):
     number_of_dev_subtrack_by_dt = []
     for dt, architecture, assembly, bug_hunt, code, conceptual, ctn_creation, copilot, marathon, f2f, spec, test_scenario, test_suite, ui_proto in cursor:
         number_of_dev_subtrack_by_dt.append({
-            'date': dt,
+            'date': fmt_date(dt),
             'architecture': architecture,
             'assembly_competition': assembly,
             'bug_hunt': bug_hunt,
