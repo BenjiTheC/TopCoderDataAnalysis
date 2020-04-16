@@ -131,9 +131,9 @@ def get_total_prize_of_track_by_date(cursor):
         prize_of_track_by_date.append(
             {
                 'date': fmt_date(dt),
-                'develop': develop,
-                'design': design,
-                'data_science': data_science
+                'develop': round(float(develop), 2),
+                'design': round(float(design), 2),
+                'data_science': round(float(data_science), 2)
             }
         )
 
@@ -162,9 +162,9 @@ def get_number_of_track_by_date(cursor):
         print(f'{dt} | dev {develop} | des {design} | ds {data_science}')
         number_of_track_by_date.append({
             'date': fmt_date(dt),
-            'develop': develop,
-            'design': design,
-            'data_science': data_science
+            'develop': int(develop),
+            'design': int(design),
+            'data_science': int(data_science)
         })
 
     print(f'{len(number_of_track_by_date)} days of data retrieved')
@@ -201,19 +201,19 @@ def get_total_prize_of_dev_subtrack_by_date(cursor):
     for dt, architecture, assembly, bug_hunt, code, conceptual, ctn_creation, copilot, marathon, f2f, spec, test_scenario, test_suite, ui_proto in cursor:
         prize_of_dev_subtrack_by_dt.append({
             'date': fmt_date(dt),
-            'architecture': architecture,
-            'assembly_competition': assembly,
-            'bug_hunt': bug_hunt,
-            'code': code,
-            'conceptualization': conceptual,
-            'content_creation': ctn_creation,
-            'copilot_posting': copilot,
-            'dev_marathon': marathon,
-            'first_to_finish': f2f,
-            'specification': spec,
-            'test_scenario': test_scenario,
-            'test_suite': test_suite,
-            'ui_prototype': ui_proto
+            'architecture': round(float(architecture), 2),
+            'assembly_competition': round(float(assembly), 2),
+            'bug_hunt': round(float(bug_hunt), 2),
+            'code': round(float(code), 2),
+            'conceptualization': round(float(conceptual), 2),
+            'content_creation': round(float(ctn_creation), 2),
+            'copilot_posting': round(float(copilot), 2),
+            'dev_marathon': round(float(marathon), 2),
+            'first_to_finish': round(float(f2f), 2),
+            'specification': round(float(spec), 2),
+            'test_scenario': round(float(test_scenario), 2),
+            'test_suite': round(float(test_suite), 2),
+            'ui_prototype': round(float(ui_proto), 2)
         })
 
     print(f'{len(prize_of_dev_subtrack_by_dt)} of dates data')
@@ -250,19 +250,19 @@ def get_number_of_dev_subtrack_by_date(cursor):
     for dt, architecture, assembly, bug_hunt, code, conceptual, ctn_creation, copilot, marathon, f2f, spec, test_scenario, test_suite, ui_proto in cursor:
         number_of_dev_subtrack_by_dt.append({
             'date': fmt_date(dt),
-            'architecture': architecture,
-            'assembly_competition': assembly,
-            'bug_hunt': bug_hunt,
-            'code': code,
-            'conceptualization': conceptual,
-            'content_creation': ctn_creation,
-            'copilot_posting': copilot,
-            'dev_marathon': marathon,
-            'first_to_finish': f2f,
-            'specification': spec,
-            'test_scenario': test_scenario,
-            'test_suite': test_suite,
-            'ui_prototype': ui_proto
+            'architecture': int(architecture),
+            'assembly_competition': int(assembly),
+            'bug_hunt': int(bug_hunt),
+            'code': int(code),
+            'conceptualization': int(conceptual),
+            'content_creation': int(ctn_creation),
+            'copilot_posting': int(copilot),
+            'dev_marathon': int(marathon),
+            'first_to_finish': int(f2f),
+            'specification': int(spec),
+            'test_scenario': int(test_scenario),
+            'test_suite': int(test_suite),
+            'ui_prototype': int(ui_proto)
         })
 
     print(f'{len(number_of_dev_subtrack_by_dt)} of dates data')
