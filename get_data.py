@@ -195,7 +195,7 @@ def get_total_prize_of_dev_subtrack_by_date(cursor):
         GROUP BY Dt
         ORDER BY Dt ASC;
     """
-    curosr.execute(select_query)
+    cursor.execute(select_query)
 
     prize_of_dev_subtrack_by_dt = []
     for dt, architecture, assembly, bug_hunt, code, conceptual, ctn_creation, copilot, marathon, f2f, spec, test_scenario, test_suite, ui_proto in cursor:
@@ -244,7 +244,7 @@ def get_number_of_dev_subtrack_by_date(cursor):
         GROUP BY Dt
         ORDER BY Dt ASC;
     """
-    curosr.execute(select_query)
+    cursor.execute(select_query)
 
     number_of_dev_subtrack_by_dt = []
     for dt, architecture, assembly, bug_hunt, code, conceptual, ctn_creation, copilot, marathon, f2f, spec, test_scenario, test_suite, ui_proto in cursor:
