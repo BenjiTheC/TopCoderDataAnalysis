@@ -76,7 +76,7 @@ def get_number_of_challenges_by_project(cursor):
 
     challenge_count_by_project = []
     for project_id, number_of_challenges in cursor:
-        print(f'Project {projectId} | {number_of_challenges} challenges')
+        print(f'Project {project_id} | {number_of_challenges} challenges')
         challenge_count_by_project.append({'project_id': project_id, 'number_of_challenges': number_of_challenges})
 
     print(f'{len(challenge_count_by_project)} project in total.')
