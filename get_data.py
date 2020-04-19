@@ -68,11 +68,11 @@ def get_detailed_requirements(cursor):
         """
     cursor.execute(select_query)
 
-    detailed_requirements = []
+    fetched_requirements = []
 
     for project_id, challenge_id, detailed_requirements, challenge_title in cursor:
         print(f'Selecting challenge {challenge_id}')
-        striped_requirements.append(
+        fetched_requirements.append(
             {
                 'project_id': project_id,
                 'challenge_id': str(challenge_id),
@@ -81,9 +81,9 @@ def get_detailed_requirements(cursor):
             }
         )
 
-    print(f'Selected {len(striped_requirements)} challenges.')
+    print(f'Selected {len(fetched_requirements)} challenges.')
     with open(os.path.join(PATH, 'detail_requirements.json'), 'w') as fwrite:
-        json.dump(striped_requirements, fwrite, indent=4)
+        json.dump(fetched_requirements, fwrite, indent=4)
 
     cursor.close()
 
