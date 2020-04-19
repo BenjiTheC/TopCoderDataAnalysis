@@ -289,12 +289,13 @@ def main():
     """ Main entrance"""
     create_data_folder()
     cnx = get_db_cnx()
-    get_number_of_challenges_by_project(cnx.cursor())
-    get_total_prize_of_track_by_date(cnx.cursor())
-    get_number_of_track_by_date(cnx.cursor())
-    get_total_prize_of_dev_subtrack_by_date(cnx.cursor())
-    get_number_of_dev_subtrack_by_date(cnx.cursor())
-    get_tech_by_start_date(cnx.cursor())
+    # get_number_of_challenges_by_project(cnx.cursor())
+    # get_total_prize_of_track_by_date(cnx.cursor())
+    # get_number_of_track_by_date(cnx.cursor())
+    # get_total_prize_of_dev_subtrack_by_date(cnx.cursor())
+    # get_number_of_dev_subtrack_by_date(cnx.cursor())
+    # get_tech_by_start_date(cnx.cursor())
+    get_detailed_requirements(cnx.cursor())
     cnx.close()
 
 if __name__ == '__main__':
