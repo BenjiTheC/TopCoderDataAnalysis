@@ -50,20 +50,34 @@ def get_db_cnx():
     
     return cnx
 
-def select_and_strip_detailed_requirements(cursor):
+def get_detailed_requirements(cursor):
     """ Select the data from database and strip out the text from html."""
-    select_query = 'SELECT challengeId, detailedRequirements FROM challenge_meta;'
+    select_query =\
+        """ SELECT projectId, challengeId, detailedRequirements, challengeTitle
+            FROM Challenge
+            WHERE projectId IN
+            (
+                SELECT t.projectId AS projectId FROM
+                    (SELECT projectId, COUNT(*) AS numberOfChallenges
+                    FROM Challenge
+                    WHERE projectId != -1
+                    GROUP BY projectId
+                    ORDER BY projectId DESC) as t
+                WHERE t.numberOfChallenges >= 10)
+            ORDER BY projectId DESC;
+        """
     cursor.execute(select_query)
 
-    white_space_regex = r'/s+'
-    striped_requirements = []
+    detailed_requirements = []
 
-    for challenge_id, detailed_requirements in cursor:
+    for project_id, challenge_id, detailed_requirements, challenge_title in cursor:
         print(f'Selecting challenge {challenge_id}')
         striped_requirements.append(
             {
+                'project_id': project_id,
                 'challenge_id': str(challenge_id),
-                'requirements': ' '.join(BeautifulSoup(detailed_requirements, 'html.parser').get_text().lower().split()),
+                'requirements': detailed_requirements,
+                'title': challenge_title
             }
         )
 
