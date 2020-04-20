@@ -75,7 +75,7 @@ def get_detailed_requirements(cursor):
         fetched_requirements.append(
             {
                 'project_id': project_id,
-                'challenge_id': str(challenge_id),
+                'challenge_id': challenge_id,
                 'requirements': detailed_requirements,
                 'title': challenge_title
             }
