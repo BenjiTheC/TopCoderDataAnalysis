@@ -110,8 +110,8 @@ def get_number_of_challenges_by_project(cursor):
             'project_id': project_id,
             'project_start_date': fmt_date(project_start_date),
             'number_of_challenges': number_of_challenges,
-            'prize_per_challenge': prize_per_challenge,
-            'registrants_per_challenge': registrants_per_challenge
+            'prize_per_challenge': float(prize_per_challenge),
+            'registrants_per_challenge': int(registrants_per_challenge)
         })
 
     print(f'{len(challenge_count_by_project)} project in total.')
@@ -332,7 +332,7 @@ def get_dev_track_info(cursor):
         dev_track_challenges.append({
             'challenge_id': challenge_id,
             'registration_start_date': fmt_date(registration_start_date),
-            'total_prize': total_prize,
+            'total_prize': float(total_prize),
             'number_of_registrants': number_of_registrants,
             'sub_track': sub_track
         })
