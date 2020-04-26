@@ -104,11 +104,13 @@ def get_number_of_challenges_by_project(cursor):
     cursor.execute(select_query)
 
     challenge_count_by_project = []
+    challenge_info_by_project = []
     for project_id, project_start_date, number_of_challenges, prize_per_challenge, registrants_per_challenge in cursor:
         print(f'Project {project_id} | {number_of_challenges} challenges')
-        challenge_count_by_project.append({
+        challenge_count_by_project.append({'project_id': project_id, 'number_of_challenges': number_of_challenges})
+        challenge_info_by_project.append({
             'project_id': project_id,
-            'project_start_date': fmt_date(project_start_date),
+            'date': fmt_date(project_start_date),
             'number_of_challenges': number_of_challenges,
             'prize_per_challenge': float(prize_per_challenge),
             'registrants_per_challenge': int(registrants_per_challenge)
@@ -117,6 +119,9 @@ def get_number_of_challenges_by_project(cursor):
     print(f'{len(challenge_count_by_project)} project in total.')
     with open(os.path.join(PATH, 'number_of_challenges_by_project.json'), 'w') as fwrite:
         json.dump(challenge_count_by_project, fwrite, indent=4)
+
+    with open(os.path.join(PATH, 'challenge_info_by_project.json'), 'w') as fwrite:
+        json.dump(challenge_info_by_project, fwrite, indent=4)
 
     cursor.close()
 
@@ -141,13 +146,14 @@ def get_tech_by_start_date(cursor):
         tech_by_challenge.append({
             'challenge_id': challenge_id,
             'num_of_tech': len(tech_string.split(', ')),
+            'tech_lst': tech_string.split(', '),
             'registration_start_date': fmt_date(registration_start_date)
         })
 
     with open(os.path.join(PATH, 'tech_by_start_date.json'), 'w') as fwrite:
         json.dump(tech_by_start_date, fwrite, indent=4)
 
-    with open(os.path.join(PATH, 'tech_by_challenge.json'), '2') as fwrite:
+    with open(os.path.join(PATH, 'tech_by_challenge.json'), 'w') as fwrite:
         json.dump(tech_by_challenge, fwrite, indent=4)
 
     cursor.close()
