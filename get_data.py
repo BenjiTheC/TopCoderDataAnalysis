@@ -89,13 +89,30 @@ def get_detailed_requirements(cursor):
 
 def get_number_of_challenges_by_project(cursor):
     """ Group the count of challenges by project id."""
-    select_query = 'SELECT projectId, COUNT(*) AS numberOfChallenges FROM Challenge WHERE projectId != -1 GROUP BY projectId ORDER BY projectId DESC;'
+    select_query =\
+        """ SELECT 
+                projectId,
+                MIN(DATE(registrationStartDate)) AS projectStartDate,
+                COUNT(*) AS numOfChallenges,
+                ROUND(SUM(totalPrize) / COUNT(*), 1) AS prizePerChallenge,
+                CEIL(SUM(numberOfRegistrants) / COUNT(*)) AS registrantsPerChallenge
+            FROM Challenge 
+            WHERE projectId != -1 
+            GROUP BY projectId 
+            ORDER BY projectId DESC;
+        """
     cursor.execute(select_query)
 
     challenge_count_by_project = []
-    for project_id, number_of_challenges in cursor:
+    for project_id, project_start_date, number_of_challenges, prize_per_challenge, registrants_per_challenge in cursor:
         print(f'Project {project_id} | {number_of_challenges} challenges')
-        challenge_count_by_project.append({'project_id': project_id, 'number_of_challenges': number_of_challenges})
+        challenge_count_by_project.append({
+            'project_id': project_id,
+            'project_start_date': fmt_date(project_start_date),
+            'number_of_challenges': number_of_challenges,
+            'prize_per_challenge': prize_per_challenge,
+            'registrants_per_challenge': registrants_per_challenge
+        })
 
     print(f'{len(challenge_count_by_project)} project in total.')
     with open(os.path.join(PATH, 'number_of_challenges_by_project.json'), 'w') as fwrite:
@@ -106,7 +123,7 @@ def get_number_of_challenges_by_project(cursor):
 def get_tech_by_start_date(cursor):
     """ Get the technology string by start date."""
     select_query = """
-        SELECT technologies, Date(registrationStartDate) AS Dt
+        SELECT challengeId, technologies, Date(registrationStartDate) AS Dt
         FROM Challenge
         WHERE technologies != ''
         ORDER BY Dt ASC;
@@ -114,14 +131,24 @@ def get_tech_by_start_date(cursor):
     cursor.execute(select_query)
 
     tech_by_start_date = defaultdict(lambda: defaultdict(int))
-    for tech_string, registration_start_date in cursor:
+    tech_by_challenge = []
+    for challenge_id, tech_string, registration_start_date in cursor:
         print(f'Counting tech on {registration_start_date}')
         for tech_term in [tech_term.lower() for tech_term in tech_string.split(', ')]:
             print(f'\t{tech_term}')
             tech_by_start_date[fmt_date(registration_start_date)][tech_term] += 1
 
+        tech_by_challenge.append({
+            'challenge_id': challenge_id,
+            'num_of_tech': len(tech_string.split(', ')),
+            'registration_start_date': fmt_date(registration_start_date)
+        })
+
     with open(os.path.join(PATH, 'tech_by_start_date.json'), 'w') as fwrite:
         json.dump(tech_by_start_date, fwrite, indent=4)
+
+    with open(os.path.join(PATH, 'tech_by_challenge.json'), '2') as fwrite:
+        json.dump(tech_by_challenge, fwrite, indent=4)
 
     cursor.close()
 
@@ -285,17 +312,48 @@ def get_number_of_dev_subtrack_by_date(cursor):
 
     cursor.close()
 
+def get_dev_track_info(cursor):
+    """ Get more information of challenges under develop track"""
+    select_query =\
+        """ SELECT
+                challengeId,
+                DATE(registrationStartDate) AS Dt,
+                totalPrize,
+                numberOfRegistrants,
+                subTrack
+            FROM Challenge
+            WHERE track = 'DEVELOP';
+        """
+    cursor.execute(select_query)
+
+    dev_track_challenges = []
+    for challenge_id, registration_start_date, total_prize, number_of_registrants, sub_track in cursor:
+        print(f'Getting dev track info of {challenge_id}')
+        dev_track_challenges.append({
+            'challenge_id': challenge_id,
+            'registration_start_date': fmt_date(registration_start_date),
+            'total_prize': total_prize,
+            'number_of_registrants': number_of_registrants,
+            'sub_track': sub_track
+        })
+
+    with open(os.path.join(PATH, 'dev_track_challenges_info.json'), 'w') as fwrite:
+        json.dump(dev_track_challenges, fwrite, indent=4)
+
+    cursor.close()
+
 def main():
     """ Main entrance"""
     create_data_folder()
     cnx = get_db_cnx()
-    # get_number_of_challenges_by_project(cnx.cursor())
-    # get_total_prize_of_track_by_date(cnx.cursor())
-    # get_number_of_track_by_date(cnx.cursor())
-    # get_total_prize_of_dev_subtrack_by_date(cnx.cursor())
-    # get_number_of_dev_subtrack_by_date(cnx.cursor())
-    # get_tech_by_start_date(cnx.cursor())
-    get_detailed_requirements(cnx.cursor())
+    get_number_of_challenges_by_project(cnx.cursor())
+    get_total_prize_of_track_by_date(cnx.cursor())
+    get_number_of_track_by_date(cnx.cursor())
+    get_total_prize_of_dev_subtrack_by_date(cnx.cursor())
+    get_number_of_dev_subtrack_by_date(cnx.cursor())
+    get_tech_by_start_date(cnx.cursor())
+    get_dev_track_info(cnx.cursor())
+    # get_detailed_requirements(cnx.cursor())
     cnx.close()
 
 if __name__ == '__main__':
