@@ -1,4 +1,5 @@
 appnope==0.1.0
+astroid==2.4.0
 attrs==19.3.0
 backcall==0.1.0
 beautifulsoup4==4.9.0
@@ -9,6 +10,7 @@ cachetools==4.0.0
 certifi==2019.11.28
 chardet==3.0.4
 cycler==0.10.0
+Cython==0.29.17
 decorator==4.4.2
 defusedxml==0.6.0
 dnspython==1.16.0
@@ -27,6 +29,7 @@ ipykernel==5.2.0
 ipython==7.13.0
 ipython-genutils==0.2.0
 ipywidgets==7.5.1
+isort==4.3.21
 jedi==0.16.0
 Jinja2==2.11.1
 jmespath==0.9.5
@@ -37,8 +40,10 @@ jupyter-client==6.1.2
 jupyter-console==6.1.0
 jupyter-core==4.6.3
 kiwisolver==1.1.0
+lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 matplotlib==3.2.1
+mccabe==0.6.1
 mistune==0.8.4
 mysql-connector-python==8.0.19
 nbconvert==5.6.1
@@ -58,6 +63,7 @@ ptyprocess==0.6.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 Pygments==2.6.1
+pylint==2.5.0
 pyparsing==2.4.6
 pyrsistent==0.16.0
 python-dateutil==2.8.1
@@ -78,10 +84,13 @@ smart-open==1.10.0
 soupsieve==2.0
 terminado==0.8.3
 testpath==0.4.4
+toml==0.10.0
 tornado==6.0.4
 traitlets==4.3.3
+typed-ast==1.4.1
 urllib3==1.25.8
 wcwidth==0.1.9
 webencodings==0.5.1
 widgetsnbextension==3.5.1
+wrapt==1.12.1
 zipp==3.1.0

@@ -47,7 +47,7 @@ def get_db_cnx():
             print('Requested database doesn\'t exist')
         print(err)
         exit(1)
-    
+
     return cnx
 
 def get_detailed_requirements(cursor):
@@ -90,15 +90,15 @@ def get_detailed_requirements(cursor):
 def get_number_of_challenges_by_project(cursor):
     """ Group the count of challenges by project id."""
     select_query =\
-        """ SELECT 
+        """ SELECT
                 projectId,
                 MIN(DATE(registrationStartDate)) AS projectStartDate,
                 COUNT(*) AS numOfChallenges,
                 ROUND(SUM(totalPrize) / COUNT(*), 1) AS prizePerChallenge,
                 CEIL(SUM(numberOfRegistrants) / COUNT(*)) AS registrantsPerChallenge
-            FROM Challenge 
-            WHERE projectId != -1 
-            GROUP BY projectId 
+            FROM Challenge
+            WHERE projectId != -1
+            GROUP BY projectId
             ORDER BY projectId DESC;
         """
     cursor.execute(select_query)
