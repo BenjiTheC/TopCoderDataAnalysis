@@ -397,7 +397,7 @@ def get_challenge_prz_and_avg_score(cursor):
     print(f'Fetched {len(challenge_prz_and_score)} records.')
 
     with open(os.path.join(PATH, 'challenge_prz_and_score.json'), 'w') as fwrite:
-        json.dump(challenge_prz_and_score, fwrite)
+        json.dump(challenge_prz_and_score, fwrite, indent=4)
 
     cursor.close()
 
