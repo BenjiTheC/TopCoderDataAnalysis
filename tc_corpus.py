@@ -16,6 +16,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 from gensim.parsing.preprocessing import STOPWORDS as GENSIM_STOP_WORDS
 
 """
+IMPORTANT:
+The detailed requirement text data are from challenges which have valid project ids (!= -1)
+and where the project has AT LEAST 10 challenges.
+
 Corpus container should have following functionality
 - store the requirements by project id and challenge id and section name
 - get the corpus by project / challenge

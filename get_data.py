@@ -348,18 +348,72 @@ def get_dev_track_info(cursor):
 
     cursor.close()
 
+def get_challenge_prz_and_avg_score(cursor):
+    """ Retrieve challenge prize, avgerage score of all winners, number of submiiters, number of winners from database."""
+    select_query =\
+        """ SELECT
+                C.challengeId AS challengeId,
+                IFNULL(C.totalPrize, -1) AS totalPrize,
+                IFNULL(W.avgScore, -1) AS avgScore,
+                IFNULL(C.numberOfSubmitters, 0) AS numberOfSubmitters,
+                IFNULL(W.numOfWinner, 0) AS numberOfWinner
+            FROM (
+                SELECT challengeId, projectId, totalPrize, numberOfSubmitters
+                FROM Challenge
+                WHERE projectId IN (
+                    SELECT t.projectId AS projectId
+                    FROM (
+                        SELECT projectId, COUNT(*) AS numberOfChallenges
+                        FROM Challenge
+                        WHERE projectId != -1
+                        GROUP BY projectId
+                        ORDER BY projectId DESC
+                        ) AS t
+                    WHERE t.numberOfChallenges >= 10)
+                ) AS C
+            LEFT OUTER JOIN (
+                SELECT
+                    challengeId,
+                    ROUND(AVG(points), 2) AS avgScore,
+                    COUNT(*) AS numOfWinner
+                FROM Challenge_Winner
+                GROUP BY challengeId
+                ) AS W
+            ON C.challengeId = W.challengeId;
+        """
+    cursor.execute(select_query)
+
+    challenge_prz_and_score = []
+    for challenge_id, total_prize, avg_score, num_of_submitters, num_of_winners in cursor:
+        print(f'Fetching {challenge_id} | prz {total_prize} | avg score {avg_score}')
+        challenge_prz_and_score.append({
+            'challenge_id': challenge_id,
+            'total_prize': float(total_prize),
+            'avg_score': float(avg_score),
+            'num_of_submitters': int(num_of_submitters),
+            'num_of_winners': int(num_of_winners)
+        })
+
+    print(f'Fetched {len(challenge_prz_and_score)} records.')
+
+    with open(os.path.join(PATH, 'challenge_prz_and_score.json'), 'w') as fwrite:
+        json.dump(challenge_prz_and_score, fwrite)
+
+    cursor.close()
+
 def main():
     """ Main entrance"""
     create_data_folder()
     cnx = get_db_cnx()
-    get_number_of_challenges_by_project(cnx.cursor())
-    get_total_prize_of_track_by_date(cnx.cursor())
-    get_number_of_track_by_date(cnx.cursor())
-    get_total_prize_of_dev_subtrack_by_date(cnx.cursor())
-    get_number_of_dev_subtrack_by_date(cnx.cursor())
-    get_tech_by_start_date(cnx.cursor())
-    get_dev_track_info(cnx.cursor())
+    # get_number_of_challenges_by_project(cnx.cursor())
+    # get_total_prize_of_track_by_date(cnx.cursor())
+    # get_number_of_track_by_date(cnx.cursor())
+    # get_total_prize_of_dev_subtrack_by_date(cnx.cursor())
+    # get_number_of_dev_subtrack_by_date(cnx.cursor())
+    # get_tech_by_start_date(cnx.cursor())
+    # get_dev_track_info(cnx.cursor())
     # get_detailed_requirements(cnx.cursor())
+    get_challenge_prz_and_avg_score(cnx.cursor())
     cnx.close()
 
 if __name__ == '__main__':
