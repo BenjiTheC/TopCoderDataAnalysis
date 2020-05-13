@@ -17,13 +17,15 @@ from gensim.models import Word2Vec
 from sklearn.decomposition import IncrementalPCA
 from sklearn.manifold import TSNE
 
-def train_word2vec_model(sentences, save_when_finished=True):
+def train_word2vec_model(sentences, save_when_finished=True, size=200, save_dir=None, suffix=None):
     """ Train and save the word2vec model wv."""
-    model = Word2Vec(sentences=sentences, size=200, workers=6)
+    default_save_dir = os.path.join(os.curdir, 'models')
+    default_suffix = datetime.now().strftime('%Y%m%dT%H%M%S')
+
+    model = Word2Vec(sentences=sentences, size=size, workers=6)
     trained_wv = model.wv
     if save_when_finished:
-        timestamp = datetime.now().strftime('%Y%m%dT%H%M%S')
-        save_path = os.path.join(os.curdir, 'models', f'model_{timestamp}')
+        save_path = os.path.join(save_dir or default_save_dir, f'model_{suffix or default_suffix}')
         trained_wv.save(save_path)
 
     return trained_wv
