@@ -208,6 +208,7 @@ class TopCoderCorpus:
         """
         challenge_req = self.sectioned_requirements.groupby(level=1).aggregate(' '.join).apply({'requirements_by_section': remove_stop_words_from_str})
         challenge_req.columns = ['requirements']
+        # challenge_req = challenge_req.loc[challenge_req.requirements != '']
         return [tokenize_str(req) for cha_id, req in challenge_req.itertuples()] if not as_dataframe else challenge_req
 
 if __name__ == '__main__':
