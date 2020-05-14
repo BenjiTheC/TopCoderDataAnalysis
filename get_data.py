@@ -401,6 +401,51 @@ def get_challenge_prz_and_avg_score(cursor):
 
     cursor.close()
 
+def get_challenge_basic_info(cursor):
+    """ Retrieve information like track, subtrack, registration
+        start date, submission start date, submission end date
+        of challenges
+    """
+    select_query =\
+        """ SELECT
+                challengeId,
+                totalPrize,
+                track,
+                subTrack,
+                registrationStartDate,
+                registrationEndDate,
+                submissionEndDate,
+                numberOfRegistrants,
+                numberOfSubmissions,
+                numberOfSubmitters
+            FROM Challenge
+            ORDER BY 
+                FIELD(track, 'DEVELOP', 'DESIGN', 'DATA_SCIENCE'), 
+                subTrack ASC;
+    """
+    cursor.execute(select_query)
+
+    challenge_basic_info = []
+    for challenge_id, total_prize, track, subtrack, reg_start_dt, reg_end_dt, sub_end_dt, num_of_reg, num_of_submission, num_of_submitters in cursor:
+        print(f'Fetching basic info of challenge {challenge_id}')
+        challenge_basic_info.append({
+            'challenge_id': challenge_id,
+            'total_prize': float(total_prize),
+            'track': track,
+            'subtrack': subtrack,
+            'registration_start_date': fmt_date(reg_start_dt),
+            'registration_end_date': fmt_date(reg_end_dt),
+            'submission_end_date': fmt_date(sub_end_dt),
+            'number_of_registration': int(num_of_reg),
+            'number_of_submission': int(num_of_submission),
+            'number_of_submitters': int(num_of_submitters)
+        })
+
+    with open(os.path.join(PATH, 'challenge_basic_info.json'), 'w') as fwrite:
+        json.dump(challenge_basic_info, fwrite, indent=4)
+
+    cursor.close()
+
 def main():
     """ Main entrance"""
     create_data_folder()
@@ -413,7 +458,8 @@ def main():
     # get_tech_by_start_date(cnx.cursor())
     # get_dev_track_info(cnx.cursor())
     # get_detailed_requirements(cnx.cursor())
-    get_challenge_prz_and_avg_score(cnx.cursor())
+    # get_challenge_prz_and_avg_score(cnx.cursor())
+    get_challenge_basic_info(cnx.cursor())
     cnx.close()
 
 if __name__ == '__main__':
