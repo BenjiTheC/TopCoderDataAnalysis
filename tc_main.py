@@ -17,20 +17,25 @@ class TopCoder:
     data_path = os.path.join(os.curdir, 'data')
     corpus_fn = 'detail_requirements.json'
     cha_prz_fn = 'challenge_prz_and_score.json'
+    cha_basic_info = 'challenge_basic_info.json'
 
     def __init__(self):
         self.corpus = TopCoderCorpus(self.corpus_fn)
         self.challenge_prize_avg_score = self.create_df_from_json(self.cha_prz_fn, index_col='challenge_id')
+        self.challenge_basic_info = self.create_df_from_json(
+            self.cha_basic_info, 
+            index_col='challenge_id', 
+            convert_dates=['registration_start_date', 'registration_end_date', 'submission_end_date']
+        )
 
-    def create_df_from_json(self, fn, orient='index', index_col=None):
-        """ Read the given json file into a pandas dataframe."""
+    def create_df_from_json(self, fn, orient='records', index_col=None, convert_dates=True):
+        """ Read the given json file into a pandas dataframe.
+            TODO: data tech_by_start_date.json is in the form of {dt: dct_of_tech_count}
+                  we should convert it in to [{dt, dct_of_tech_count}] form in get_date.py
+                  so that every data file retrieved from the database are in the same format
+        """
         with open(os.path.join(self.data_path, fn)) as fread:
-            records_obj = json.load(fread)
-
-        if isinstance(records_obj, list):
-            df = pd.DataFrame(records_obj)
-        elif isinstance(records_obj, dict):
-            df = pd.DataFrame.from_dict(records_obj, orient=orient)
+            df = pd.read_json(fread, orient=orient, convert_dates=convert_dates)
 
         if index_col:
             df.set_index(index_col, inplace=True)
