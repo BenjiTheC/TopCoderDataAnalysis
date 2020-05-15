@@ -26,6 +26,7 @@ class ModelBuilder:
         self.corpus_df = corpus_df
         self.model_path = os.path.join(base_path, 'models')
         self.measure_path = os.path.join(base_path, 'measures')
+        self.doc_vec_path = os.path.join(base_path, 'document_vec')
 
     def iterate_word2vec_training(self):
         """ Iteratively training the word2vec model."""
@@ -95,17 +96,42 @@ class ModelBuilder:
         print(f'The mean MRE of pricing model 0 with {wv_dimensions}-D word2vec is {mmre}')
         print('-' * 50)
 
+    def build_document_vectors(self):
+        """ Build document vectors for all wv."""
+        for dimension in range(100, 1100, 100):
+            print('-' * 15, f'Document vector 0 :: {dimension}-D', '-' * 15)
+            wv = KeyedVectors.load(os.path.join(self.model_path, f'model_{dimension}D'))
+            self.build_one_document_vector(wv=wv, wv_dimensions=dimension)
+            print()
+
+    def build_one_document_vector(self, wv, wv_dimensions):
+        """ Build the document vectors from trained word vectors, store it in the disk."""
+        cleaned_corpus_df = self.corpus_df.loc[self.corpus_df.requirements != '']
+
+        challenge_vec = {cha_id: doc_vector_from_word_vectors(req, wv) for cha_id, req in cleaned_corpus_df.itertuples()}
+        zero_vector = {cha_id: vec for cha_id, vec in challenge_vec.items() if not isinstance(vec, np.ndarray)}
+
+        cleaned_challenge_vec = {cha_id: vec for cha_id, vec in challenge_vec.items() if cha_id not in zero_vector}
+
+        with open(os.path.join(self.doc_vec_path, f'document_vec_{wv_dimensions}D.json'), 'w') as fwrite:
+            json.dump({cha_id: vec.tolist() for cha_id, vec in cleaned_challenge_vec.items()}, fwrite, indent=4)
+
+        return cleaned_challenge_vec
+
 def main():
     """ Main entrance."""
     challenge_req = TOPCODER.corpus.get_challenge_req_sentences(as_dataframe=True)
-    for track in ('DEVELOP', 'DESIGN'):
+    for track in ('ALL', 'DEVELOP', 'DESIGN'):
         print('*' * 80)
         print('*' * 20, f'Training models with {track} challenges', '*' * (20 - (len(track) - 6)))
-        challenge_id_by_track = TOPCODER.challenge_basic_info.loc[TOPCODER.challenge_basic_info.track == track].index
+        print('*' * 80)
+
+        challenge_id_by_track = TOPCODER.challenge_basic_info.index if track == 'ALL' else TOPCODER.challenge_basic_info.loc[TOPCODER.challenge_basic_info.track == track].index
         corpus = challenge_req.loc[challenge_req.index.isin(challenge_id_by_track)]
         model_builder = ModelBuilder(corpus_df=corpus, base_path=os.path.join(os.curdir, 'pricing_model_0', f'{track.lower()}_track'))
-        model_builder.iterate_word2vec_training()
-        model_builder.build_pricing_models()
+        # model_builder.iterate_word2vec_training()
+        # model_builder.build_pricing_models()
+        model_builder.build_document_vectors()
         print()
 
 if __name__ == "__main__":

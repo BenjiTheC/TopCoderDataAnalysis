@@ -1,6 +1,8 @@
 # Customized ignored
 .vscode/
 models/
+ml_models/
+document_vec/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
