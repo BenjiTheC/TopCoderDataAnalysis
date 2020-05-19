@@ -73,7 +73,7 @@ class TopCoderCorpus:
     def __init__(self, file_name):
         self.file_name = file_name
         self.titles, self.sectioned_requirements = self.process_detailed_req()
-        # self.sections_similarity = self.calculate_section_similarity()
+        self.sections_similarity = self.calculate_section_similarity()
 
     def process_detailed_req(self) -> (pd.DataFrame, pd.DataFrame):
         """ Process the detailed requirements from loaded json

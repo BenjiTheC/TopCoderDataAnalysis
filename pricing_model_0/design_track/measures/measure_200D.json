@@ -1,2810 +1,3746 @@
 [
     {
         "index":30043953,
+        "total_prize":1900,
         "estimated_total_prize":1800.0,
-        "total_prize":1900.0,
-        "MRE":0.0526315789
+        "MRE":0.0526315789,
+        "ml_estimated_total_prize":2225.5208346209,
+        "LR_MRE":0.1713267551
     },
     {
         "index":30044981,
+        "total_prize":2000,
         "estimated_total_prize":1235.0,
-        "total_prize":2000.0,
-        "MRE":0.3825
+        "MRE":0.3825,
+        "ml_estimated_total_prize":1655.4392374339,
+        "LR_MRE":0.1722803813
     },
     {
         "index":30045356,
+        "total_prize":2250,
         "estimated_total_prize":2207.5,
-        "total_prize":2250.0,
-        "MRE":0.0188888889
+        "MRE":0.0188888889,
+        "ml_estimated_total_prize":2356.366601012,
+        "LR_MRE":0.0472740449
     },
     {
         "index":30045415,
+        "total_prize":400,
         "estimated_total_prize":1000.0,
-        "total_prize":400.0,
-        "MRE":1.5
+        "MRE":1.5,
+        "ml_estimated_total_prize":354.3192822912,
+        "LR_MRE":0.1142017943
     },
     {
         "index":30045436,
+        "total_prize":1500,
         "estimated_total_prize":1185.0,
-        "total_prize":1500.0,
-        "MRE":0.21
+        "MRE":0.21,
+        "ml_estimated_total_prize":615.2475059341,
+        "LR_MRE":0.589834996
     },
     {
         "index":30045465,
+        "total_prize":800,
         "estimated_total_prize":107.5,
-        "total_prize":800.0,
-        "MRE":0.865625
+        "MRE":0.865625,
+        "ml_estimated_total_prize":157.0684424144,
+        "LR_MRE":0.803664447
     },
     {
         "index":30045499,
+        "total_prize":100,
         "estimated_total_prize":1440.0,
-        "total_prize":100.0,
-        "MRE":13.4
+        "MRE":13.4,
+        "ml_estimated_total_prize":924.1445310892,
+        "LR_MRE":8.2414453109
     },
     {
         "index":30045523,
+        "total_prize":1500,
         "estimated_total_prize":985.0,
-        "total_prize":1500.0,
-        "MRE":0.3433333333
+        "MRE":0.3433333333,
+        "ml_estimated_total_prize":1299.8201969121,
+        "LR_MRE":0.1334532021
     },
     {
         "index":30045559,
+        "total_prize":1250,
         "estimated_total_prize":1050.0,
-        "total_prize":1250.0,
-        "MRE":0.16
+        "MRE":0.16,
+        "ml_estimated_total_prize":1329.4631214527,
+        "LR_MRE":0.0635704972
     },
     {
         "index":30045560,
+        "total_prize":1500,
         "estimated_total_prize":1560.0,
-        "total_prize":1500.0,
-        "MRE":0.04
+        "MRE":0.04,
+        "ml_estimated_total_prize":1787.961370472,
+        "LR_MRE":0.191974247
     },
     {
         "index":30045648,
+        "total_prize":150,
         "estimated_total_prize":945.0,
-        "total_prize":150.0,
-        "MRE":5.3
+        "MRE":5.3,
+        "ml_estimated_total_prize":-279.3902859405,
+        "LR_MRE":2.8626019063
     },
     {
         "index":30045701,
+        "total_prize":1500,
         "estimated_total_prize":2140.0,
-        "total_prize":1500.0,
-        "MRE":0.4266666667
+        "MRE":0.4266666667,
+        "ml_estimated_total_prize":1576.9200770968,
+        "LR_MRE":0.0512800514
     },
     {
         "index":30045737,
+        "total_prize":650,
         "estimated_total_prize":1830.0,
-        "total_prize":650.0,
-        "MRE":1.8153846154
+        "MRE":1.8153846154,
+        "ml_estimated_total_prize":327.7429567708,
+        "LR_MRE":0.4957800665
     },
     {
         "index":30045753,
+        "total_prize":1500,
         "estimated_total_prize":1740.0,
-        "total_prize":1500.0,
-        "MRE":0.16
+        "MRE":0.16,
+        "ml_estimated_total_prize":1882.0928779759,
+        "LR_MRE":0.2547285853
     },
     {
         "index":30045886,
+        "total_prize":2200,
         "estimated_total_prize":2107.5,
-        "total_prize":2200.0,
-        "MRE":0.0420454545
+        "MRE":0.0420454545,
+        "ml_estimated_total_prize":1898.9298845558,
+        "LR_MRE":0.1368500525
     },
     {
         "index":30045888,
+        "total_prize":1500,
         "estimated_total_prize":1715.0,
-        "total_prize":1500.0,
-        "MRE":0.1433333333
+        "MRE":0.1433333333,
+        "ml_estimated_total_prize":2153.2850431682,
+        "LR_MRE":0.4355233621
     },
     {
         "index":30045889,
+        "total_prize":2200,
         "estimated_total_prize":2065.0,
-        "total_prize":2200.0,
-        "MRE":0.0613636364
+        "MRE":0.0613636364,
+        "ml_estimated_total_prize":1946.1626415233,
+        "LR_MRE":0.1153806175
     },
     {
         "index":30045899,
+        "total_prize":2250,
         "estimated_total_prize":2512.5,
-        "total_prize":2250.0,
-        "MRE":0.1166666667
+        "MRE":0.1166666667,
+        "ml_estimated_total_prize":2060.2372671352,
+        "LR_MRE":0.0843389924
     },
     {
         "index":30045969,
+        "total_prize":250,
         "estimated_total_prize":182.0,
-        "total_prize":250.0,
-        "MRE":0.272
+        "MRE":0.272,
+        "ml_estimated_total_prize":717.4072977478,
+        "LR_MRE":1.869629191
     },
     {
         "index":30045990,
+        "total_prize":500,
         "estimated_total_prize":108.5,
-        "total_prize":500.0,
-        "MRE":0.783
+        "MRE":0.783,
+        "ml_estimated_total_prize":402.9813493357,
+        "LR_MRE":0.1940373013
     },
     {
         "index":30045993,
+        "total_prize":75,
         "estimated_total_prize":81.0,
-        "total_prize":75.0,
-        "MRE":0.08
+        "MRE":0.08,
+        "ml_estimated_total_prize":476.932649161,
+        "LR_MRE":5.3591019888
     },
     {
         "index":30045995,
+        "total_prize":200,
         "estimated_total_prize":95.0,
-        "total_prize":200.0,
-        "MRE":0.525
+        "MRE":0.525,
+        "ml_estimated_total_prize":-547.7119562652,
+        "LR_MRE":3.7385597813
     },
     {
         "index":30045997,
+        "total_prize":120,
         "estimated_total_prize":190.0,
-        "total_prize":120.0,
-        "MRE":0.5833333333
+        "MRE":0.5833333333,
+        "ml_estimated_total_prize":549.8692810207,
+        "LR_MRE":3.5822440085
     },
     {
         "index":30046030,
+        "total_prize":1000,
         "estimated_total_prize":1652.5,
-        "total_prize":1000.0,
-        "MRE":0.6525
+        "MRE":0.6525,
+        "ml_estimated_total_prize":1246.5868909525,
+        "LR_MRE":0.246586891
     },
     {
         "index":30046048,
+        "total_prize":700,
         "estimated_total_prize":1210.0,
-        "total_prize":700.0,
-        "MRE":0.7285714286
+        "MRE":0.7285714286,
+        "ml_estimated_total_prize":264.1059435691,
+        "LR_MRE":0.6227057949
     },
     {
         "index":30046071,
+        "total_prize":2250,
         "estimated_total_prize":2310.0,
-        "total_prize":2250.0,
-        "MRE":0.0266666667
+        "MRE":0.0266666667,
+        "ml_estimated_total_prize":2277.3665608851,
+        "LR_MRE":0.0121629159
     },
     {
         "index":30046122,
+        "total_prize":300,
         "estimated_total_prize":612.5,
-        "total_prize":300.0,
-        "MRE":1.0416666667
+        "MRE":1.0416666667,
+        "ml_estimated_total_prize":-111.8196275041,
+        "LR_MRE":1.3727320917
     },
     {
         "index":30046137,
+        "total_prize":300,
         "estimated_total_prize":785.0,
-        "total_prize":300.0,
-        "MRE":1.6166666667
+        "MRE":1.6166666667,
+        "ml_estimated_total_prize":647.9015522644,
+        "LR_MRE":1.1596718409
     },
     {
         "index":30046151,
+        "total_prize":2250,
         "estimated_total_prize":1490.0,
-        "total_prize":2250.0,
-        "MRE":0.3377777778
+        "MRE":0.3377777778,
+        "ml_estimated_total_prize":1211.7569914835,
+        "LR_MRE":0.4614413371
     },
     {
         "index":30046181,
+        "total_prize":2250,
         "estimated_total_prize":2140.0,
-        "total_prize":2250.0,
-        "MRE":0.0488888889
+        "MRE":0.0488888889,
+        "ml_estimated_total_prize":2192.1912258644,
+        "LR_MRE":0.0256927885
     },
     {
         "index":30046236,
+        "total_prize":1900,
         "estimated_total_prize":1790.0,
-        "total_prize":1900.0,
-        "MRE":0.0578947368
+        "MRE":0.0578947368,
+        "ml_estimated_total_prize":2130.7146320658,
+        "LR_MRE":0.1214287537
     },
     {
         "index":30046280,
+        "total_prize":1800,
         "estimated_total_prize":1785.0,
-        "total_prize":1800.0,
-        "MRE":0.0083333333
+        "MRE":0.0083333333,
+        "ml_estimated_total_prize":1516.8248050688,
+        "LR_MRE":0.1573195527
     },
     {
         "index":30046383,
+        "total_prize":1250,
         "estimated_total_prize":1705.0,
-        "total_prize":1250.0,
-        "MRE":0.364
+        "MRE":0.364,
+        "ml_estimated_total_prize":1666.4416701869,
+        "LR_MRE":0.3331533361
     },
     {
         "index":30046384,
+        "total_prize":50,
         "estimated_total_prize":142.5,
-        "total_prize":50.0,
-        "MRE":1.85
+        "MRE":1.85,
+        "ml_estimated_total_prize":229.7419253472,
+        "LR_MRE":3.5948385069
     },
     {
         "index":30046387,
+        "total_prize":50,
         "estimated_total_prize":87.5,
-        "total_prize":50.0,
-        "MRE":0.75
+        "MRE":0.75,
+        "ml_estimated_total_prize":-531.2843319444,
+        "LR_MRE":11.6256866389
     },
     {
         "index":30046436,
+        "total_prize":60,
         "estimated_total_prize":82.5,
-        "total_prize":60.0,
-        "MRE":0.375
+        "MRE":0.375,
+        "ml_estimated_total_prize":61.3623140024,
+        "LR_MRE":0.0227052334
     },
     {
         "index":30046454,
+        "total_prize":1000,
         "estimated_total_prize":1597.5,
-        "total_prize":1000.0,
-        "MRE":0.5975
+        "MRE":0.5975,
+        "ml_estimated_total_prize":995.9706284575,
+        "LR_MRE":0.0040293715
     },
     {
         "index":30046455,
+        "total_prize":1500,
         "estimated_total_prize":847.5,
-        "total_prize":1500.0,
-        "MRE":0.435
+        "MRE":0.435,
+        "ml_estimated_total_prize":1447.9204902737,
+        "LR_MRE":0.0347196732
     },
     {
         "index":30046456,
+        "total_prize":1500,
         "estimated_total_prize":895.0,
-        "total_prize":1500.0,
-        "MRE":0.4033333333
+        "MRE":0.4033333333,
+        "ml_estimated_total_prize":1493.2477711194,
+        "LR_MRE":0.0045014859
     },
     {
         "index":30046516,
+        "total_prize":75,
         "estimated_total_prize":128.5,
-        "total_prize":75.0,
-        "MRE":0.7133333333
+        "MRE":0.7133333333,
+        "ml_estimated_total_prize":125.1643110911,
+        "LR_MRE":0.6688574812
     },
     {
         "index":30046583,
+        "total_prize":1700,
         "estimated_total_prize":1780.0,
-        "total_prize":1700.0,
-        "MRE":0.0470588235
+        "MRE":0.0470588235,
+        "ml_estimated_total_prize":1734.3532342382,
+        "LR_MRE":0.0202077848
     },
     {
         "index":30046604,
+        "total_prize":1250,
         "estimated_total_prize":1715.0,
-        "total_prize":1250.0,
-        "MRE":0.372
+        "MRE":0.372,
+        "ml_estimated_total_prize":1487.5734969741,
+        "LR_MRE":0.1900587976
     },
     {
         "index":30046646,
+        "total_prize":150,
         "estimated_total_prize":100.0,
-        "total_prize":150.0,
-        "MRE":0.3333333333
+        "MRE":0.3333333333,
+        "ml_estimated_total_prize":-6.9642199629,
+        "LR_MRE":1.0464281331
     },
     {
         "index":30046669,
+        "total_prize":1850,
         "estimated_total_prize":1940.0,
-        "total_prize":1850.0,
-        "MRE":0.0486486486
+        "MRE":0.0486486486,
+        "ml_estimated_total_prize":2015.3694524304,
+        "LR_MRE":0.0893888932
     },
     {
         "index":30046690,
+        "total_prize":400,
         "estimated_total_prize":2315.0,
-        "total_prize":400.0,
-        "MRE":4.7875
+        "MRE":4.7875,
+        "ml_estimated_total_prize":659.7148356639,
+        "LR_MRE":0.6492870892
     },
     {
         "index":30046770,
+        "total_prize":900,
         "estimated_total_prize":1400.0,
-        "total_prize":900.0,
-        "MRE":0.5555555556
+        "MRE":0.5555555556,
+        "ml_estimated_total_prize":966.1540324214,
+        "LR_MRE":0.0735044805
     },
     {
         "index":30046834,
+        "total_prize":50,
         "estimated_total_prize":120.0,
-        "total_prize":50.0,
-        "MRE":1.4
+        "MRE":1.4,
+        "ml_estimated_total_prize":-352.2119721773,
+        "LR_MRE":8.0442394435
     },
     {
         "index":30046835,
+        "total_prize":400,
         "estimated_total_prize":215.0,
-        "total_prize":400.0,
-        "MRE":0.4625
+        "MRE":0.4625,
+        "ml_estimated_total_prize":-243.536759288,
+        "LR_MRE":1.6088418982
     },
     {
         "index":30046852,
+        "total_prize":1850,
         "estimated_total_prize":1825.0,
-        "total_prize":1850.0,
-        "MRE":0.0135135135
+        "MRE":0.0135135135,
+        "ml_estimated_total_prize":1248.4300242751,
+        "LR_MRE":0.3251729599
     },
     {
         "index":30046902,
+        "total_prize":600,
         "estimated_total_prize":780.0,
-        "total_prize":600.0,
-        "MRE":0.3
+        "MRE":0.3,
+        "ml_estimated_total_prize":1064.830390846,
+        "LR_MRE":0.7747173181
     },
     {
         "index":30046903,
+        "total_prize":1250,
         "estimated_total_prize":1670.0,
-        "total_prize":1250.0,
-        "MRE":0.336
+        "MRE":0.336,
+        "ml_estimated_total_prize":1300.6259908395,
+        "LR_MRE":0.0405007927
     },
     {
         "index":30046924,
+        "total_prize":300,
         "estimated_total_prize":250.0,
-        "total_prize":300.0,
-        "MRE":0.1666666667
+        "MRE":0.1666666667,
+        "ml_estimated_total_prize":437.1048286936,
+        "LR_MRE":0.4570160956
     },
     {
         "index":30046930,
+        "total_prize":1600,
         "estimated_total_prize":2465.0,
-        "total_prize":1600.0,
-        "MRE":0.540625
+        "MRE":0.540625,
+        "ml_estimated_total_prize":1616.9235906346,
+        "LR_MRE":0.0105772441
     },
     {
         "index":30046981,
+        "total_prize":750,
         "estimated_total_prize":2137.5,
-        "total_prize":750.0,
-        "MRE":1.85
+        "MRE":1.85,
+        "ml_estimated_total_prize":1306.3926732945,
+        "LR_MRE":0.7418568977
     },
     {
         "index":30047011,
+        "total_prize":100,
         "estimated_total_prize":157.5,
-        "total_prize":100.0,
-        "MRE":0.575
+        "MRE":0.575,
+        "ml_estimated_total_prize":221.4415996022,
+        "LR_MRE":1.214415996
     },
     {
         "index":30047025,
+        "total_prize":2000,
         "estimated_total_prize":1905.0,
-        "total_prize":2000.0,
-        "MRE":0.0475
+        "MRE":0.0475,
+        "ml_estimated_total_prize":1849.8250310236,
+        "LR_MRE":0.0750874845
     },
     {
         "index":30047027,
+        "total_prize":2000,
         "estimated_total_prize":1980.0,
-        "total_prize":2000.0,
-        "MRE":0.01
+        "MRE":0.01,
+        "ml_estimated_total_prize":1835.0095631947,
+        "LR_MRE":0.0824952184
     },
     {
         "index":30047044,
+        "total_prize":600,
         "estimated_total_prize":97.5,
-        "total_prize":600.0,
-        "MRE":0.8375
+        "MRE":0.8375,
+        "ml_estimated_total_prize":705.0622038122,
+        "LR_MRE":0.175103673
     },
     {
         "index":30047064,
+        "total_prize":150,
         "estimated_total_prize":240.0,
-        "total_prize":150.0,
-        "MRE":0.6
+        "MRE":0.6,
+        "ml_estimated_total_prize":42.090099217,
+        "LR_MRE":0.7193993386
     },
     {
         "index":30047137,
+        "total_prize":50,
         "estimated_total_prize":101.0,
-        "total_prize":50.0,
-        "MRE":1.02
+        "MRE":1.02,
+        "ml_estimated_total_prize":333.8191452672,
+        "LR_MRE":5.6763829053
     },
     {
         "index":30047138,
+        "total_prize":900,
         "estimated_total_prize":1310.0,
-        "total_prize":900.0,
-        "MRE":0.4555555556
+        "MRE":0.4555555556,
+        "ml_estimated_total_prize":1252.7340871448,
+        "LR_MRE":0.3919267635
     },
     {
         "index":30047157,
+        "total_prize":100,
         "estimated_total_prize":205.0,
-        "total_prize":100.0,
-        "MRE":1.05
+        "MRE":1.05,
+        "ml_estimated_total_prize":70.5295920388,
+        "LR_MRE":0.2947040796
     },
     {
         "index":30047176,
+        "total_prize":300,
         "estimated_total_prize":192.5,
-        "total_prize":300.0,
-        "MRE":0.3583333333
+        "MRE":0.3583333333,
+        "ml_estimated_total_prize":-290.5752259927,
+        "LR_MRE":1.9685840866
     },
     {
         "index":30047177,
+        "total_prize":800,
         "estimated_total_prize":1305.0,
-        "total_prize":800.0,
-        "MRE":0.63125
+        "MRE":0.63125,
+        "ml_estimated_total_prize":894.1706949036,
+        "LR_MRE":0.1177133686
     },
     {
         "index":30047246,
+        "total_prize":3750,
         "estimated_total_prize":1142.0,
-        "total_prize":3750.0,
-        "MRE":0.6954666667
+        "MRE":0.6954666667,
+        "ml_estimated_total_prize":3152.8692253958,
+        "LR_MRE":0.1592348732
     },
     {
         "index":30047294,
+        "total_prize":1250,
         "estimated_total_prize":1437.5,
-        "total_prize":1250.0,
-        "MRE":0.15
+        "MRE":0.15,
+        "ml_estimated_total_prize":1201.8063965529,
+        "LR_MRE":0.0385548828
     },
     {
         "index":30047310,
+        "total_prize":650,
         "estimated_total_prize":1390.0,
-        "total_prize":650.0,
-        "MRE":1.1384615385
+        "MRE":1.1384615385,
+        "ml_estimated_total_prize":1129.9005895879,
+        "LR_MRE":0.7383085994
     },
     {
         "index":30047311,
+        "total_prize":1000,
         "estimated_total_prize":2595.0,
-        "total_prize":1000.0,
-        "MRE":1.595
+        "MRE":1.595,
+        "ml_estimated_total_prize":1187.9934367081,
+        "LR_MRE":0.1879934367
     },
     {
         "index":30047352,
+        "total_prize":1250,
         "estimated_total_prize":992.0,
-        "total_prize":1250.0,
-        "MRE":0.2064
+        "MRE":0.2064,
+        "ml_estimated_total_prize":1412.2972265324,
+        "LR_MRE":0.1298377812
     },
     {
         "index":30047376,
+        "total_prize":2550,
         "estimated_total_prize":2045.0,
-        "total_prize":2550.0,
-        "MRE":0.1980392157
+        "MRE":0.1980392157,
+        "ml_estimated_total_prize":2238.4817326787,
+        "LR_MRE":0.1221640264
     },
     {
         "index":30047456,
+        "total_prize":1850,
         "estimated_total_prize":2377.5,
-        "total_prize":1850.0,
-        "MRE":0.2851351351
+        "MRE":0.2851351351,
+        "ml_estimated_total_prize":1837.0968817203,
+        "LR_MRE":0.0069746585
     },
     {
         "index":30047466,
+        "total_prize":75,
         "estimated_total_prize":150.0,
-        "total_prize":75.0,
-        "MRE":1.0
+        "MRE":1.0,
+        "ml_estimated_total_prize":143.7930882839,
+        "LR_MRE":0.9172411771
     },
     {
         "index":30047469,
+        "total_prize":1250,
         "estimated_total_prize":1035.0,
-        "total_prize":1250.0,
-        "MRE":0.172
+        "MRE":0.172,
+        "ml_estimated_total_prize":1685.9469413592,
+        "LR_MRE":0.3487575531
     },
     {
         "index":30047537,
+        "total_prize":500,
         "estimated_total_prize":1440.0,
-        "total_prize":500.0,
-        "MRE":1.88
+        "MRE":1.88,
+        "ml_estimated_total_prize":1065.410703424,
+        "LR_MRE":1.1308214068
     },
     {
         "index":30047574,
+        "total_prize":100,
         "estimated_total_prize":123.5,
-        "total_prize":100.0,
-        "MRE":0.235
+        "MRE":0.235,
+        "ml_estimated_total_prize":99.6854304066,
+        "LR_MRE":0.0031456959
     },
     {
         "index":30047578,
+        "total_prize":150,
         "estimated_total_prize":111.0,
-        "total_prize":150.0,
-        "MRE":0.26
+        "MRE":0.26,
+        "ml_estimated_total_prize":239.1967862268,
+        "LR_MRE":0.5946452415
     },
     {
         "index":30047804,
+        "total_prize":3750,
         "estimated_total_prize":2430.0,
-        "total_prize":3750.0,
-        "MRE":0.352
+        "MRE":0.352,
+        "ml_estimated_total_prize":3423.1508636958,
+        "LR_MRE":0.0871597697
     },
     {
         "index":30047825,
+        "total_prize":3750,
         "estimated_total_prize":2430.0,
-        "total_prize":3750.0,
-        "MRE":0.352
+        "MRE":0.352,
+        "ml_estimated_total_prize":3427.530749365,
+        "LR_MRE":0.0859918002
     },
     {
         "index":30047826,
+        "total_prize":3750,
         "estimated_total_prize":2430.0,
-        "total_prize":3750.0,
-        "MRE":0.352
+        "MRE":0.352,
+        "ml_estimated_total_prize":3259.4043274603,
+        "LR_MRE":0.1308255127
     },
     {
         "index":30047827,
+        "total_prize":2000,
         "estimated_total_prize":1005.0,
-        "total_prize":2000.0,
-        "MRE":0.4975
+        "MRE":0.4975,
+        "ml_estimated_total_prize":1972.5658760121,
+        "LR_MRE":0.013717062
     },
     {
         "index":30047828,
+        "total_prize":2000,
         "estimated_total_prize":960.0,
-        "total_prize":2000.0,
-        "MRE":0.52
+        "MRE":0.52,
+        "ml_estimated_total_prize":1629.0393139429,
+        "LR_MRE":0.185480343
     },
     {
         "index":30047829,
+        "total_prize":2000,
         "estimated_total_prize":1565.0,
-        "total_prize":2000.0,
-        "MRE":0.2175
+        "MRE":0.2175,
+        "ml_estimated_total_prize":1848.2650224089,
+        "LR_MRE":0.0758674888
     },
     {
         "index":30047866,
+        "total_prize":1500,
         "estimated_total_prize":1982.5,
-        "total_prize":1500.0,
-        "MRE":0.3216666667
+        "MRE":0.3216666667,
+        "ml_estimated_total_prize":1377.2265941071,
+        "LR_MRE":0.0818489373
     },
     {
         "index":30047872,
+        "total_prize":3100,
         "estimated_total_prize":2097.5,
-        "total_prize":3100.0,
-        "MRE":0.3233870968
+        "MRE":0.3233870968,
+        "ml_estimated_total_prize":2958.6348805481,
+        "LR_MRE":0.0456016514
     },
     {
         "index":30047976,
+        "total_prize":2250,
         "estimated_total_prize":2227.5,
-        "total_prize":2250.0,
-        "MRE":0.01
+        "MRE":0.01,
+        "ml_estimated_total_prize":2901.1847736848,
+        "LR_MRE":0.289415455
     },
     {
         "index":30048013,
+        "total_prize":2200,
         "estimated_total_prize":1120.0,
-        "total_prize":2200.0,
-        "MRE":0.4909090909
+        "MRE":0.4909090909,
+        "ml_estimated_total_prize":1238.5815324453,
+        "LR_MRE":0.4370083943
     },
     {
         "index":30048017,
+        "total_prize":800,
         "estimated_total_prize":1870.0,
-        "total_prize":800.0,
-        "MRE":1.3375
+        "MRE":1.3375,
+        "ml_estimated_total_prize":1381.6886940078,
+        "LR_MRE":0.7271108675
     },
     {
         "index":30048019,
+        "total_prize":1600,
         "estimated_total_prize":1275.0,
-        "total_prize":1600.0,
-        "MRE":0.203125
+        "MRE":0.203125,
+        "ml_estimated_total_prize":1894.8291093675,
+        "LR_MRE":0.1842681934
     },
     {
         "index":30048040,
+        "total_prize":100,
         "estimated_total_prize":202.5,
-        "total_prize":100.0,
-        "MRE":1.025
+        "MRE":1.025,
+        "ml_estimated_total_prize":709.4766212603,
+        "LR_MRE":6.0947662126
     },
     {
         "index":30048041,
+        "total_prize":100,
         "estimated_total_prize":146.0,
-        "total_prize":100.0,
-        "MRE":0.46
+        "MRE":0.46,
+        "ml_estimated_total_prize":247.7208222135,
+        "LR_MRE":1.4772082221
     },
     {
         "index":30048075,
+        "total_prize":75,
         "estimated_total_prize":207.5,
-        "total_prize":75.0,
-        "MRE":1.7666666667
+        "MRE":1.7666666667,
+        "ml_estimated_total_prize":28.6209932956,
+        "LR_MRE":0.6183867561
     },
     {
         "index":30048080,
+        "total_prize":100,
         "estimated_total_prize":232.5,
-        "total_prize":100.0,
-        "MRE":1.325
+        "MRE":1.325,
+        "ml_estimated_total_prize":-67.3482001715,
+        "LR_MRE":1.6734820017
     },
     {
         "index":30048100,
+        "total_prize":75,
         "estimated_total_prize":86.0,
-        "total_prize":75.0,
-        "MRE":0.1466666667
+        "MRE":0.1466666667,
+        "ml_estimated_total_prize":-89.9389380681,
+        "LR_MRE":2.1991858409
     },
     {
         "index":30048208,
+        "total_prize":50,
         "estimated_total_prize":83.5,
-        "total_prize":50.0,
-        "MRE":0.67
+        "MRE":0.67,
+        "ml_estimated_total_prize":6.5550159325,
+        "LR_MRE":0.8688996813
     },
     {
         "index":30048302,
+        "total_prize":1350,
         "estimated_total_prize":1740.0,
-        "total_prize":1350.0,
-        "MRE":0.2888888889
+        "MRE":0.2888888889,
+        "ml_estimated_total_prize":1227.3791575749,
+        "LR_MRE":0.0908302536
     },
     {
         "index":30048335,
+        "total_prize":250,
         "estimated_total_prize":1160.0,
-        "total_prize":250.0,
-        "MRE":3.64
+        "MRE":3.64,
+        "ml_estimated_total_prize":654.1502607902,
+        "LR_MRE":1.6166010432
     },
     {
         "index":30048342,
+        "total_prize":100,
         "estimated_total_prize":177.5,
-        "total_prize":100.0,
-        "MRE":0.775
+        "MRE":0.775,
+        "ml_estimated_total_prize":206.1414467587,
+        "LR_MRE":1.0614144676
     },
     {
         "index":30048376,
+        "total_prize":100,
         "estimated_total_prize":108.5,
-        "total_prize":100.0,
-        "MRE":0.085
+        "MRE":0.085,
+        "ml_estimated_total_prize":197.517938782,
+        "LR_MRE":0.9751793878
     },
     {
         "index":30048407,
+        "total_prize":75,
         "estimated_total_prize":86.0,
-        "total_prize":75.0,
-        "MRE":0.1466666667
+        "MRE":0.1466666667,
+        "ml_estimated_total_prize":62.0324795908,
+        "LR_MRE":0.1729002721
     },
     {
         "index":30048504,
+        "total_prize":2500,
         "estimated_total_prize":1865.0,
-        "total_prize":2500.0,
-        "MRE":0.254
+        "MRE":0.254,
+        "ml_estimated_total_prize":2143.8662824127,
+        "LR_MRE":0.142453487
     },
     {
         "index":30048515,
+        "total_prize":2000,
         "estimated_total_prize":2585.0,
-        "total_prize":2000.0,
-        "MRE":0.2925
+        "MRE":0.2925,
+        "ml_estimated_total_prize":1979.7263625323,
+        "LR_MRE":0.0101368187
     },
     {
         "index":30048579,
+        "total_prize":2450,
         "estimated_total_prize":2265.0,
-        "total_prize":2450.0,
-        "MRE":0.0755102041
+        "MRE":0.0755102041,
+        "ml_estimated_total_prize":2092.9045863606,
+        "LR_MRE":0.1457532301
     },
     {
         "index":30048658,
+        "total_prize":75,
         "estimated_total_prize":81.0,
-        "total_prize":75.0,
-        "MRE":0.08
+        "MRE":0.08,
+        "ml_estimated_total_prize":-405.9166447448,
+        "LR_MRE":6.4122219299
     },
     {
         "index":30048664,
+        "total_prize":1750,
         "estimated_total_prize":2007.5,
-        "total_prize":1750.0,
-        "MRE":0.1471428571
+        "MRE":0.1471428571,
+        "ml_estimated_total_prize":1928.8586920907,
+        "LR_MRE":0.1022049669
     },
     {
         "index":30048732,
+        "total_prize":75,
         "estimated_total_prize":81.0,
-        "total_prize":75.0,
-        "MRE":0.08
+        "MRE":0.08,
+        "ml_estimated_total_prize":-321.1583945562,
+        "LR_MRE":5.2821119274
     },
     {
         "index":30048814,
+        "total_prize":75,
         "estimated_total_prize":128.5,
-        "total_prize":75.0,
-        "MRE":0.7133333333
+        "MRE":0.7133333333,
+        "ml_estimated_total_prize":-33.1426583843,
+        "LR_MRE":1.4419021118
     },
     {
         "index":30048987,
+        "total_prize":3700,
         "estimated_total_prize":2330.0,
-        "total_prize":3700.0,
-        "MRE":0.3702702703
+        "MRE":0.3702702703,
+        "ml_estimated_total_prize":2712.8811538274,
+        "LR_MRE":0.2667888773
     },
     {
         "index":30049019,
+        "total_prize":1750,
         "estimated_total_prize":1937.5,
-        "total_prize":1750.0,
-        "MRE":0.1071428571
+        "MRE":0.1071428571,
+        "ml_estimated_total_prize":1271.2040309598,
+        "LR_MRE":0.2735976966
     },
     {
         "index":30049031,
+        "total_prize":1400,
         "estimated_total_prize":790.0,
-        "total_prize":1400.0,
-        "MRE":0.4357142857
+        "MRE":0.4357142857,
+        "ml_estimated_total_prize":1876.042310756,
+        "LR_MRE":0.340030222
     },
     {
         "index":30049038,
+        "total_prize":2575,
         "estimated_total_prize":2047.5,
-        "total_prize":2575.0,
-        "MRE":0.2048543689
+        "MRE":0.2048543689,
+        "ml_estimated_total_prize":2723.8468341902,
+        "LR_MRE":0.0578045958
     },
     {
         "index":30049160,
+        "total_prize":250,
         "estimated_total_prize":882.5,
-        "total_prize":250.0,
-        "MRE":2.53
+        "MRE":2.53,
+        "ml_estimated_total_prize":731.2537268879,
+        "LR_MRE":1.9250149076
     },
     {
         "index":30049248,
+        "total_prize":2250,
         "estimated_total_prize":2047.5,
-        "total_prize":2250.0,
-        "MRE":0.09
+        "MRE":0.09,
+        "ml_estimated_total_prize":2394.4310871803,
+        "LR_MRE":0.0641915943
     },
     {
         "index":30049312,
+        "total_prize":2750,
         "estimated_total_prize":2425.0,
-        "total_prize":2750.0,
-        "MRE":0.1181818182
+        "MRE":0.1181818182,
+        "ml_estimated_total_prize":2510.473795848,
+        "LR_MRE":0.0871004379
     },
     {
         "index":30049499,
+        "total_prize":1400,
         "estimated_total_prize":2345.0,
-        "total_prize":1400.0,
-        "MRE":0.675
+        "MRE":0.675,
+        "ml_estimated_total_prize":1440.6228397563,
+        "LR_MRE":0.0290163141
     },
     {
         "index":30049500,
+        "total_prize":125,
         "estimated_total_prize":359.5,
-        "total_prize":125.0,
-        "MRE":1.876
+        "MRE":1.876,
+        "ml_estimated_total_prize":468.3011474063,
+        "LR_MRE":2.7464091793
     },
     {
         "index":30049501,
+        "total_prize":120,
         "estimated_total_prize":985.0,
-        "total_prize":120.0,
-        "MRE":7.2083333333
+        "MRE":7.2083333333,
+        "ml_estimated_total_prize":809.2074752124,
+        "LR_MRE":5.7433956268
     },
     {
         "index":30049532,
+        "total_prize":1050,
         "estimated_total_prize":727.5,
-        "total_prize":1050.0,
-        "MRE":0.3071428571
+        "MRE":0.3071428571,
+        "ml_estimated_total_prize":917.6621146604,
+        "LR_MRE":0.1260360813
     },
     {
         "index":30049560,
+        "total_prize":1400,
         "estimated_total_prize":1565.0,
-        "total_prize":1400.0,
-        "MRE":0.1178571429
+        "MRE":0.1178571429,
+        "ml_estimated_total_prize":1850.9901362178,
+        "LR_MRE":0.3221358116
     },
     {
         "index":30049608,
+        "total_prize":1800,
         "estimated_total_prize":1430.0,
-        "total_prize":1800.0,
-        "MRE":0.2055555556
+        "MRE":0.2055555556,
+        "ml_estimated_total_prize":1754.1734358535,
+        "LR_MRE":0.0254592023
     },
     {
         "index":30049609,
+        "total_prize":1500,
         "estimated_total_prize":1585.0,
-        "total_prize":1500.0,
-        "MRE":0.0566666667
+        "MRE":0.0566666667,
+        "ml_estimated_total_prize":1863.9708298095,
+        "LR_MRE":0.2426472199
     },
     {
         "index":30049632,
+        "total_prize":300,
         "estimated_total_prize":640.0,
-        "total_prize":300.0,
-        "MRE":1.1333333333
+        "MRE":1.1333333333,
+        "ml_estimated_total_prize":574.9348809153,
+        "LR_MRE":0.9164496031
     },
     {
         "index":30049633,
+        "total_prize":300,
         "estimated_total_prize":640.0,
-        "total_prize":300.0,
-        "MRE":1.1333333333
+        "MRE":1.1333333333,
+        "ml_estimated_total_prize":602.6111799131,
+        "LR_MRE":1.008703933
     },
     {
         "index":30049670,
+        "total_prize":1650,
         "estimated_total_prize":1100.0,
-        "total_prize":1650.0,
-        "MRE":0.3333333333
+        "MRE":0.3333333333,
+        "ml_estimated_total_prize":1809.9120736643,
+        "LR_MRE":0.0969164083
     },
     {
         "index":30049760,
+        "total_prize":1750,
         "estimated_total_prize":980.0,
-        "total_prize":1750.0,
-        "MRE":0.44
+        "MRE":0.44,
+        "ml_estimated_total_prize":759.6127587537,
+        "LR_MRE":0.5659355664
     },
     {
         "index":30049822,
+        "total_prize":1700,
         "estimated_total_prize":1720.0,
-        "total_prize":1700.0,
-        "MRE":0.0117647059
+        "MRE":0.0117647059,
+        "ml_estimated_total_prize":2339.6256872298,
+        "LR_MRE":0.3762504043
     },
     {
         "index":30049830,
+        "total_prize":1500,
         "estimated_total_prize":1900.0,
-        "total_prize":1500.0,
-        "MRE":0.2666666667
+        "MRE":0.2666666667,
+        "ml_estimated_total_prize":1142.8627724839,
+        "LR_MRE":0.238091485
     },
     {
         "index":30049876,
+        "total_prize":1200,
         "estimated_total_prize":1815.0,
-        "total_prize":1200.0,
-        "MRE":0.5125
+        "MRE":0.5125,
+        "ml_estimated_total_prize":1604.6591273238,
+        "LR_MRE":0.3372159394
     },
     {
         "index":30049899,
+        "total_prize":500,
         "estimated_total_prize":672.5,
-        "total_prize":500.0,
-        "MRE":0.345
+        "MRE":0.345,
+        "ml_estimated_total_prize":499.7152622808,
+        "LR_MRE":0.0005694754
     },
     {
         "index":30049948,
+        "total_prize":2250,
         "estimated_total_prize":2545.0,
-        "total_prize":2250.0,
-        "MRE":0.1311111111
+        "MRE":0.1311111111,
+        "ml_estimated_total_prize":2297.4584685948,
+        "LR_MRE":0.0210926527
     },
     {
         "index":30049970,
+        "total_prize":2100,
         "estimated_total_prize":2325.0,
-        "total_prize":2100.0,
-        "MRE":0.1071428571
+        "MRE":0.1071428571,
+        "ml_estimated_total_prize":2765.3813320824,
+        "LR_MRE":0.3168482534
     },
     {
         "index":30049984,
+        "total_prize":200,
         "estimated_total_prize":402.5,
-        "total_prize":200.0,
-        "MRE":1.0125
+        "MRE":1.0125,
+        "ml_estimated_total_prize":575.6895779018,
+        "LR_MRE":1.8784478895
     },
     {
         "index":30050008,
+        "total_prize":1750,
         "estimated_total_prize":1282.5,
-        "total_prize":1750.0,
-        "MRE":0.2671428571
+        "MRE":0.2671428571,
+        "ml_estimated_total_prize":1776.3840099431,
+        "LR_MRE":0.0150765771
     },
     {
         "index":30050017,
+        "total_prize":2100,
         "estimated_total_prize":2050.0,
-        "total_prize":2100.0,
-        "MRE":0.0238095238
+        "MRE":0.0238095238,
+        "ml_estimated_total_prize":1810.6476122748,
+        "LR_MRE":0.1377868513
     },
     {
         "index":30050073,
+        "total_prize":2700,
         "estimated_total_prize":2190.0,
-        "total_prize":2700.0,
-        "MRE":0.1888888889
+        "MRE":0.1888888889,
+        "ml_estimated_total_prize":2980.6832634347,
+        "LR_MRE":0.1039567642
     },
     {
         "index":30050108,
+        "total_prize":200,
         "estimated_total_prize":372.0,
-        "total_prize":200.0,
-        "MRE":0.86
+        "MRE":0.86,
+        "ml_estimated_total_prize":600.106991411,
+        "LR_MRE":2.0005349571
     },
     {
         "index":30050140,
+        "total_prize":850,
         "estimated_total_prize":362.5,
-        "total_prize":850.0,
-        "MRE":0.5735294118
+        "MRE":0.5735294118,
+        "ml_estimated_total_prize":640.2803592016,
+        "LR_MRE":0.2467289892
     },
     {
         "index":30050144,
+        "total_prize":850,
         "estimated_total_prize":347.5,
-        "total_prize":850.0,
-        "MRE":0.5911764706
+        "MRE":0.5911764706,
+        "ml_estimated_total_prize":826.5872120764,
+        "LR_MRE":0.0275444564
     },
     {
         "index":30050155,
+        "total_prize":2600,
         "estimated_total_prize":2240.0,
-        "total_prize":2600.0,
-        "MRE":0.1384615385
+        "MRE":0.1384615385,
+        "ml_estimated_total_prize":3202.2137073295,
+        "LR_MRE":0.2316206567
     },
     {
         "index":30050166,
+        "total_prize":2400,
         "estimated_total_prize":1960.0,
-        "total_prize":2400.0,
-        "MRE":0.1833333333
+        "MRE":0.1833333333,
+        "ml_estimated_total_prize":1957.4874839137,
+        "LR_MRE":0.184380215
     },
     {
         "index":30050175,
+        "total_prize":1600,
         "estimated_total_prize":2080.0,
-        "total_prize":1600.0,
-        "MRE":0.3
+        "MRE":0.3,
+        "ml_estimated_total_prize":2026.7715190431,
+        "LR_MRE":0.2667321994
     },
     {
         "index":30050184,
+        "total_prize":2450,
         "estimated_total_prize":2185.0,
-        "total_prize":2450.0,
-        "MRE":0.1081632653
+        "MRE":0.1081632653,
+        "ml_estimated_total_prize":2358.9122137216,
+        "LR_MRE":0.0371786883
     },
     {
         "index":30050193,
+        "total_prize":100,
         "estimated_total_prize":145.0,
-        "total_prize":100.0,
-        "MRE":0.45
+        "MRE":0.45,
+        "ml_estimated_total_prize":-236.5165560725,
+        "LR_MRE":3.3651655607
     },
     {
         "index":30050196,
+        "total_prize":1800,
         "estimated_total_prize":1250.0,
-        "total_prize":1800.0,
-        "MRE":0.3055555556
+        "MRE":0.3055555556,
+        "ml_estimated_total_prize":1683.2439567346,
+        "LR_MRE":0.0648644685
     },
     {
         "index":30050204,
+        "total_prize":2800,
         "estimated_total_prize":1665.0,
-        "total_prize":2800.0,
-        "MRE":0.4053571429
+        "MRE":0.4053571429,
+        "ml_estimated_total_prize":2357.1085644276,
+        "LR_MRE":0.1581755127
     },
     {
         "index":30050205,
+        "total_prize":1700,
         "estimated_total_prize":1920.0,
-        "total_prize":1700.0,
-        "MRE":0.1294117647
+        "MRE":0.1294117647,
+        "ml_estimated_total_prize":2082.3920437088,
+        "LR_MRE":0.2249364963
     },
     {
         "index":30050249,
+        "total_prize":1700,
         "estimated_total_prize":1592.5,
-        "total_prize":1700.0,
-        "MRE":0.0632352941
+        "MRE":0.0632352941,
+        "ml_estimated_total_prize":1203.4786646766,
+        "LR_MRE":0.2920713737
     },
     {
         "index":30050348,
+        "total_prize":2625,
         "estimated_total_prize":1615.0,
-        "total_prize":2625.0,
-        "MRE":0.3847619048
+        "MRE":0.3847619048,
+        "ml_estimated_total_prize":2258.5462708092,
+        "LR_MRE":0.1396014206
     },
     {
         "index":30050349,
+        "total_prize":3150,
         "estimated_total_prize":2202.5,
-        "total_prize":3150.0,
-        "MRE":0.3007936508
+        "MRE":0.3007936508,
+        "ml_estimated_total_prize":2493.8838321106,
+        "LR_MRE":0.2082908469
     },
     {
         "index":30050434,
+        "total_prize":3500,
         "estimated_total_prize":2390.0,
-        "total_prize":3500.0,
-        "MRE":0.3171428571
+        "MRE":0.3171428571,
+        "ml_estimated_total_prize":3208.958534551,
+        "LR_MRE":0.0831547044
     },
     {
         "index":30050438,
+        "total_prize":75,
         "estimated_total_prize":2160.0,
-        "total_prize":75.0,
-        "MRE":27.8
+        "MRE":27.8,
+        "ml_estimated_total_prize":587.8842669787,
+        "LR_MRE":6.838456893
     },
     {
         "index":30050444,
+        "total_prize":1600,
         "estimated_total_prize":990.0,
-        "total_prize":1600.0,
-        "MRE":0.38125
+        "MRE":0.38125,
+        "ml_estimated_total_prize":1252.5896773731,
+        "LR_MRE":0.2171314516
     },
     {
         "index":30050497,
+        "total_prize":700,
         "estimated_total_prize":467.5,
-        "total_prize":700.0,
-        "MRE":0.3321428571
+        "MRE":0.3321428571,
+        "ml_estimated_total_prize":572.9015086074,
+        "LR_MRE":0.1815692734
     },
     {
         "index":30050537,
+        "total_prize":50,
         "estimated_total_prize":257.5,
-        "total_prize":50.0,
-        "MRE":4.15
+        "MRE":4.15,
+        "ml_estimated_total_prize":474.8276320167,
+        "LR_MRE":8.4965526403
     },
     {
         "index":30050538,
+        "total_prize":2150,
         "estimated_total_prize":1775.0,
-        "total_prize":2150.0,
-        "MRE":0.1744186047
+        "MRE":0.1744186047,
+        "ml_estimated_total_prize":1193.8834726018,
+        "LR_MRE":0.4447053616
     },
     {
         "index":30050542,
+        "total_prize":100,
         "estimated_total_prize":397.5,
-        "total_prize":100.0,
-        "MRE":2.975
+        "MRE":2.975,
+        "ml_estimated_total_prize":2.5817190409,
+        "LR_MRE":0.9741828096
     },
     {
         "index":30050548,
+        "total_prize":2600,
         "estimated_total_prize":1905.0,
-        "total_prize":2600.0,
-        "MRE":0.2673076923
+        "MRE":0.2673076923,
+        "ml_estimated_total_prize":1484.5603425741,
+        "LR_MRE":0.4290152529
     },
     {
         "index":30050585,
+        "total_prize":300,
         "estimated_total_prize":159.5,
-        "total_prize":300.0,
-        "MRE":0.4683333333
+        "MRE":0.4683333333,
+        "ml_estimated_total_prize":119.4475339964,
+        "LR_MRE":0.6018415533
     },
     {
         "index":30050586,
+        "total_prize":400,
         "estimated_total_prize":612.5,
-        "total_prize":400.0,
-        "MRE":0.53125
+        "MRE":0.53125,
+        "ml_estimated_total_prize":494.6949819252,
+        "LR_MRE":0.2367374548
     },
     {
         "index":30050708,
+        "total_prize":50,
         "estimated_total_prize":170.0,
-        "total_prize":50.0,
-        "MRE":2.4
+        "MRE":2.4,
+        "ml_estimated_total_prize":-146.58437754,
+        "LR_MRE":3.9316875508
     },
     {
         "index":30050724,
+        "total_prize":2000,
         "estimated_total_prize":2347.5,
-        "total_prize":2000.0,
-        "MRE":0.17375
+        "MRE":0.17375,
+        "ml_estimated_total_prize":1906.6914180486,
+        "LR_MRE":0.046654291
     },
     {
         "index":30050733,
+        "total_prize":1750,
         "estimated_total_prize":370.0,
-        "total_prize":1750.0,
-        "MRE":0.7885714286
+        "MRE":0.7885714286,
+        "ml_estimated_total_prize":1676.5067807257,
+        "LR_MRE":0.0419961253
     },
     {
         "index":30050737,
+        "total_prize":1700,
         "estimated_total_prize":1625.0,
-        "total_prize":1700.0,
-        "MRE":0.0441176471
+        "MRE":0.0441176471,
+        "ml_estimated_total_prize":1679.5318508617,
+        "LR_MRE":0.0120400877
     },
     {
         "index":30050769,
+        "total_prize":1600,
         "estimated_total_prize":2390.0,
-        "total_prize":1600.0,
-        "MRE":0.49375
+        "MRE":0.49375,
+        "ml_estimated_total_prize":2466.4948230864,
+        "LR_MRE":0.5415592644
     },
     {
         "index":30050882,
+        "total_prize":1600,
         "estimated_total_prize":1640.0,
-        "total_prize":1600.0,
-        "MRE":0.025
+        "MRE":0.025,
+        "ml_estimated_total_prize":1694.7540623708,
+        "LR_MRE":0.059221289
     },
     {
         "index":30050895,
+        "total_prize":1750,
         "estimated_total_prize":1875.0,
-        "total_prize":1750.0,
-        "MRE":0.0714285714
+        "MRE":0.0714285714,
+        "ml_estimated_total_prize":1764.7925029165,
+        "LR_MRE":0.0084528588
     },
     {
         "index":30050927,
+        "total_prize":2625,
         "estimated_total_prize":1830.0,
-        "total_prize":2625.0,
-        "MRE":0.3028571429
+        "MRE":0.3028571429,
+        "ml_estimated_total_prize":2186.6027073275,
+        "LR_MRE":0.1670084924
     },
     {
         "index":30050941,
+        "total_prize":1500,
         "estimated_total_prize":1630.0,
-        "total_prize":1500.0,
-        "MRE":0.0866666667
+        "MRE":0.0866666667,
+        "ml_estimated_total_prize":1437.6919187253,
+        "LR_MRE":0.0415387208
     },
     {
         "index":30050957,
+        "total_prize":2000,
         "estimated_total_prize":2327.5,
-        "total_prize":2000.0,
-        "MRE":0.16375
+        "MRE":0.16375,
+        "ml_estimated_total_prize":2747.6389929749,
+        "LR_MRE":0.3738194965
     },
     {
         "index":30050974,
+        "total_prize":1950,
         "estimated_total_prize":2445.0,
-        "total_prize":1950.0,
-        "MRE":0.2538461538
+        "MRE":0.2538461538,
+        "ml_estimated_total_prize":2147.1633556423,
+        "LR_MRE":0.1011094131
     },
     {
         "index":30050997,
+        "total_prize":2000,
         "estimated_total_prize":2010.0,
-        "total_prize":2000.0,
-        "MRE":0.005
+        "MRE":0.005,
+        "ml_estimated_total_prize":1713.7850215373,
+        "LR_MRE":0.1431074892
     },
     {
         "index":30051010,
+        "total_prize":1600,
         "estimated_total_prize":1760.0,
-        "total_prize":1600.0,
-        "MRE":0.1
+        "MRE":0.1,
+        "ml_estimated_total_prize":2403.8380866181,
+        "LR_MRE":0.5023988041
     },
     {
         "index":30051049,
+        "total_prize":1650,
         "estimated_total_prize":1847.5,
-        "total_prize":1650.0,
-        "MRE":0.1196969697
+        "MRE":0.1196969697,
+        "ml_estimated_total_prize":2095.7383287495,
+        "LR_MRE":0.2701444417
     },
     {
         "index":30051050,
+        "total_prize":2000,
         "estimated_total_prize":2030.0,
-        "total_prize":2000.0,
-        "MRE":0.015
+        "MRE":0.015,
+        "ml_estimated_total_prize":2046.8438370189,
+        "LR_MRE":0.0234219185
     },
     {
         "index":30051091,
+        "total_prize":1600,
         "estimated_total_prize":1535.0,
-        "total_prize":1600.0,
-        "MRE":0.040625
+        "MRE":0.040625,
+        "ml_estimated_total_prize":939.9404126232,
+        "LR_MRE":0.4125372421
     },
     {
         "index":30051114,
+        "total_prize":2000,
         "estimated_total_prize":1750.0,
-        "total_prize":2000.0,
-        "MRE":0.125
+        "MRE":0.125,
+        "ml_estimated_total_prize":1880.571583029,
+        "LR_MRE":0.0597142085
     },
     {
         "index":30051124,
+        "total_prize":2000,
         "estimated_total_prize":2340.0,
-        "total_prize":2000.0,
-        "MRE":0.17
+        "MRE":0.17,
+        "ml_estimated_total_prize":2034.9064396184,
+        "LR_MRE":0.0174532198
     },
     {
         "index":30051146,
+        "total_prize":200,
         "estimated_total_prize":1695.0,
-        "total_prize":200.0,
-        "MRE":7.475
+        "MRE":7.475,
+        "ml_estimated_total_prize":654.9048518873,
+        "LR_MRE":2.2745242594
     },
     {
         "index":30051180,
+        "total_prize":1600,
         "estimated_total_prize":2302.5,
-        "total_prize":1600.0,
-        "MRE":0.4390625
+        "MRE":0.4390625,
+        "ml_estimated_total_prize":1835.4962149937,
+        "LR_MRE":0.1471851344
     },
     {
         "index":30051181,
+        "total_prize":2000,
         "estimated_total_prize":2700.0,
-        "total_prize":2000.0,
-        "MRE":0.35
+        "MRE":0.35,
+        "ml_estimated_total_prize":2662.1373639057,
+        "LR_MRE":0.331068682
     },
     {
         "index":30051210,
+        "total_prize":2150,
         "estimated_total_prize":1840.0,
-        "total_prize":2150.0,
-        "MRE":0.1441860465
+        "MRE":0.1441860465,
+        "ml_estimated_total_prize":2418.3084133127,
+        "LR_MRE":0.1247946108
     },
     {
         "index":30051224,
+        "total_prize":1600,
         "estimated_total_prize":2277.5,
-        "total_prize":1600.0,
-        "MRE":0.4234375
+        "MRE":0.4234375,
+        "ml_estimated_total_prize":1863.8785132575,
+        "LR_MRE":0.1649240708
     },
     {
         "index":30051226,
+        "total_prize":75,
         "estimated_total_prize":347.0,
-        "total_prize":75.0,
-        "MRE":3.6266666667
+        "MRE":3.6266666667,
+        "ml_estimated_total_prize":-61.0408563768,
+        "LR_MRE":1.813878085
     },
     {
         "index":30051234,
+        "total_prize":100,
         "estimated_total_prize":650.0,
-        "total_prize":100.0,
-        "MRE":5.5
+        "MRE":5.5,
+        "ml_estimated_total_prize":707.0658968585,
+        "LR_MRE":6.0706589686
     },
     {
         "index":30051241,
+        "total_prize":2800,
         "estimated_total_prize":2167.5,
-        "total_prize":2800.0,
-        "MRE":0.2258928571
+        "MRE":0.2258928571,
+        "ml_estimated_total_prize":2222.12400893,
+        "LR_MRE":0.2063842825
     },
     {
         "index":30051352,
+        "total_prize":1225,
         "estimated_total_prize":947.5,
-        "total_prize":1225.0,
-        "MRE":0.2265306122
+        "MRE":0.2265306122,
+        "ml_estimated_total_prize":1961.3225194947,
+        "LR_MRE":0.6010796078
     },
     {
         "index":30051457,
+        "total_prize":300,
         "estimated_total_prize":1390.0,
-        "total_prize":300.0,
-        "MRE":3.6333333333
+        "MRE":3.6333333333,
+        "ml_estimated_total_prize":416.0758171343,
+        "LR_MRE":0.3869193904
     },
     {
         "index":30051525,
+        "total_prize":600,
         "estimated_total_prize":1140.0,
-        "total_prize":600.0,
-        "MRE":0.9
+        "MRE":0.9,
+        "ml_estimated_total_prize":393.4939051484,
+        "LR_MRE":0.3441768248
     },
     {
         "index":30051543,
+        "total_prize":100,
         "estimated_total_prize":1000.0,
-        "total_prize":100.0,
-        "MRE":9.0
+        "MRE":9.0,
+        "ml_estimated_total_prize":680.8230805899,
+        "LR_MRE":5.8082308059
     },
     {
         "index":30051548,
+        "total_prize":700,
         "estimated_total_prize":905.0,
-        "total_prize":700.0,
-        "MRE":0.2928571429
+        "MRE":0.2928571429,
+        "ml_estimated_total_prize":1413.5392353453,
+        "LR_MRE":1.0193417648
     },
     {
         "index":30051580,
+        "total_prize":1100,
         "estimated_total_prize":725.0,
-        "total_prize":1100.0,
-        "MRE":0.3409090909
+        "MRE":0.3409090909,
+        "ml_estimated_total_prize":1012.5416819844,
+        "LR_MRE":0.0795075618
     },
     {
         "index":30051581,
+        "total_prize":2000,
         "estimated_total_prize":1915.0,
-        "total_prize":2000.0,
-        "MRE":0.0425
+        "MRE":0.0425,
+        "ml_estimated_total_prize":1745.5303952823,
+        "LR_MRE":0.1272348024
     },
     {
         "index":30051582,
+        "total_prize":2700,
         "estimated_total_prize":1265.0,
-        "total_prize":2700.0,
-        "MRE":0.5314814815
+        "MRE":0.5314814815,
+        "ml_estimated_total_prize":2145.4277149188,
+        "LR_MRE":0.2053971426
     },
     {
         "index":30051598,
+        "total_prize":150,
         "estimated_total_prize":1400.0,
-        "total_prize":150.0,
-        "MRE":8.3333333333
+        "MRE":8.3333333333,
+        "ml_estimated_total_prize":989.409520045,
+        "LR_MRE":5.596063467
     },
     {
         "index":30051607,
+        "total_prize":2000,
         "estimated_total_prize":2322.5,
-        "total_prize":2000.0,
-        "MRE":0.16125
+        "MRE":0.16125,
+        "ml_estimated_total_prize":1615.0608016298,
+        "LR_MRE":0.1924695992
     },
     {
         "index":30051796,
+        "total_prize":1500,
         "estimated_total_prize":1895.0,
-        "total_prize":1500.0,
-        "MRE":0.2633333333
+        "MRE":0.2633333333,
+        "ml_estimated_total_prize":1380.7646210312,
+        "LR_MRE":0.0794902526
     },
     {
         "index":30051870,
+        "total_prize":2000,
         "estimated_total_prize":1735.0,
-        "total_prize":2000.0,
-        "MRE":0.1325
+        "MRE":0.1325,
+        "ml_estimated_total_prize":1610.1049952635,
+        "LR_MRE":0.1949475024
     },
     {
         "index":30051920,
+        "total_prize":1650,
         "estimated_total_prize":1720.0,
-        "total_prize":1650.0,
-        "MRE":0.0424242424
+        "MRE":0.0424242424,
+        "ml_estimated_total_prize":1521.9140602899,
+        "LR_MRE":0.0776278422
     },
     {
         "index":30051993,
+        "total_prize":2000,
         "estimated_total_prize":2195.0,
-        "total_prize":2000.0,
-        "MRE":0.0975
+        "MRE":0.0975,
+        "ml_estimated_total_prize":2094.1327857256,
+        "LR_MRE":0.0470663929
     },
     {
         "index":30052109,
+        "total_prize":1050,
         "estimated_total_prize":735.0,
-        "total_prize":1050.0,
-        "MRE":0.3
+        "MRE":0.3,
+        "ml_estimated_total_prize":1450.3128347493,
+        "LR_MRE":0.3812503188
     },
     {
         "index":30052116,
+        "total_prize":1350,
         "estimated_total_prize":1855.0,
-        "total_prize":1350.0,
-        "MRE":0.3740740741
+        "MRE":0.3740740741,
+        "ml_estimated_total_prize":1486.3218457132,
+        "LR_MRE":0.100979145
     },
     {
         "index":30052174,
+        "total_prize":2800,
         "estimated_total_prize":2525.0,
-        "total_prize":2800.0,
-        "MRE":0.0982142857
+        "MRE":0.0982142857,
+        "ml_estimated_total_prize":2561.5875931344,
+        "LR_MRE":0.0851472882
     },
     {
         "index":30052216,
+        "total_prize":1800,
         "estimated_total_prize":1570.0,
-        "total_prize":1800.0,
-        "MRE":0.1277777778
+        "MRE":0.1277777778,
+        "ml_estimated_total_prize":1997.8849511554,
+        "LR_MRE":0.109936084
     },
     {
         "index":30052346,
+        "total_prize":1750,
         "estimated_total_prize":1895.0,
-        "total_prize":1750.0,
-        "MRE":0.0828571429
+        "MRE":0.0828571429,
+        "ml_estimated_total_prize":1678.7843646861,
+        "LR_MRE":0.0406946488
     },
     {
         "index":30052488,
+        "total_prize":800,
         "estimated_total_prize":1067.5,
-        "total_prize":800.0,
-        "MRE":0.334375
+        "MRE":0.334375,
+        "ml_estimated_total_prize":712.8062392588,
+        "LR_MRE":0.1089922009
     },
     {
         "index":30052490,
+        "total_prize":150,
         "estimated_total_prize":2310.0,
-        "total_prize":150.0,
-        "MRE":14.4
+        "MRE":14.4,
+        "ml_estimated_total_prize":410.5841242849,
+        "LR_MRE":1.7372274952
     },
     {
         "index":30052511,
+        "total_prize":150,
         "estimated_total_prize":1790.0,
-        "total_prize":150.0,
-        "MRE":10.9333333333
+        "MRE":10.9333333333,
+        "ml_estimated_total_prize":873.5073971049,
+        "LR_MRE":4.8233826474
     },
     {
         "index":30052517,
+        "total_prize":250,
         "estimated_total_prize":1767.5,
-        "total_prize":250.0,
-        "MRE":6.07
+        "MRE":6.07,
+        "ml_estimated_total_prize":328.1085047994,
+        "LR_MRE":0.3124340192
     },
     {
         "index":30052520,
+        "total_prize":1700,
         "estimated_total_prize":1100.0,
-        "total_prize":1700.0,
-        "MRE":0.3529411765
+        "MRE":0.3529411765,
+        "ml_estimated_total_prize":737.6165397431,
+        "LR_MRE":0.5661079178
     },
     {
         "index":30052532,
+        "total_prize":3350,
         "estimated_total_prize":1952.5,
-        "total_prize":3350.0,
-        "MRE":0.4171641791
+        "MRE":0.4171641791,
+        "ml_estimated_total_prize":2719.5728855457,
+        "LR_MRE":0.1881871983
     },
     {
         "index":30052538,
+        "total_prize":800,
         "estimated_total_prize":1215.0,
-        "total_prize":800.0,
-        "MRE":0.51875
+        "MRE":0.51875,
+        "ml_estimated_total_prize":756.9102587671,
+        "LR_MRE":0.0538621765
     },
     {
         "index":30052539,
+        "total_prize":2200,
         "estimated_total_prize":2137.5,
-        "total_prize":2200.0,
-        "MRE":0.0284090909
+        "MRE":0.0284090909,
+        "ml_estimated_total_prize":2183.1660752728,
+        "LR_MRE":0.007651784
     },
     {
         "index":30052578,
+        "total_prize":2300,
         "estimated_total_prize":740.0,
-        "total_prize":2300.0,
-        "MRE":0.6782608696
+        "MRE":0.6782608696,
+        "ml_estimated_total_prize":1523.6784928756,
+        "LR_MRE":0.3375310901
     },
     {
         "index":30052652,
+        "total_prize":300,
         "estimated_total_prize":177.0,
-        "total_prize":300.0,
-        "MRE":0.41
+        "MRE":0.41,
+        "ml_estimated_total_prize":354.816339221,
+        "LR_MRE":0.1827211307
     },
     {
         "index":30052653,
+        "total_prize":300,
         "estimated_total_prize":172.0,
-        "total_prize":300.0,
-        "MRE":0.4266666667
+        "MRE":0.4266666667,
+        "ml_estimated_total_prize":233.3397106298,
+        "LR_MRE":0.2222009646
     },
     {
         "index":30052728,
+        "total_prize":2000,
         "estimated_total_prize":2135.0,
-        "total_prize":2000.0,
-        "MRE":0.0675
+        "MRE":0.0675,
+        "ml_estimated_total_prize":2233.3174617724,
+        "LR_MRE":0.1166587309
     },
     {
         "index":30052749,
+        "total_prize":250,
         "estimated_total_prize":1810.0,
-        "total_prize":250.0,
-        "MRE":6.24
+        "MRE":6.24,
+        "ml_estimated_total_prize":842.8279901384,
+        "LR_MRE":2.3713119606
     },
     {
         "index":30052816,
+        "total_prize":500,
         "estimated_total_prize":2050.0,
-        "total_prize":500.0,
-        "MRE":3.1
+        "MRE":3.1,
+        "ml_estimated_total_prize":1358.587604297,
+        "LR_MRE":1.7171752086
     },
     {
         "index":30053018,
+        "total_prize":2600,
         "estimated_total_prize":2415.0,
-        "total_prize":2600.0,
-        "MRE":0.0711538462
+        "MRE":0.0711538462,
+        "ml_estimated_total_prize":3001.0578871278,
+        "LR_MRE":0.1542530335
     },
     {
         "index":30053037,
+        "total_prize":4000,
         "estimated_total_prize":1700.0,
-        "total_prize":4000.0,
-        "MRE":0.575
+        "MRE":0.575,
+        "ml_estimated_total_prize":3522.4678529327,
+        "LR_MRE":0.1193830368
     },
     {
         "index":30053174,
+        "total_prize":2600,
         "estimated_total_prize":2555.0,
-        "total_prize":2600.0,
-        "MRE":0.0173076923
+        "MRE":0.0173076923,
+        "ml_estimated_total_prize":1917.8494365651,
+        "LR_MRE":0.2623656013
     },
     {
         "index":30053253,
+        "total_prize":3000,
         "estimated_total_prize":2240.0,
-        "total_prize":3000.0,
-        "MRE":0.2533333333
+        "MRE":0.2533333333,
+        "ml_estimated_total_prize":2953.9301272165,
+        "LR_MRE":0.0153566243
     },
     {
         "index":30053262,
+        "total_prize":500,
         "estimated_total_prize":1180.0,
-        "total_prize":500.0,
-        "MRE":1.36
+        "MRE":1.36,
+        "ml_estimated_total_prize":784.8131092145,
+        "LR_MRE":0.5696262184
     },
     {
         "index":30053263,
+        "total_prize":300,
         "estimated_total_prize":1145.0,
-        "total_prize":300.0,
-        "MRE":2.8166666667
+        "MRE":2.8166666667,
+        "ml_estimated_total_prize":487.5620451876,
+        "LR_MRE":0.6252068173
     },
     {
         "index":30053270,
+        "total_prize":150,
         "estimated_total_prize":1070.0,
-        "total_prize":150.0,
-        "MRE":6.1333333333
+        "MRE":6.1333333333,
+        "ml_estimated_total_prize":183.0077162509,
+        "LR_MRE":0.2200514417
     },
     {
         "index":30053271,
+        "total_prize":50,
         "estimated_total_prize":1150.0,
-        "total_prize":50.0,
-        "MRE":22.0
+        "MRE":22.0,
+        "ml_estimated_total_prize":236.6031107773,
+        "LR_MRE":3.7320622155
     },
     {
         "index":30053272,
+        "total_prize":50,
         "estimated_total_prize":1020.0,
-        "total_prize":50.0,
-        "MRE":19.4
+        "MRE":19.4,
+        "ml_estimated_total_prize":292.4922025668,
+        "LR_MRE":4.8498440513
     },
     {
         "index":30053368,
+        "total_prize":1750,
         "estimated_total_prize":2015.0,
-        "total_prize":1750.0,
-        "MRE":0.1514285714
+        "MRE":0.1514285714,
+        "ml_estimated_total_prize":1993.2929741754,
+        "LR_MRE":0.1390245567
     },
     {
         "index":30053369,
+        "total_prize":2100,
         "estimated_total_prize":2612.5,
-        "total_prize":2100.0,
-        "MRE":0.244047619
+        "MRE":0.244047619,
+        "ml_estimated_total_prize":2432.530871571,
+        "LR_MRE":0.1583480341
     },
     {
         "index":30053441,
+        "total_prize":2575,
         "estimated_total_prize":1522.5,
-        "total_prize":2575.0,
-        "MRE":0.4087378641
+        "MRE":0.4087378641,
+        "ml_estimated_total_prize":2405.9866995661,
+        "LR_MRE":0.0656362332
     },
     {
         "index":30053467,
+        "total_prize":1750,
         "estimated_total_prize":1982.5,
-        "total_prize":1750.0,
-        "MRE":0.1328571429
+        "MRE":0.1328571429,
+        "ml_estimated_total_prize":1624.4200117434,
+        "LR_MRE":0.0717599933
     },
     {
         "index":30053527,
+        "total_prize":300,
         "estimated_total_prize":1125.0,
-        "total_prize":300.0,
-        "MRE":2.75
+        "MRE":2.75,
+        "ml_estimated_total_prize":64.570932011,
+        "LR_MRE":0.78476356
     },
     {
         "index":30053602,
+        "total_prize":1350,
         "estimated_total_prize":2180.0,
-        "total_prize":1350.0,
-        "MRE":0.6148148148
+        "MRE":0.6148148148,
+        "ml_estimated_total_prize":1803.4351993297,
+        "LR_MRE":0.3358779254
     },
     {
         "index":30053603,
+        "total_prize":1950,
         "estimated_total_prize":2462.5,
-        "total_prize":1950.0,
-        "MRE":0.2628205128
+        "MRE":0.2628205128,
+        "ml_estimated_total_prize":1697.4565623668,
+        "LR_MRE":0.1295094552
     },
     {
         "index":30053607,
+        "total_prize":1500,
         "estimated_total_prize":752.5,
-        "total_prize":1500.0,
-        "MRE":0.4983333333
+        "MRE":0.4983333333,
+        "ml_estimated_total_prize":1245.6347999975,
+        "LR_MRE":0.1695768
     },
     {
         "index":30053618,
+        "total_prize":1200,
         "estimated_total_prize":1265.0,
-        "total_prize":1200.0,
-        "MRE":0.0541666667
+        "MRE":0.0541666667,
+        "ml_estimated_total_prize":888.4547942435,
+        "LR_MRE":0.2596210048
     },
     {
         "index":30053693,
+        "total_prize":1750,
         "estimated_total_prize":1947.5,
-        "total_prize":1750.0,
-        "MRE":0.1128571429
+        "MRE":0.1128571429,
+        "ml_estimated_total_prize":1618.162559115,
+        "LR_MRE":0.0753356805
     },
     {
         "index":30053698,
+        "total_prize":2575,
         "estimated_total_prize":2340.0,
-        "total_prize":2575.0,
-        "MRE":0.0912621359
+        "MRE":0.0912621359,
+        "ml_estimated_total_prize":3146.8592134562,
+        "LR_MRE":0.2220812479
     },
     {
         "index":30053721,
+        "total_prize":1950,
         "estimated_total_prize":2020.0,
-        "total_prize":1950.0,
-        "MRE":0.0358974359
+        "MRE":0.0358974359,
+        "ml_estimated_total_prize":2605.3113796593,
+        "LR_MRE":0.3360571178
     },
     {
         "index":30053724,
+        "total_prize":2575,
         "estimated_total_prize":2360.0,
-        "total_prize":2575.0,
-        "MRE":0.0834951456
+        "MRE":0.0834951456,
+        "ml_estimated_total_prize":2108.2138645051,
+        "LR_MRE":0.1812761691
     },
     {
         "index":30053772,
+        "total_prize":2300,
         "estimated_total_prize":2525.0,
-        "total_prize":2300.0,
-        "MRE":0.097826087
+        "MRE":0.097826087,
+        "ml_estimated_total_prize":1759.3330894578,
+        "LR_MRE":0.2350725698
     },
     {
         "index":30053778,
+        "total_prize":200,
         "estimated_total_prize":1287.5,
-        "total_prize":200.0,
-        "MRE":5.4375
+        "MRE":5.4375,
+        "ml_estimated_total_prize":755.6375666922,
+        "LR_MRE":2.7781878335
     },
     {
         "index":30053790,
+        "total_prize":2500,
         "estimated_total_prize":2112.5,
-        "total_prize":2500.0,
-        "MRE":0.155
+        "MRE":0.155,
+        "ml_estimated_total_prize":2414.0240722827,
+        "LR_MRE":0.0343903711
     },
     {
         "index":30053846,
+        "total_prize":2500,
         "estimated_total_prize":2197.5,
-        "total_prize":2500.0,
-        "MRE":0.121
+        "MRE":0.121,
+        "ml_estimated_total_prize":2013.6090710179,
+        "LR_MRE":0.1945563716
     },
     {
         "index":30053855,
+        "total_prize":2700,
         "estimated_total_prize":752.5,
-        "total_prize":2700.0,
-        "MRE":0.7212962963
+        "MRE":0.7212962963,
+        "ml_estimated_total_prize":1245.6347999975,
+        "LR_MRE":0.5386537778
     },
     {
         "index":30053872,
+        "total_prize":2500,
         "estimated_total_prize":2362.5,
-        "total_prize":2500.0,
-        "MRE":0.055
+        "MRE":0.055,
+        "ml_estimated_total_prize":2377.6433442428,
+        "LR_MRE":0.0489426623
     },
     {
         "index":30053906,
+        "total_prize":625,
         "estimated_total_prize":900.0,
-        "total_prize":625.0,
-        "MRE":0.44
+        "MRE":0.44,
+        "ml_estimated_total_prize":922.8808998262,
+        "LR_MRE":0.4766094397
     },
     {
         "index":30053952,
+        "total_prize":1100,
         "estimated_total_prize":1575.0,
-        "total_prize":1100.0,
-        "MRE":0.4318181818
+        "MRE":0.4318181818,
+        "ml_estimated_total_prize":1020.4966028997,
+        "LR_MRE":0.0722758155
     },
     {
         "index":30054064,
+        "total_prize":2800,
         "estimated_total_prize":752.5,
-        "total_prize":2800.0,
-        "MRE":0.73125
+        "MRE":0.73125,
+        "ml_estimated_total_prize":1245.6347999975,
+        "LR_MRE":0.5551304286
     },
     {
         "index":30054140,
+        "total_prize":2500,
         "estimated_total_prize":2315.0,
-        "total_prize":2500.0,
-        "MRE":0.074
+        "MRE":0.074,
+        "ml_estimated_total_prize":2876.7071864633,
+        "LR_MRE":0.1506828746
     },
     {
         "index":30054141,
+        "total_prize":2750,
         "estimated_total_prize":2405.0,
-        "total_prize":2750.0,
-        "MRE":0.1254545455
+        "MRE":0.1254545455,
+        "ml_estimated_total_prize":2897.4709396782,
+        "LR_MRE":0.0536257962
     },
     {
         "index":30054143,
+        "total_prize":1500,
         "estimated_total_prize":1900.0,
-        "total_prize":1500.0,
-        "MRE":0.2666666667
+        "MRE":0.2666666667,
+        "ml_estimated_total_prize":1580.5747897133,
+        "LR_MRE":0.0537165265
     },
     {
         "index":30054164,
+        "total_prize":2700,
         "estimated_total_prize":2460.0,
-        "total_prize":2700.0,
-        "MRE":0.0888888889
+        "MRE":0.0888888889,
+        "ml_estimated_total_prize":2718.8261890701,
+        "LR_MRE":0.0069726626
     },
     {
         "index":30054165,
+        "total_prize":2700,
         "estimated_total_prize":2200.0,
-        "total_prize":2700.0,
-        "MRE":0.1851851852
+        "MRE":0.1851851852,
+        "ml_estimated_total_prize":2028.153960078,
+        "LR_MRE":0.2488318666
     },
     {
         "index":30054166,
+        "total_prize":1800,
         "estimated_total_prize":2295.0,
-        "total_prize":1800.0,
-        "MRE":0.275
+        "MRE":0.275,
+        "ml_estimated_total_prize":1705.6437000098,
+        "LR_MRE":0.0524201667
     },
     {
         "index":30054171,
+        "total_prize":2000,
         "estimated_total_prize":2460.0,
-        "total_prize":2000.0,
-        "MRE":0.23
+        "MRE":0.23,
+        "ml_estimated_total_prize":2111.2075047609,
+        "LR_MRE":0.0556037524
     },
     {
         "index":30054190,
+        "total_prize":2350,
         "estimated_total_prize":2430.0,
-        "total_prize":2350.0,
-        "MRE":0.0340425532
+        "MRE":0.0340425532,
+        "ml_estimated_total_prize":2239.8890925403,
+        "LR_MRE":0.0468557053
     },
     {
         "index":30054191,
+        "total_prize":2350,
         "estimated_total_prize":2455.0,
-        "total_prize":2350.0,
-        "MRE":0.0446808511
+        "MRE":0.0446808511,
+        "ml_estimated_total_prize":2562.0545310887,
+        "LR_MRE":0.0902359707
     },
     {
         "index":30054192,
+        "total_prize":1800,
         "estimated_total_prize":2565.0,
-        "total_prize":1800.0,
-        "MRE":0.425
+        "MRE":0.425,
+        "ml_estimated_total_prize":2806.7786382477,
+        "LR_MRE":0.5593214657
     },
     {
         "index":30054210,
+        "total_prize":2500,
         "estimated_total_prize":2395.0,
-        "total_prize":2500.0,
-        "MRE":0.042
+        "MRE":0.042,
+        "ml_estimated_total_prize":2460.6406523905,
+        "LR_MRE":0.015743739
     },
     {
         "index":30054211,
+        "total_prize":2250,
         "estimated_total_prize":2475.0,
-        "total_prize":2250.0,
-        "MRE":0.1
+        "MRE":0.1,
+        "ml_estimated_total_prize":2200.5985038507,
+        "LR_MRE":0.0219562205
     },
     {
         "index":30054212,
+        "total_prize":1500,
         "estimated_total_prize":2665.0,
-        "total_prize":1500.0,
-        "MRE":0.7766666667
+        "MRE":0.7766666667,
+        "ml_estimated_total_prize":1416.6059225986,
+        "LR_MRE":0.0555960516
     },
     {
         "index":30054221,
+        "total_prize":2250,
         "estimated_total_prize":2342.5,
-        "total_prize":2250.0,
-        "MRE":0.0411111111
+        "MRE":0.0411111111,
+        "ml_estimated_total_prize":2391.4505591558,
+        "LR_MRE":0.0628669152
     },
     {
         "index":30054256,
+        "total_prize":2000,
         "estimated_total_prize":1647.5,
-        "total_prize":2000.0,
-        "MRE":0.17625
+        "MRE":0.17625,
+        "ml_estimated_total_prize":2334.0681397926,
+        "LR_MRE":0.1670340699
     },
     {
         "index":30054295,
+        "total_prize":100,
         "estimated_total_prize":92.5,
-        "total_prize":100.0,
-        "MRE":0.075
+        "MRE":0.075,
+        "ml_estimated_total_prize":268.485100326,
+        "LR_MRE":1.6848510033
     },
     {
         "index":30054374,
+        "total_prize":200,
         "estimated_total_prize":95.0,
-        "total_prize":200.0,
-        "MRE":0.525
+        "MRE":0.525,
+        "ml_estimated_total_prize":696.8307603579,
+        "LR_MRE":2.4841538018
     },
     {
         "index":30054377,
+        "total_prize":1900,
         "estimated_total_prize":2677.5,
-        "total_prize":1900.0,
-        "MRE":0.4092105263
+        "MRE":0.4092105263,
+        "ml_estimated_total_prize":2150.6660238365,
+        "LR_MRE":0.1319294862
     },
     {
         "index":30054386,
+        "total_prize":1200,
         "estimated_total_prize":1560.0,
-        "total_prize":1200.0,
-        "MRE":0.3
+        "MRE":0.3,
+        "ml_estimated_total_prize":1405.681949809,
+        "LR_MRE":0.1714016248
     },
     {
         "index":30054404,
+        "total_prize":1800,
         "estimated_total_prize":1290.0,
-        "total_prize":1800.0,
-        "MRE":0.2833333333
+        "MRE":0.2833333333,
+        "ml_estimated_total_prize":1295.1636863578,
+        "LR_MRE":0.2804646187
     },
     {
         "index":30054528,
+        "total_prize":300,
         "estimated_total_prize":2130.0,
-        "total_prize":300.0,
-        "MRE":6.1
+        "MRE":6.1,
+        "ml_estimated_total_prize":1145.0337569003,
+        "LR_MRE":2.8167791897
     },
     {
         "index":30054630,
+        "total_prize":2700,
         "estimated_total_prize":240.0,
-        "total_prize":2700.0,
-        "MRE":0.9111111111
+        "MRE":0.9111111111,
+        "ml_estimated_total_prize":1601.2280545326,
+        "LR_MRE":0.4069525724
     },
     {
         "index":30054964,
+        "total_prize":200,
         "estimated_total_prize":1460.0,
-        "total_prize":200.0,
-        "MRE":6.3
+        "MRE":6.3,
+        "ml_estimated_total_prize":868.5717000588,
+        "LR_MRE":3.3428585003
     },
     {
         "index":30055008,
+        "total_prize":5650,
         "estimated_total_prize":2162.5,
-        "total_prize":5650.0,
-        "MRE":0.6172566372
+        "MRE":0.6172566372,
+        "ml_estimated_total_prize":4327.4009061147,
+        "LR_MRE":0.2340883352
     },
     {
         "index":30055086,
+        "total_prize":500,
         "estimated_total_prize":1905.0,
-        "total_prize":500.0,
-        "MRE":2.81
+        "MRE":2.81,
+        "ml_estimated_total_prize":1012.2546336213,
+        "LR_MRE":1.0245092672
     },
     {
         "index":30055087,
+        "total_prize":1400,
         "estimated_total_prize":1305.0,
-        "total_prize":1400.0,
-        "MRE":0.0678571429
+        "MRE":0.0678571429,
+        "ml_estimated_total_prize":1472.3033308269,
+        "LR_MRE":0.0516452363
     },
     {
         "index":30055127,
+        "total_prize":2000,
         "estimated_total_prize":1955.0,
-        "total_prize":2000.0,
-        "MRE":0.0225
+        "MRE":0.0225,
+        "ml_estimated_total_prize":1741.7868891808,
+        "LR_MRE":0.1291065554
     },
     {
         "index":30055141,
+        "total_prize":2200,
         "estimated_total_prize":2125.0,
-        "total_prize":2200.0,
-        "MRE":0.0340909091
+        "MRE":0.0340909091,
+        "ml_estimated_total_prize":2208.3140088209,
+        "LR_MRE":0.0037790949
     },
     {
         "index":30055210,
+        "total_prize":1350,
         "estimated_total_prize":1947.5,
-        "total_prize":1350.0,
-        "MRE":0.4425925926
+        "MRE":0.4425925926,
+        "ml_estimated_total_prize":1641.9833284123,
+        "LR_MRE":0.216283947
     },
     {
         "index":30055240,
+        "total_prize":2000,
         "estimated_total_prize":1850.0,
-        "total_prize":2000.0,
-        "MRE":0.075
+        "MRE":0.075,
+        "ml_estimated_total_prize":1775.4231796019,
+        "LR_MRE":0.1122884102
     },
     {
         "index":30055335,
+        "total_prize":2250,
         "estimated_total_prize":1447.5,
-        "total_prize":2250.0,
-        "MRE":0.3566666667
+        "MRE":0.3566666667,
+        "ml_estimated_total_prize":1197.7209686022,
+        "LR_MRE":0.4676795695
     },
     {
         "index":30055390,
+        "total_prize":850,
         "estimated_total_prize":757.0,
-        "total_prize":850.0,
-        "MRE":0.1094117647
+        "MRE":0.1094117647,
+        "ml_estimated_total_prize":1054.7386109342,
+        "LR_MRE":0.240868954
     },
     {
         "index":30055472,
+        "total_prize":2200,
         "estimated_total_prize":1780.0,
-        "total_prize":2200.0,
-        "MRE":0.1909090909
+        "MRE":0.1909090909,
+        "ml_estimated_total_prize":2339.0297849458,
+        "LR_MRE":0.0631953568
     },
     {
         "index":30055473,
+        "total_prize":2200,
         "estimated_total_prize":1630.0,
-        "total_prize":2200.0,
-        "MRE":0.2590909091
+        "MRE":0.2590909091,
+        "ml_estimated_total_prize":1925.803110118,
+        "LR_MRE":0.1246349499
     },
     {
         "index":30055504,
+        "total_prize":2000,
         "estimated_total_prize":1690.0,
-        "total_prize":2000.0,
-        "MRE":0.155
+        "MRE":0.155,
+        "ml_estimated_total_prize":1468.2918614261,
+        "LR_MRE":0.2658540693
     },
     {
         "index":30055556,
+        "total_prize":3050,
         "estimated_total_prize":2510.0,
-        "total_prize":3050.0,
-        "MRE":0.1770491803
+        "MRE":0.1770491803,
+        "ml_estimated_total_prize":2840.1688459258,
+        "LR_MRE":0.0687970997
     },
     {
         "index":30055563,
+        "total_prize":1750,
         "estimated_total_prize":1985.0,
-        "total_prize":1750.0,
-        "MRE":0.1342857143
+        "MRE":0.1342857143,
+        "ml_estimated_total_prize":1900.9913735284,
+        "LR_MRE":0.0862807849
     },
     {
         "index":30055802,
+        "total_prize":3150,
         "estimated_total_prize":2045.0,
-        "total_prize":3150.0,
-        "MRE":0.3507936508
+        "MRE":0.3507936508,
+        "ml_estimated_total_prize":2361.0793534351,
+        "LR_MRE":0.2504509989
     },
     {
         "index":30055821,
+        "total_prize":2550,
         "estimated_total_prize":2290.0,
-        "total_prize":2550.0,
-        "MRE":0.1019607843
+        "MRE":0.1019607843,
+        "ml_estimated_total_prize":2401.8285323379,
+        "LR_MRE":0.0581064579
     },
     {
         "index":30055825,
+        "total_prize":2550,
         "estimated_total_prize":1995.0,
-        "total_prize":2550.0,
-        "MRE":0.2176470588
+        "MRE":0.2176470588,
+        "ml_estimated_total_prize":2590.9768221032,
+        "LR_MRE":0.016069342
     },
     {
         "index":30055873,
+        "total_prize":3000,
         "estimated_total_prize":2192.5,
-        "total_prize":3000.0,
-        "MRE":0.2691666667
+        "MRE":0.2691666667,
+        "ml_estimated_total_prize":3008.42878534,
+        "LR_MRE":0.0028095951
     },
     {
         "index":30055874,
+        "total_prize":2250,
         "estimated_total_prize":1940.0,
-        "total_prize":2250.0,
-        "MRE":0.1377777778
+        "MRE":0.1377777778,
+        "ml_estimated_total_prize":2375.5719874637,
+        "LR_MRE":0.0558097722
     },
     {
         "index":30055958,
+        "total_prize":2550,
         "estimated_total_prize":1850.0,
-        "total_prize":2550.0,
-        "MRE":0.2745098039
+        "MRE":0.2745098039,
+        "ml_estimated_total_prize":2160.9094100925,
+        "LR_MRE":0.1525845451
     },
     {
         "index":30056008,
+        "total_prize":1650,
         "estimated_total_prize":1995.0,
-        "total_prize":1650.0,
-        "MRE":0.2090909091
+        "MRE":0.2090909091,
+        "ml_estimated_total_prize":1647.0949261735,
+        "LR_MRE":0.0017606508
     },
     {
         "index":30056128,
+        "total_prize":2850,
         "estimated_total_prize":2140.0,
-        "total_prize":2850.0,
-        "MRE":0.249122807
+        "MRE":0.249122807,
+        "ml_estimated_total_prize":2682.1775651139,
+        "LR_MRE":0.0588850649
     },
     {
         "index":30056130,
+        "total_prize":2850,
         "estimated_total_prize":2015.0,
-        "total_prize":2850.0,
-        "MRE":0.2929824561
+        "MRE":0.2929824561,
+        "ml_estimated_total_prize":2016.3541660584,
+        "LR_MRE":0.2925073102
     },
     {
         "index":30056162,
+        "total_prize":2100,
         "estimated_total_prize":1970.0,
-        "total_prize":2100.0,
-        "MRE":0.0619047619
+        "MRE":0.0619047619,
+        "ml_estimated_total_prize":2338.4075042948,
+        "LR_MRE":0.113527383
     },
     {
         "index":30056429,
+        "total_prize":2100,
         "estimated_total_prize":1070.0,
-        "total_prize":2100.0,
-        "MRE":0.4904761905
+        "MRE":0.4904761905,
+        "ml_estimated_total_prize":1347.1086688754,
+        "LR_MRE":0.3585196815
     },
     {
         "index":30057422,
+        "total_prize":2750,
         "estimated_total_prize":2615.0,
-        "total_prize":2750.0,
-        "MRE":0.0490909091
+        "MRE":0.0490909091,
+        "ml_estimated_total_prize":2817.3559965301,
+        "LR_MRE":0.0244930896
     },
     {
         "index":30057568,
+        "total_prize":1150,
         "estimated_total_prize":1480.0,
-        "total_prize":1150.0,
-        "MRE":0.2869565217
+        "MRE":0.2869565217,
+        "ml_estimated_total_prize":1566.3950271846,
+        "LR_MRE":0.3620826323
     },
     {
         "index":30057612,
+        "total_prize":2000,
         "estimated_total_prize":1310.0,
-        "total_prize":2000.0,
-        "MRE":0.345
+        "MRE":0.345,
+        "ml_estimated_total_prize":1577.0811846086,
+        "LR_MRE":0.2114594077
     },
     {
         "index":30057740,
+        "total_prize":2000,
         "estimated_total_prize":2102.5,
-        "total_prize":2000.0,
-        "MRE":0.05125
+        "MRE":0.05125,
+        "ml_estimated_total_prize":1889.5562543809,
+        "LR_MRE":0.0552218728
     },
     {
         "index":30057796,
+        "total_prize":2000,
         "estimated_total_prize":1497.5,
-        "total_prize":2000.0,
-        "MRE":0.25125
+        "MRE":0.25125,
+        "ml_estimated_total_prize":1275.1985181555,
+        "LR_MRE":0.3624007409
     },
     {
         "index":30058214,
+        "total_prize":1000,
         "estimated_total_prize":897.5,
-        "total_prize":1000.0,
-        "MRE":0.1025
+        "MRE":0.1025,
+        "ml_estimated_total_prize":748.220368675,
+        "LR_MRE":0.2517796313
     },
     {
         "index":30058324,
+        "total_prize":2000,
         "estimated_total_prize":2035.0,
-        "total_prize":2000.0,
-        "MRE":0.0175
+        "MRE":0.0175,
+        "ml_estimated_total_prize":2076.1586884161,
+        "LR_MRE":0.0380793442
     },
     {
         "index":30058577,
+        "total_prize":2000,
         "estimated_total_prize":2480.0,
-        "total_prize":2000.0,
-        "MRE":0.24
+        "MRE":0.24,
+        "ml_estimated_total_prize":1959.2030367248,
+        "LR_MRE":0.0203984816
     },
     {
         "index":30058578,
+        "total_prize":2750,
         "estimated_total_prize":1912.5,
-        "total_prize":2750.0,
-        "MRE":0.3045454545
+        "MRE":0.3045454545,
+        "ml_estimated_total_prize":2854.5914707649,
+        "LR_MRE":0.0380332621
     },
     {
         "index":30058579,
+        "total_prize":2000,
         "estimated_total_prize":2162.5,
-        "total_prize":2000.0,
-        "MRE":0.08125
+        "MRE":0.08125,
+        "ml_estimated_total_prize":2043.2372363809,
+        "LR_MRE":0.0216186182
     },
     {
         "index":30058580,
+        "total_prize":2000,
         "estimated_total_prize":2105.0,
-        "total_prize":2000.0,
-        "MRE":0.0525
+        "MRE":0.0525,
+        "ml_estimated_total_prize":2478.7141496235,
+        "LR_MRE":0.2393570748
     },
     {
         "index":30058581,
+        "total_prize":2750,
         "estimated_total_prize":1725.0,
-        "total_prize":2750.0,
-        "MRE":0.3727272727
+        "MRE":0.3727272727,
+        "ml_estimated_total_prize":1132.2442699817,
+        "LR_MRE":0.5882748109
     },
     {
         "index":30058719,
+        "total_prize":2000,
         "estimated_total_prize":1967.5,
-        "total_prize":2000.0,
-        "MRE":0.01625
+        "MRE":0.01625,
+        "ml_estimated_total_prize":2284.2334978879,
+        "LR_MRE":0.1421167489
     },
     {
         "index":30060051,
+        "total_prize":2000,
         "estimated_total_prize":2385.0,
-        "total_prize":2000.0,
-        "MRE":0.1925
+        "MRE":0.1925,
+        "ml_estimated_total_prize":1652.7010604995,
+        "LR_MRE":0.1736494698
     },
     {
         "index":30060226,
+        "total_prize":250,
         "estimated_total_prize":522.5,
-        "total_prize":250.0,
-        "MRE":1.09
+        "MRE":1.09,
+        "ml_estimated_total_prize":397.6829683463,
+        "LR_MRE":0.5907318734
     },
     {
         "index":30060517,
+        "total_prize":2000,
         "estimated_total_prize":2120.0,
-        "total_prize":2000.0,
-        "MRE":0.06
+        "MRE":0.06,
+        "ml_estimated_total_prize":1638.6303071383,
+        "LR_MRE":0.1806848464
     },
     {
         "index":30060648,
+        "total_prize":2000,
         "estimated_total_prize":2087.5,
-        "total_prize":2000.0,
-        "MRE":0.04375
+        "MRE":0.04375,
+        "ml_estimated_total_prize":1940.8422455439,
+        "LR_MRE":0.0295788772
     },
     {
         "index":30060689,
+        "total_prize":2750,
         "estimated_total_prize":1805.0,
-        "total_prize":2750.0,
-        "MRE":0.3436363636
+        "MRE":0.3436363636,
+        "ml_estimated_total_prize":1979.1573123966,
+        "LR_MRE":0.2803064319
     },
     {
         "index":30060946,
+        "total_prize":1550,
         "estimated_total_prize":1932.5,
-        "total_prize":1550.0,
-        "MRE":0.2467741935
+        "MRE":0.2467741935,
+        "ml_estimated_total_prize":1449.4897174294,
+        "LR_MRE":0.0648453436
     },
     {
         "index":30060985,
+        "total_prize":2000,
         "estimated_total_prize":2235.0,
-        "total_prize":2000.0,
-        "MRE":0.1175
+        "MRE":0.1175,
+        "ml_estimated_total_prize":1536.4461115474,
+        "LR_MRE":0.2317769442
     },
     {
         "index":30061270,
+        "total_prize":2750,
         "estimated_total_prize":2377.5,
-        "total_prize":2750.0,
-        "MRE":0.1354545455
+        "MRE":0.1354545455,
+        "ml_estimated_total_prize":3090.5676290519,
+        "LR_MRE":0.1238427742
     },
     {
         "index":30061550,
+        "total_prize":350,
         "estimated_total_prize":1500.0,
-        "total_prize":350.0,
-        "MRE":3.2857142857
+        "MRE":3.2857142857,
+        "ml_estimated_total_prize":-132.8056108839,
+        "LR_MRE":1.3794446025
     },
     {
         "index":30061738,
+        "total_prize":1550,
         "estimated_total_prize":1240.0,
-        "total_prize":1550.0,
-        "MRE":0.2
+        "MRE":0.2,
+        "ml_estimated_total_prize":1104.685083178,
+        "LR_MRE":0.2872999463
     },
     {
         "index":30061792,
+        "total_prize":2000,
         "estimated_total_prize":2005.0,
-        "total_prize":2000.0,
-        "MRE":0.0025
+        "MRE":0.0025,
+        "ml_estimated_total_prize":2097.8327114879,
+        "LR_MRE":0.0489163557
     },
     {
         "index":30061903,
+        "total_prize":2000,
         "estimated_total_prize":2035.0,
-        "total_prize":2000.0,
-        "MRE":0.0175
+        "MRE":0.0175,
+        "ml_estimated_total_prize":2008.519487525,
+        "LR_MRE":0.0042597438
     },
     {
         "index":30061954,
+        "total_prize":300,
         "estimated_total_prize":1360.0,
-        "total_prize":300.0,
-        "MRE":3.5333333333
+        "MRE":3.5333333333,
+        "ml_estimated_total_prize":824.2060196399,
+        "LR_MRE":1.7473533988
     },
     {
         "index":30061965,
+        "total_prize":2750,
         "estimated_total_prize":2505.0,
-        "total_prize":2750.0,
-        "MRE":0.0890909091
+        "MRE":0.0890909091,
+        "ml_estimated_total_prize":2325.3567747229,
+        "LR_MRE":0.1544157183
     },
     {
         "index":30062442,
+        "total_prize":2750,
         "estimated_total_prize":2340.0,
-        "total_prize":2750.0,
-        "MRE":0.1490909091
+        "MRE":0.1490909091,
+        "ml_estimated_total_prize":2900.1102099972,
+        "LR_MRE":0.0545855309
     },
     {
         "index":30062517,
+        "total_prize":2750,
         "estimated_total_prize":2347.5,
-        "total_prize":2750.0,
-        "MRE":0.1463636364
+        "MRE":0.1463636364,
+        "ml_estimated_total_prize":2356.5522245672,
+        "LR_MRE":0.1430719183
     },
     {
         "index":30062529,
+        "total_prize":2750,
         "estimated_total_prize":2335.0,
-        "total_prize":2750.0,
-        "MRE":0.1509090909
+        "MRE":0.1509090909,
+        "ml_estimated_total_prize":2676.6315868888,
+        "LR_MRE":0.0266794229
     },
     {
         "index":30062898,
+        "total_prize":100,
         "estimated_total_prize":920.0,
-        "total_prize":100.0,
-        "MRE":8.2
+        "MRE":8.2,
+        "ml_estimated_total_prize":731.4643002879,
+        "LR_MRE":6.3146430029
     },
     {
         "index":30063038,
+        "total_prize":1550,
         "estimated_total_prize":1320.0,
-        "total_prize":1550.0,
-        "MRE":0.1483870968
+        "MRE":0.1483870968,
+        "ml_estimated_total_prize":1629.0395244722,
+        "LR_MRE":0.0509932416
     },
     {
         "index":30063081,
+        "total_prize":2750,
         "estimated_total_prize":2635.0,
-        "total_prize":2750.0,
-        "MRE":0.0418181818
+        "MRE":0.0418181818,
+        "ml_estimated_total_prize":2123.9248369038,
+        "LR_MRE":0.2276636957
     },
     {
         "index":30063243,
+        "total_prize":100,
         "estimated_total_prize":475.0,
-        "total_prize":100.0,
-        "MRE":3.75
+        "MRE":3.75,
+        "ml_estimated_total_prize":360.111049203,
+        "LR_MRE":2.601110492
     },
     {
         "index":30063326,
+        "total_prize":1550,
         "estimated_total_prize":2230.0,
-        "total_prize":1550.0,
-        "MRE":0.4387096774
+        "MRE":0.4387096774,
+        "ml_estimated_total_prize":1256.5017044944,
+        "LR_MRE":0.189353739
     },
     {
         "index":30063376,
+        "total_prize":2000,
         "estimated_total_prize":2470.0,
-        "total_prize":2000.0,
-        "MRE":0.235
+        "MRE":0.235,
+        "ml_estimated_total_prize":2426.095589118,
+        "LR_MRE":0.2130477946
     },
     {
         "index":30063473,
+        "total_prize":2000,
         "estimated_total_prize":1205.0,
-        "total_prize":2000.0,
-        "MRE":0.3975
+        "MRE":0.3975,
+        "ml_estimated_total_prize":2453.254194903,
+        "LR_MRE":0.2266270975
     },
     {
         "index":30063513,
+        "total_prize":1550,
         "estimated_total_prize":1995.0,
-        "total_prize":1550.0,
-        "MRE":0.2870967742
+        "MRE":0.2870967742,
+        "ml_estimated_total_prize":2262.8596788681,
+        "LR_MRE":0.4599094702
     },
     {
         "index":30063799,
+        "total_prize":2000,
         "estimated_total_prize":1850.0,
-        "total_prize":2000.0,
-        "MRE":0.075
+        "MRE":0.075,
+        "ml_estimated_total_prize":1921.7413774224,
+        "LR_MRE":0.0391293113
     },
     {
         "index":30063878,
+        "total_prize":50,
         "estimated_total_prize":1252.0,
-        "total_prize":50.0,
-        "MRE":24.04
+        "MRE":24.04,
+        "ml_estimated_total_prize":987.5532585883,
+        "LR_MRE":18.7510651718
     },
     {
         "index":30063943,
+        "total_prize":1550,
         "estimated_total_prize":1480.0,
-        "total_prize":1550.0,
-        "MRE":0.0451612903
+        "MRE":0.0451612903,
+        "ml_estimated_total_prize":1360.1150973752,
+        "LR_MRE":0.1225063888
     },
     {
         "index":30064068,
+        "total_prize":1950,
         "estimated_total_prize":2565.0,
-        "total_prize":1950.0,
-        "MRE":0.3153846154
+        "MRE":0.3153846154,
+        "ml_estimated_total_prize":2369.3141653256,
+        "LR_MRE":0.2150329053
     },
     {
         "index":30064171,
+        "total_prize":2750,
         "estimated_total_prize":2420.0,
-        "total_prize":2750.0,
-        "MRE":0.12
+        "MRE":0.12,
+        "ml_estimated_total_prize":2892.958015445,
+        "LR_MRE":0.0519847329
     },
     {
         "index":30064183,
+        "total_prize":1550,
         "estimated_total_prize":1497.5,
-        "total_prize":1550.0,
-        "MRE":0.0338709677
+        "MRE":0.0338709677,
+        "ml_estimated_total_prize":1275.1985181555,
+        "LR_MRE":0.1772912786
     },
     {
         "index":30064184,
+        "total_prize":2000,
         "estimated_total_prize":2735.0,
-        "total_prize":2000.0,
-        "MRE":0.3675
+        "MRE":0.3675,
+        "ml_estimated_total_prize":2039.9743087883,
+        "LR_MRE":0.0199871544
     },
     {
         "index":30064280,
+        "total_prize":850,
         "estimated_total_prize":800.0,
-        "total_prize":850.0,
-        "MRE":0.0588235294
+        "MRE":0.0588235294,
+        "ml_estimated_total_prize":961.8950220405,
+        "LR_MRE":0.1316412024
     },
     {
         "index":30064397,
+        "total_prize":1550,
         "estimated_total_prize":1765.0,
-        "total_prize":1550.0,
-        "MRE":0.1387096774
+        "MRE":0.1387096774,
+        "ml_estimated_total_prize":1570.0815669243,
+        "LR_MRE":0.0129558496
     },
     {
         "index":30064482,
+        "total_prize":2000,
         "estimated_total_prize":1497.5,
-        "total_prize":2000.0,
-        "MRE":0.25125
+        "MRE":0.25125,
+        "ml_estimated_total_prize":1275.1985181555,
+        "LR_MRE":0.3624007409
     },
     {
         "index":30064645,
+        "total_prize":2000,
         "estimated_total_prize":2195.0,
-        "total_prize":2000.0,
-        "MRE":0.0975
+        "MRE":0.0975,
+        "ml_estimated_total_prize":2219.8005172029,
+        "LR_MRE":0.1099002586
     },
     {
         "index":30064861,
+        "total_prize":200,
         "estimated_total_prize":315.0,
-        "total_prize":200.0,
-        "MRE":0.575
+        "MRE":0.575,
+        "ml_estimated_total_prize":877.4995550163,
+        "LR_MRE":3.3874977751
     },
     {
         "index":30065141,
+        "total_prize":125,
         "estimated_total_prize":627.5,
-        "total_prize":125.0,
-        "MRE":4.02
+        "MRE":4.02,
+        "ml_estimated_total_prize":1066.9530251133,
+        "LR_MRE":7.5356242009
     },
     {
         "index":30065162,
+        "total_prize":1550,
         "estimated_total_prize":1765.0,
-        "total_prize":1550.0,
-        "MRE":0.1387096774
+        "MRE":0.1387096774,
+        "ml_estimated_total_prize":1387.2777222369,
+        "LR_MRE":0.1049821147
     },
     {
         "index":30065194,
+        "total_prize":2000,
         "estimated_total_prize":1355.0,
-        "total_prize":2000.0,
-        "MRE":0.3225
+        "MRE":0.3225,
+        "ml_estimated_total_prize":1484.7999692513,
+        "LR_MRE":0.2576000154
     },
     {
         "index":30065329,
+        "total_prize":200,
         "estimated_total_prize":507.5,
-        "total_prize":200.0,
-        "MRE":1.5375
+        "MRE":1.5375,
+        "ml_estimated_total_prize":180.6699802806,
+        "LR_MRE":0.0966500986
     },
     {
         "index":30065332,
+        "total_prize":1050,
         "estimated_total_prize":1170.0,
-        "total_prize":1050.0,
-        "MRE":0.1142857143
+        "MRE":0.1142857143,
+        "ml_estimated_total_prize":1327.3199624797,
+        "LR_MRE":0.26411425
     },
     {
         "index":30065409,
+        "total_prize":2750,
         "estimated_total_prize":2345.0,
-        "total_prize":2750.0,
-        "MRE":0.1472727273
+        "MRE":0.1472727273,
+        "ml_estimated_total_prize":2715.085427277,
+        "LR_MRE":0.0126962083
     },
     {
         "index":30065483,
+        "total_prize":175,
         "estimated_total_prize":817.5,
-        "total_prize":175.0,
-        "MRE":3.6714285714
+        "MRE":3.6714285714,
+        "ml_estimated_total_prize":619.8920609953,
+        "LR_MRE":2.5422403485
     },
     {
         "index":30065539,
+        "total_prize":2000,
         "estimated_total_prize":1927.5,
-        "total_prize":2000.0,
-        "MRE":0.03625
+        "MRE":0.03625,
+        "ml_estimated_total_prize":1358.942931149,
+        "LR_MRE":0.3205285344
     },
     {
         "index":30065727,
+        "total_prize":250,
         "estimated_total_prize":1030.0,
-        "total_prize":250.0,
-        "MRE":3.12
+        "MRE":3.12,
+        "ml_estimated_total_prize":489.3897779593,
+        "LR_MRE":0.9575591118
     },
     {
         "index":30065795,
+        "total_prize":1000,
         "estimated_total_prize":647.5,
-        "total_prize":1000.0,
-        "MRE":0.3525
+        "MRE":0.3525,
+        "ml_estimated_total_prize":909.4899078595,
+        "LR_MRE":0.0905100921
     },
     {
         "index":30065796,
+        "total_prize":700,
         "estimated_total_prize":1410.0,
-        "total_prize":700.0,
-        "MRE":1.0142857143
+        "MRE":1.0142857143,
+        "ml_estimated_total_prize":950.6096347272,
+        "LR_MRE":0.3580137639
     },
     {
         "index":30065937,
+        "total_prize":1385,
         "estimated_total_prize":2120.0,
-        "total_prize":1385.0,
-        "MRE":0.5306859206
+        "MRE":0.5306859206,
+        "ml_estimated_total_prize":1448.2522058995,
+        "LR_MRE":0.0456694627
     },
     {
         "index":30066064,
+        "total_prize":2100,
         "estimated_total_prize":1460.0,
-        "total_prize":2100.0,
-        "MRE":0.3047619048
+        "MRE":0.3047619048,
+        "ml_estimated_total_prize":1743.2084484157,
+        "LR_MRE":0.1699007388
     },
     {
         "index":30066634,
+        "total_prize":1800,
         "estimated_total_prize":1072.5,
-        "total_prize":1800.0,
-        "MRE":0.4041666667
+        "MRE":0.4041666667,
+        "ml_estimated_total_prize":1236.5207122432,
+        "LR_MRE":0.3130440488
     },
     {
         "index":30066716,
+        "total_prize":300,
         "estimated_total_prize":495.0,
-        "total_prize":300.0,
-        "MRE":0.65
+        "MRE":0.65,
+        "ml_estimated_total_prize":430.1032379851,
+        "LR_MRE":0.43367746
     },
     {
         "index":30066866,
+        "total_prize":100,
         "estimated_total_prize":220.0,
-        "total_prize":100.0,
-        "MRE":1.2
+        "MRE":1.2,
+        "ml_estimated_total_prize":1018.7379906643,
+        "LR_MRE":9.1873799066
     },
     {
         "index":30067414,
+        "total_prize":300,
         "estimated_total_prize":195.0,
-        "total_prize":300.0,
-        "MRE":0.35
+        "MRE":0.35,
+        "ml_estimated_total_prize":-86.2638822221,
+        "LR_MRE":1.2875462741
     },
     {
         "index":30067415,
+        "total_prize":400,
         "estimated_total_prize":147.5,
-        "total_prize":400.0,
-        "MRE":0.63125
+        "MRE":0.63125,
+        "ml_estimated_total_prize":304.2015974263,
+        "LR_MRE":0.2394960064
     },
     {
         "index":30067431,
+        "total_prize":200,
         "estimated_total_prize":97.5,
-        "total_prize":200.0,
-        "MRE":0.5125
+        "MRE":0.5125,
+        "ml_estimated_total_prize":401.0106689816,
+        "LR_MRE":1.0050533449
     },
     {
         "index":30067432,
+        "total_prize":300,
         "estimated_total_prize":215.0,
-        "total_prize":300.0,
-        "MRE":0.2833333333
+        "MRE":0.2833333333,
+        "ml_estimated_total_prize":533.6902935943,
+        "LR_MRE":0.7789676453
     },
     {
         "index":30067520,
+        "total_prize":700,
         "estimated_total_prize":2275.0,
-        "total_prize":700.0,
-        "MRE":2.25
+        "MRE":2.25,
+        "ml_estimated_total_prize":1651.2616706361,
+        "LR_MRE":1.3589452438
     },
     {
         "index":30067599,
+        "total_prize":2000,
         "estimated_total_prize":2025.0,
-        "total_prize":2000.0,
-        "MRE":0.0125
+        "MRE":0.0125,
+        "ml_estimated_total_prize":2299.3931044508,
+        "LR_MRE":0.1496965522
     },
     {
         "index":30067608,
+        "total_prize":300,
         "estimated_total_prize":227.5,
-        "total_prize":300.0,
-        "MRE":0.2416666667
+        "MRE":0.2416666667,
+        "ml_estimated_total_prize":165.4450913939,
+        "LR_MRE":0.448516362
     },
     {
         "index":30067609,
+        "total_prize":200,
         "estimated_total_prize":240.0,
-        "total_prize":200.0,
-        "MRE":0.2
+        "MRE":0.2,
+        "ml_estimated_total_prize":353.3366566626,
+        "LR_MRE":0.7666832833
     },
     {
         "index":30067861,
+        "total_prize":2750,
         "estimated_total_prize":2480.0,
-        "total_prize":2750.0,
-        "MRE":0.0981818182
+        "MRE":0.0981818182,
+        "ml_estimated_total_prize":2372.9762795792,
+        "LR_MRE":0.1370995347
     },
     {
         "index":30068109,
+        "total_prize":1550,
         "estimated_total_prize":2240.0,
-        "total_prize":1550.0,
-        "MRE":0.4451612903
+        "MRE":0.4451612903,
+        "ml_estimated_total_prize":1637.0257074003,
+        "LR_MRE":0.0561456177
     },
     {
         "index":30068822,
+        "total_prize":2750,
         "estimated_total_prize":2695.0,
-        "total_prize":2750.0,
-        "MRE":0.02
+        "MRE":0.02,
+        "ml_estimated_total_prize":1979.8864672161,
+        "LR_MRE":0.2800412846
     },
     {
         "index":30068824,
+        "total_prize":2750,
         "estimated_total_prize":2430.0,
-        "total_prize":2750.0,
-        "MRE":0.1163636364
+        "MRE":0.1163636364,
+        "ml_estimated_total_prize":2435.8863478556,
+        "LR_MRE":0.1142231462
     },
     {
         "index":30068825,
+        "total_prize":1550,
         "estimated_total_prize":1840.0,
-        "total_prize":1550.0,
-        "MRE":0.1870967742
+        "MRE":0.1870967742,
+        "ml_estimated_total_prize":1292.7925506842,
+        "LR_MRE":0.1659402899
     },
     {
         "index":30069150,
+        "total_prize":175,
         "estimated_total_prize":140.0,
-        "total_prize":175.0,
-        "MRE":0.2
+        "MRE":0.2,
+        "ml_estimated_total_prize":899.7296084396,
+        "LR_MRE":4.1413120482
     },
     {
         "index":30069151,
+        "total_prize":250,
         "estimated_total_prize":140.0,
-        "total_prize":250.0,
-        "MRE":0.44
+        "MRE":0.44,
+        "ml_estimated_total_prize":899.7296084396,
+        "LR_MRE":2.5989184338
     },
     {
         "index":30069445,
+        "total_prize":2000,
         "estimated_total_prize":1497.5,
-        "total_prize":2000.0,
-        "MRE":0.25125
+        "MRE":0.25125,
+        "ml_estimated_total_prize":1275.1985181555,
+        "LR_MRE":0.3624007409
     },
     {
         "index":30069447,
+        "total_prize":2750,
         "estimated_total_prize":1497.5,
-        "total_prize":2750.0,
-        "MRE":0.4554545455
+        "MRE":0.4554545455,
+        "ml_estimated_total_prize":1275.1985181555,
+        "LR_MRE":0.5362914479
     },
     {
         "index":30069564,
+        "total_prize":175,
         "estimated_total_prize":527.0,
-        "total_prize":175.0,
-        "MRE":2.0114285714
+        "MRE":2.0114285714,
+        "ml_estimated_total_prize":835.3903741101,
+        "LR_MRE":3.7736592806
     },
     {
         "index":30069565,
+        "total_prize":300,
         "estimated_total_prize":527.0,
-        "total_prize":300.0,
-        "MRE":0.7566666667
+        "MRE":0.7566666667,
+        "ml_estimated_total_prize":835.3903741101,
+        "LR_MRE":1.7846345804
     },
     {
         "index":30069875,
+        "total_prize":2750,
         "estimated_total_prize":2465.0,
-        "total_prize":2750.0,
-        "MRE":0.1036363636
+        "MRE":0.1036363636,
+        "ml_estimated_total_prize":1995.2317342672,
+        "LR_MRE":0.2744611875
     },
     {
         "index":30070046,
+        "total_prize":1550,
         "estimated_total_prize":2135.0,
-        "total_prize":1550.0,
-        "MRE":0.3774193548
+        "MRE":0.3774193548,
+        "ml_estimated_total_prize":1796.8103129736,
+        "LR_MRE":0.15923246
     },
     {
         "index":30070299,
+        "total_prize":200,
         "estimated_total_prize":100.0,
-        "total_prize":200.0,
-        "MRE":0.5
+        "MRE":0.5,
+        "ml_estimated_total_prize":438.8353946891,
+        "LR_MRE":1.1941769734
     },
     {
         "index":30070715,
+        "total_prize":2750,
         "estimated_total_prize":2435.0,
-        "total_prize":2750.0,
-        "MRE":0.1145454545
+        "MRE":0.1145454545,
+        "ml_estimated_total_prize":2561.6288153517,
+        "LR_MRE":0.0684986126
     },
     {
         "index":30070972,
+        "total_prize":2750,
         "estimated_total_prize":2290.0,
-        "total_prize":2750.0,
-        "MRE":0.1672727273
+        "MRE":0.1672727273,
+        "ml_estimated_total_prize":3128.1602675366,
+        "LR_MRE":0.1375128246
     },
     {
         "index":30071778,
+        "total_prize":2750,
         "estimated_total_prize":2515.0,
-        "total_prize":2750.0,
-        "MRE":0.0854545455
+        "MRE":0.0854545455,
+        "ml_estimated_total_prize":3004.710413597,
+        "LR_MRE":0.0926219686
     },
     {
         "index":30072158,
+        "total_prize":250,
         "estimated_total_prize":1005.0,
-        "total_prize":250.0,
-        "MRE":3.02
+        "MRE":3.02,
+        "ml_estimated_total_prize":598.970464284,
+        "LR_MRE":1.3958818571
     },
     {
         "index":30072607,
+        "total_prize":2000,
         "estimated_total_prize":2250.0,
-        "total_prize":2000.0,
-        "MRE":0.125
+        "MRE":0.125,
+        "ml_estimated_total_prize":1870.2587964446,
+        "LR_MRE":0.0648706018
     },
     {
         "index":30072637,
+        "total_prize":1000,
         "estimated_total_prize":1932.5,
-        "total_prize":1000.0,
-        "MRE":0.9325
+        "MRE":0.9325,
+        "ml_estimated_total_prize":781.7062935306,
+        "LR_MRE":0.2182937065
     },
     {
         "index":30072899,
+        "total_prize":2000,
         "estimated_total_prize":2145.0,
-        "total_prize":2000.0,
-        "MRE":0.0725
+        "MRE":0.0725,
+        "ml_estimated_total_prize":2359.2083268386,
+        "LR_MRE":0.1796041634
     },
     {
         "index":30072924,
+        "total_prize":2750,
         "estimated_total_prize":2330.0,
-        "total_prize":2750.0,
-        "MRE":0.1527272727
+        "MRE":0.1527272727,
+        "ml_estimated_total_prize":3295.1281681826,
+        "LR_MRE":0.1982284248
     },
     {
         "index":30073072,
+        "total_prize":900,
         "estimated_total_prize":1115.0,
-        "total_prize":900.0,
-        "MRE":0.2388888889
+        "MRE":0.2388888889,
+        "ml_estimated_total_prize":577.7401694859,
+        "LR_MRE":0.3580664783
     },
     {
         "index":30073515,
+        "total_prize":525,
         "estimated_total_prize":1020.0,
-        "total_prize":525.0,
-        "MRE":0.9428571429
+        "MRE":0.9428571429,
+        "ml_estimated_total_prize":737.3346292742,
+        "LR_MRE":0.4044469129
     },
     {
         "index":30073516,
+        "total_prize":2750,
         "estimated_total_prize":1400.0,
-        "total_prize":2750.0,
-        "MRE":0.4909090909
+        "MRE":0.4909090909,
+        "ml_estimated_total_prize":2178.0184786675,
+        "LR_MRE":0.2079932805
     },
     {
         "index":30073777,
+        "total_prize":2000,
         "estimated_total_prize":2145.0,
-        "total_prize":2000.0,
-        "MRE":0.0725
+        "MRE":0.0725,
+        "ml_estimated_total_prize":1684.3983778269,
+        "LR_MRE":0.1578008111
     },
     {
         "index":30073802,
+        "total_prize":2000,
         "estimated_total_prize":2145.0,
-        "total_prize":2000.0,
-        "MRE":0.0725
+        "MRE":0.0725,
+        "ml_estimated_total_prize":1858.900502981,
+        "LR_MRE":0.0705497485
     },
     {
         "index":30074929,
+        "total_prize":1050,
         "estimated_total_prize":1040.0,
-        "total_prize":1050.0,
-        "MRE":0.0095238095
+        "MRE":0.0095238095,
+        "ml_estimated_total_prize":1394.4671229433,
+        "LR_MRE":0.3280639266
     },
     {
         "index":30075934,
+        "total_prize":1550,
         "estimated_total_prize":1555.0,
-        "total_prize":1550.0,
-        "MRE":0.0032258065
+        "MRE":0.0032258065,
+        "ml_estimated_total_prize":1322.4123150153,
+        "LR_MRE":0.1468307645
     },
     {
         "index":30075953,
+        "total_prize":2750,
         "estimated_total_prize":2310.0,
-        "total_prize":2750.0,
-        "MRE":0.16
+        "MRE":0.16,
+        "ml_estimated_total_prize":2775.3693072445,
+        "LR_MRE":0.0092252026
     },
     {
         "index":30077399,
+        "total_prize":250,
         "estimated_total_prize":234.5,
-        "total_prize":250.0,
-        "MRE":0.062
+        "MRE":0.062,
+        "ml_estimated_total_prize":849.2401304762,
+        "LR_MRE":2.3969605219
     },
     {
         "index":30077475,
+        "total_prize":2000,
         "estimated_total_prize":1497.5,
-        "total_prize":2000.0,
-        "MRE":0.25125
+        "MRE":0.25125,
+        "ml_estimated_total_prize":1275.1985181555,
+        "LR_MRE":0.3624007409
     },
     {
         "index":30078581,
+        "total_prize":2750,
         "estimated_total_prize":2330.0,
-        "total_prize":2750.0,
-        "MRE":0.1527272727
+        "MRE":0.1527272727,
+        "ml_estimated_total_prize":2373.5988447042,
+        "LR_MRE":0.1368731474
     },
     {
         "index":30079511,
+        "total_prize":1000,
         "estimated_total_prize":1420.0,
-        "total_prize":1000.0,
-        "MRE":0.42
+        "MRE":0.42,
+        "ml_estimated_total_prize":1160.6846219395,
+        "LR_MRE":0.1606846219
     },
     {
         "index":30083527,
+        "total_prize":2000,
         "estimated_total_prize":2535.0,
-        "total_prize":2000.0,
-        "MRE":0.2675
+        "MRE":0.2675,
+        "ml_estimated_total_prize":1486.5646551783,
+        "LR_MRE":0.2567176724
     },
     {
         "index":30083663,
+        "total_prize":2000,
         "estimated_total_prize":2230.0,
-        "total_prize":2000.0,
-        "MRE":0.115
+        "MRE":0.115,
+        "ml_estimated_total_prize":1847.6060034208,
+        "LR_MRE":0.0761969983
     },
     {
         "index":30083736,
+        "total_prize":2750,
         "estimated_total_prize":2185.0,
-        "total_prize":2750.0,
-        "MRE":0.2054545455
+        "MRE":0.2054545455,
+        "ml_estimated_total_prize":2960.6725558693,
+        "LR_MRE":0.0766082021
     },
     {
         "index":30083786,
+        "total_prize":800,
         "estimated_total_prize":905.0,
-        "total_prize":800.0,
-        "MRE":0.13125
+        "MRE":0.13125,
+        "ml_estimated_total_prize":1042.1858516624,
+        "LR_MRE":0.3027323146
     },
     {
         "index":30083894,
+        "total_prize":400,
         "estimated_total_prize":1790.0,
-        "total_prize":400.0,
-        "MRE":3.475
+        "MRE":3.475,
+        "ml_estimated_total_prize":1275.684265211,
+        "LR_MRE":2.189210663
     },
     {
         "index":30085130,
+        "total_prize":1000,
         "estimated_total_prize":610.0,
-        "total_prize":1000.0,
-        "MRE":0.39
+        "MRE":0.39,
+        "ml_estimated_total_prize":139.6492394758,
+        "LR_MRE":0.8603507605
     },
     {
         "index":30085167,
+        "total_prize":1550,
         "estimated_total_prize":2127.5,
-        "total_prize":1550.0,
-        "MRE":0.3725806452
+        "MRE":0.3725806452,
+        "ml_estimated_total_prize":1745.9145734058,
+        "LR_MRE":0.126396499
     },
     {
         "index":30085303,
+        "total_prize":2100,
         "estimated_total_prize":1235.0,
-        "total_prize":2100.0,
-        "MRE":0.4119047619
+        "MRE":0.4119047619,
+        "ml_estimated_total_prize":1070.0484736407,
+        "LR_MRE":0.4904531078
     },
     {
         "index":30085305,
+        "total_prize":400,
         "estimated_total_prize":2125.0,
-        "total_prize":400.0,
-        "MRE":4.3125
+        "MRE":4.3125,
+        "ml_estimated_total_prize":1708.47803426,
+        "LR_MRE":3.2711950857
     },
     {
         "index":30085637,
+        "total_prize":250,
         "estimated_total_prize":722.5,
-        "total_prize":250.0,
-        "MRE":1.89
+        "MRE":1.89,
+        "ml_estimated_total_prize":433.7417677224,
+        "LR_MRE":0.7349670709
     },
     {
         "index":30085646,
+        "total_prize":2000,
         "estimated_total_prize":2325.0,
-        "total_prize":2000.0,
-        "MRE":0.1625
+        "MRE":0.1625,
+        "ml_estimated_total_prize":1846.6497566308,
+        "LR_MRE":0.0766751217
     },
     {
         "index":30085758,
+        "total_prize":2000,
         "estimated_total_prize":2400.0,
-        "total_prize":2000.0,
-        "MRE":0.2
+        "MRE":0.2,
+        "ml_estimated_total_prize":2582.4802594454,
+        "LR_MRE":0.2912401297
     },
     {
         "index":30085799,
+        "total_prize":50,
         "estimated_total_prize":1827.5,
-        "total_prize":50.0,
-        "MRE":35.55
+        "MRE":35.55,
+        "ml_estimated_total_prize":751.551153448,
+        "LR_MRE":14.031023069
     },
     {
         "index":30086115,
+        "total_prize":2750,
         "estimated_total_prize":2542.5,
-        "total_prize":2750.0,
-        "MRE":0.0754545455
+        "MRE":0.0754545455,
+        "ml_estimated_total_prize":2803.4204401939,
+        "LR_MRE":0.0194256146
     },
     {
         "index":30088345,
+        "total_prize":1050,
         "estimated_total_prize":1760.0,
-        "total_prize":1050.0,
-        "MRE":0.6761904762
+        "MRE":0.6761904762,
+        "ml_estimated_total_prize":1322.967980653,
+        "LR_MRE":0.2599695054
     },
     {
         "index":30088932,
+        "total_prize":2000,
         "estimated_total_prize":1470.0,
-        "total_prize":2000.0,
-        "MRE":0.265
+        "MRE":0.265,
+        "ml_estimated_total_prize":2258.5916080985,
+        "LR_MRE":0.129295804
     },
     {
         "index":30089047,
+        "total_prize":2000,
         "estimated_total_prize":2065.0,
-        "total_prize":2000.0,
-        "MRE":0.0325
+        "MRE":0.0325,
+        "ml_estimated_total_prize":1542.2110180873,
+        "LR_MRE":0.228894491
     },
     {
         "index":30089528,
+        "total_prize":850,
         "estimated_total_prize":652.5,
-        "total_prize":850.0,
-        "MRE":0.2323529412
+        "MRE":0.2323529412,
+        "ml_estimated_total_prize":838.1509833178,
+        "LR_MRE":0.0139400196
     },
     {
         "index":30089871,
+        "total_prize":100,
         "estimated_total_prize":1057.5,
-        "total_prize":100.0,
-        "MRE":9.575
+        "MRE":9.575,
+        "ml_estimated_total_prize":937.0595925961,
+        "LR_MRE":8.370595926
     },
     {
         "index":30089872,
+        "total_prize":50,
         "estimated_total_prize":1057.5,
-        "total_prize":50.0,
-        "MRE":20.15
+        "MRE":20.15,
+        "ml_estimated_total_prize":937.0595925961,
+        "LR_MRE":17.7411918519
     },
     {
         "index":30089873,
+        "total_prize":50,
         "estimated_total_prize":1057.5,
-        "total_prize":50.0,
-        "MRE":20.15
+        "MRE":20.15,
+        "ml_estimated_total_prize":937.0595925961,
+        "LR_MRE":17.7411918519
     },
     {
         "index":30090194,
+        "total_prize":400,
         "estimated_total_prize":867.5,
-        "total_prize":400.0,
-        "MRE":1.16875
+        "MRE":1.16875,
+        "ml_estimated_total_prize":258.065283027,
+        "LR_MRE":0.3548367924
     },
     {
         "index":30090220,
+        "total_prize":170,
         "estimated_total_prize":1170.0,
-        "total_prize":170.0,
-        "MRE":5.8823529412
+        "MRE":5.8823529412,
+        "ml_estimated_total_prize":658.4625888074,
+        "LR_MRE":2.8733093459
     },
     {
         "index":30090270,
+        "total_prize":2000,
         "estimated_total_prize":1960.0,
-        "total_prize":2000.0,
-        "MRE":0.02
+        "MRE":0.02,
+        "ml_estimated_total_prize":2273.6430950007,
+        "LR_MRE":0.1368215475
     },
     {
         "index":30090515,
+        "total_prize":100,
         "estimated_total_prize":525.0,
-        "total_prize":100.0,
-        "MRE":4.25
+        "MRE":4.25,
+        "ml_estimated_total_prize":-61.6972244752,
+        "LR_MRE":1.6169722448
     },
     {
         "index":30090591,
+        "total_prize":100,
         "estimated_total_prize":182.0,
-        "total_prize":100.0,
-        "MRE":0.82
+        "MRE":0.82,
+        "ml_estimated_total_prize":1125.0002896985,
+        "LR_MRE":10.250002897
     },
     {
         "index":30090871,
+        "total_prize":200,
         "estimated_total_prize":427.5,
-        "total_prize":200.0,
-        "MRE":1.1375
+        "MRE":1.1375,
+        "ml_estimated_total_prize":671.7124486431,
+        "LR_MRE":2.3585622432
     },
     {
         "index":30090881,
+        "total_prize":2750,
         "estimated_total_prize":2710.0,
-        "total_prize":2750.0,
-        "MRE":0.0145454545
+        "MRE":0.0145454545,
+        "ml_estimated_total_prize":2506.5504035877,
+        "LR_MRE":0.088527126
     },
     {
         "index":30091078,
+        "total_prize":75,
         "estimated_total_prize":312.0,
-        "total_prize":75.0,
-        "MRE":3.16
+        "MRE":3.16,
+        "ml_estimated_total_prize":44.0311944856,
+        "LR_MRE":0.4129174069
     },
     {
         "index":30091160,
+        "total_prize":150,
         "estimated_total_prize":905.0,
-        "total_prize":150.0,
-        "MRE":5.0333333333
+        "MRE":5.0333333333,
+        "ml_estimated_total_prize":761.3726368904,
+        "LR_MRE":4.0758175793
     },
     {
         "index":30091642,
+        "total_prize":300,
         "estimated_total_prize":917.5,
-        "total_prize":300.0,
-        "MRE":2.0583333333
+        "MRE":2.0583333333,
+        "ml_estimated_total_prize":942.4493166994,
+        "LR_MRE":2.1414977223
     },
     {
         "index":30091651,
+        "total_prize":200,
         "estimated_total_prize":2120.0,
-        "total_prize":200.0,
-        "MRE":9.6
+        "MRE":9.6,
+        "ml_estimated_total_prize":715.7597729089,
+        "LR_MRE":2.5787988645
     },
     {
         "index":30091662,
+        "total_prize":2000,
         "estimated_total_prize":2075.0,
-        "total_prize":2000.0,
-        "MRE":0.0375
+        "MRE":0.0375,
+        "ml_estimated_total_prize":1857.8300759904,
+        "LR_MRE":0.071084962
     },
     {
         "index":30091675,
+        "total_prize":2000,
         "estimated_total_prize":2175.0,
-        "total_prize":2000.0,
-        "MRE":0.0875
+        "MRE":0.0875,
+        "ml_estimated_total_prize":2277.2567933378,
+        "LR_MRE":0.1386283967
     },
     {
         "index":30091868,
+        "total_prize":2750,
         "estimated_total_prize":2660.0,
-        "total_prize":2750.0,
-        "MRE":0.0327272727
+        "MRE":0.0327272727,
+        "ml_estimated_total_prize":2603.6586951085,
+        "LR_MRE":0.05321502
     },
     {
         "index":30091975,
+        "total_prize":1150,
         "estimated_total_prize":890.0,
-        "total_prize":1150.0,
-        "MRE":0.2260869565
+        "MRE":0.2260869565,
+        "ml_estimated_total_prize":826.3284184357,
+        "LR_MRE":0.2814535492
     },
     {
         "index":30092118,
+        "total_prize":2000,
         "estimated_total_prize":2250.0,
-        "total_prize":2000.0,
-        "MRE":0.125
+        "MRE":0.125,
+        "ml_estimated_total_prize":1815.7626903795,
+        "LR_MRE":0.0921186548
     },
     {
         "index":30093279,
+        "total_prize":400,
         "estimated_total_prize":1790.0,
-        "total_prize":400.0,
-        "MRE":3.475
+        "MRE":3.475,
+        "ml_estimated_total_prize":1262.8301727482,
+        "LR_MRE":2.1570754319
     },
     {
         "index":30093468,
+        "total_prize":2750,
         "estimated_total_prize":2330.0,
-        "total_prize":2750.0,
-        "MRE":0.1527272727
+        "MRE":0.1527272727,
+        "ml_estimated_total_prize":2116.2422815621,
+        "LR_MRE":0.2304573522
     },
     {
         "index":30093586,
+        "total_prize":2750,
         "estimated_total_prize":2615.0,
-        "total_prize":2750.0,
-        "MRE":0.0490909091
+        "MRE":0.0490909091,
+        "ml_estimated_total_prize":2230.3639324169,
+        "LR_MRE":0.18895857
     },
     {
         "index":30095683,
+        "total_prize":1550,
         "estimated_total_prize":1610.0,
-        "total_prize":1550.0,
-        "MRE":0.0387096774
+        "MRE":0.0387096774,
+        "ml_estimated_total_prize":1696.3265770508,
+        "LR_MRE":0.0944042433
     },
     {
         "index":30096412,
+        "total_prize":450,
         "estimated_total_prize":1507.0,
-        "total_prize":450.0,
-        "MRE":2.3488888889
+        "MRE":2.3488888889,
+        "ml_estimated_total_prize":652.3157038568,
+        "LR_MRE":0.449590453
     },
     {
         "index":30097294,
+        "total_prize":2000,
         "estimated_total_prize":2077.5,
-        "total_prize":2000.0,
-        "MRE":0.03875
+        "MRE":0.03875,
+        "ml_estimated_total_prize":2512.3464298492,
+        "LR_MRE":0.2561732149
     },
     {
         "index":30098394,
+        "total_prize":150,
         "estimated_total_prize":1515.0,
-        "total_prize":150.0,
-        "MRE":9.1
+        "MRE":9.1,
+        "ml_estimated_total_prize":472.0652728247,
+        "LR_MRE":2.1471018188
     },
     {
         "index":30098395,
+        "total_prize":350,
         "estimated_total_prize":1270.0,
-        "total_prize":350.0,
-        "MRE":2.6285714286
+        "MRE":2.6285714286,
+        "ml_estimated_total_prize":545.329772532,
+        "LR_MRE":0.5580850644
     },
     {
         "index":30098863,
+        "total_prize":2000,
         "estimated_total_prize":970.0,
-        "total_prize":2000.0,
-        "MRE":0.515
+        "MRE":0.515,
+        "ml_estimated_total_prize":1161.5572524505,
+        "LR_MRE":0.4192213738
     },
     {
         "index":30098948,
+        "total_prize":2000,
         "estimated_total_prize":2330.0,
-        "total_prize":2000.0,
-        "MRE":0.165
+        "MRE":0.165,
+        "ml_estimated_total_prize":1841.4505984082,
+        "LR_MRE":0.0792747008
     },
     {
         "index":30101502,
+        "total_prize":1550,
         "estimated_total_prize":1060.0,
-        "total_prize":1550.0,
-        "MRE":0.3161290323
+        "MRE":0.3161290323,
+        "ml_estimated_total_prize":916.2306861441,
+        "LR_MRE":0.4088834283
     },
     {
         "index":30103155,
+        "total_prize":2250,
         "estimated_total_prize":1335.0,
-        "total_prize":2250.0,
-        "MRE":0.4066666667
+        "MRE":0.4066666667,
+        "ml_estimated_total_prize":912.3161693079,
+        "LR_MRE":0.594526147
     },
     {
         "index":30104376,
+        "total_prize":1550,
         "estimated_total_prize":952.5,
-        "total_prize":1550.0,
-        "MRE":0.385483871
+        "MRE":0.385483871,
+        "ml_estimated_total_prize":1195.4961223833,
+        "LR_MRE":0.2287121791
     },
     {
         "index":30104405,
+        "total_prize":1000,
         "estimated_total_prize":782.5,
-        "total_prize":1000.0,
-        "MRE":0.2175
+        "MRE":0.2175,
+        "ml_estimated_total_prize":1007.9406570288,
+        "LR_MRE":0.007940657
     },
     {
         "index":30105169,
+        "total_prize":2000,
         "estimated_total_prize":862.5,
-        "total_prize":2000.0,
-        "MRE":0.56875
+        "MRE":0.56875,
+        "ml_estimated_total_prize":1296.0571160084,
+        "LR_MRE":0.351971442
     },
     {
         "index":30108356,
+        "total_prize":2750,
         "estimated_total_prize":2510.0,
-        "total_prize":2750.0,
-        "MRE":0.0872727273
+        "MRE":0.0872727273,
+        "ml_estimated_total_prize":2678.1641693761,
+        "LR_MRE":0.0261221202
     },
     {
         "index":30109215,
+        "total_prize":250,
         "estimated_total_prize":777.5,
-        "total_prize":250.0,
-        "MRE":2.11
+        "MRE":2.11,
+        "ml_estimated_total_prize":154.7496253024,
+        "LR_MRE":0.3810014988
     },
     {
         "index":30110225,
+        "total_prize":250,
         "estimated_total_prize":244.5,
-        "total_prize":250.0,
-        "MRE":0.022
+        "MRE":0.022,
+        "ml_estimated_total_prize":650.3266514358,
+        "LR_MRE":1.6013066057
     },
     {
         "index":30112623,
+        "total_prize":1550,
         "estimated_total_prize":1880.0,
-        "total_prize":1550.0,
-        "MRE":0.2129032258
+        "MRE":0.2129032258,
+        "ml_estimated_total_prize":1329.3518402071,
+        "LR_MRE":0.1423536515
     },
     {
         "index":30112810,
+        "total_prize":3150,
         "estimated_total_prize":900.0,
-        "total_prize":3150.0,
-        "MRE":0.7142857143
+        "MRE":0.7142857143,
+        "ml_estimated_total_prize":2242.8983817833,
+        "LR_MRE":0.2879687677
     },
     {
         "index":30112907,
+        "total_prize":400,
         "estimated_total_prize":1642.5,
-        "total_prize":400.0,
-        "MRE":3.10625
+        "MRE":3.10625,
+        "ml_estimated_total_prize":900.9650443042,
+        "LR_MRE":1.2524126108
     },
     {
         "index":30113238,
+        "total_prize":200,
         "estimated_total_prize":885.0,
-        "total_prize":200.0,
-        "MRE":3.425
+        "MRE":3.425,
+        "ml_estimated_total_prize":796.0188480511,
+        "LR_MRE":2.9800942403
     },
     {
         "index":30113495,
+        "total_prize":2000,
         "estimated_total_prize":1450.0,
-        "total_prize":2000.0,
-        "MRE":0.275
+        "MRE":0.275,
+        "ml_estimated_total_prize":2014.748740048,
+        "LR_MRE":0.00737437
     },
     {
         "index":30114551,
+        "total_prize":500,
         "estimated_total_prize":767.5,
-        "total_prize":500.0,
-        "MRE":0.535
+        "MRE":0.535,
+        "ml_estimated_total_prize":617.7444599971,
+        "LR_MRE":0.23548892
     },
     {
         "index":30114648,
+        "total_prize":1550,
         "estimated_total_prize":2540.0,
-        "total_prize":1550.0,
-        "MRE":0.6387096774
+        "MRE":0.6387096774,
+        "ml_estimated_total_prize":2086.3097041215,
+        "LR_MRE":0.3460062607
     },
     {
         "index":30119995,
+        "total_prize":800,
         "estimated_total_prize":680.0,
-        "total_prize":800.0,
-        "MRE":0.15
+        "MRE":0.15,
+        "ml_estimated_total_prize":1101.9916594294,
+        "LR_MRE":0.3774895743
     },
     {
         "index":30120055,
+        "total_prize":500,
         "estimated_total_prize":537.5,
-        "total_prize":500.0,
-        "MRE":0.075
+        "MRE":0.075,
+        "ml_estimated_total_prize":387.9041661271,
+        "LR_MRE":0.2241916677
     }
 ]
