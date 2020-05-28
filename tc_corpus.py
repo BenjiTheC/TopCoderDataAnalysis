@@ -68,12 +68,10 @@ class TopCoderCorpus:
     """
 
     data_path = os.path.join(os.curdir, 'data')
-    section_freq_threshold = 0.5
+    file_name = 'detail_requirements.json'
 
-    def __init__(self, file_name):
-        self.file_name = file_name
+    def __init__(self):
         self.titles, self.sectioned_requirements = self.process_detailed_req()
-        self.sections_similarity = self.calculate_section_similarity()
 
     def process_detailed_req(self) -> (pd.DataFrame, pd.DataFrame):
         """ Process the detailed requirements from loaded json
@@ -150,66 +148,38 @@ class TopCoderCorpus:
         
         return {sec_name: ' '.join(' '.join(sec_reqs).split()) for sec_name, sec_reqs in sectioned_req_dct.items()}
 
-    def get_similarity_score(self, lst_of_str):
-        """ Calculate the simliarity scroe from a list of strings"""
-        seq_matcher = difflib.SequenceMatcher()
-        similarity_score_sum = 0
-        
-        for idx, s in enumerate(lst_of_str[:-1]):
-            seq_matcher.set_seq2(s)
-            for s1 in lst_of_str[idx + 1:]:
-                seq_matcher.set_seq1(s1)
-                similarity_score_sum += round(seq_matcher.ratio(), 3)
-                
-        return round(similarity_score_sum / ((len(lst_of_str) * (len(lst_of_str) - 1)) / 2), 3)
-
-    def calculate_section_similarity(self, threshold=section_freq_threshold):
-        """ Find "common sections" of a project and calculate the similarity of text in the section of challenges"""
-        sections_by_proj = defaultdict(lambda: defaultdict(dict))
-
-        for project_id, challenges in self.sectioned_requirements.groupby(level=0):
-            sec_name_freq = defaultdict(int)
-            sec_text_by_name = defaultdict(list)
-            num_of_challenges = len(challenges.index.unique(level='challenge_id'))
-
-            for sec_name, sec_text in challenges.droplevel(level=[0, 1]).itertuples():
-                if sec_name != 'no_header_tag':
-                    sec_name_freq[sec_name] += 1
-                    sec_text_by_name[sec_name].append(sec_text)
-
-            for sec_name, freq in sec_name_freq.items():
-                if freq / num_of_challenges > threshold:
-                    sections_by_proj[project_id][sec_name] = {
-                        'section_name_freq': round(freq / num_of_challenges, 2),
-                        'lst_of_sec_text': sec_text_by_name[sec_name]
-                    }
-
-        section_similarity_score = defaultdict(lambda: defaultdict(dict))
-        for project_id, req_sec in sections_by_proj.items():
-            for sec_name, section in req_sec.items():
-                section_similarity_score[project_id][sec_name] = {
-                    'score': self.get_similarity_score(section['lst_of_sec_text']),
-                    'freq': section['section_name_freq']
-                }
-
-        df_similarity_score = pd.DataFrame.from_dict(
-            {(project_id, sec_name): sec for project_id, sections in section_similarity_score.items() for sec_name, sec in sections.items()},
-            orient='index'
-        )
-        df_similarity_score.index.names = ['project_id', 'section_name']
-        
-        return df_similarity_score
-
-    def get_challenge_req_sentences(self, as_dataframe=False):
+    def get_challenge_req(self):
         """ Process the sectioned requirements
             - concat all sections' text
             - remove stop words
             - tokenize words
         """
-        challenge_req = self.sectioned_requirements.groupby(level=1).aggregate(' '.join).apply({'requirements_by_section': remove_stop_words_from_str})
+        challenge_req = self.sectioned_requirements.groupby(level=1).aggregate(' '.join)
         challenge_req.columns = ['requirements']
-        # challenge_req = challenge_req.loc[challenge_req.requirements != '']
-        return [tokenize_str(req) for cha_id, req in challenge_req.itertuples()] if not as_dataframe else challenge_req
+        return challenge_req
+
+    # def get_challenge_req_sentences_no_overlap(self, select_overlap=False):
+    #     """ Process the sectioned requirements
+    #         - concat the distinct section
+    #         - remove stop words
+    #         - tokenize words
+
+    #         By distinct that means the section's content are lower thant the similarity threshold
+    #     """
+    #     dropping_index = [] # collect the excluded index
+    #     selective_dropping_content = []
+    #     for (project_id, section_name), similarity_score, section_freqency in self.sections_similarity.loc[self.sections_similarity.score > self.section_similarity_threshold].itertuples():
+    #         overlap_sections = self.sectioned_requirements.loc[pd.IndexSlice[project_id, :, section_name]]
+            
+    #         selective_dropping_content.append(overlap_sections.iloc[overlap_sections.requirements_by_section.str.len().argmax(), 0])
+    #         dropping_index.extend(overlap_sections.index)
+
+    #     challenge_req = self.sectioned_requirements.loc[~self.sectioned_requirements.index.isin(dropping_index)].groupby(level=1).aggregate(' '.join).apply({'requirements_by_section': remove_stop_words_from_str})
+ 
+    #     if select_overlap:
+    #         return [*[tokenize_str(req) for cha_id, req in challenge_req.itertuples()], *selective_dropping_content]
+    #     else:
+    #         return [tokenize_str(req) for cha_id, req in challenge_req.itertuples()]
 
 if __name__ == '__main__':
-    tccorpus = TopCoderCorpus('detail_requirements.json')
+    tccorpus = TopCoderCorpus()
