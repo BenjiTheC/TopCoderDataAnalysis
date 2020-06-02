@@ -8,20 +8,18 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-from gensim.models import KeyedVectors
+from gensim.models import KeyedVectors, Doc2Vec
 
 from tc_main import TopCoder
 from tc_corpus import tokenize_str
 from tc_pricing_models import train_word2vec_model, reduce_wv_dimensions, plot_word2vec, cosine_similarity, doc_vector_from_word_vectors
 
 TOPCODER = TopCoder()
-NO_OVERLAP = True
 
 class ModelBuilder:
     """ A model builder that takes in the corpus in the form of dataframe, run
         word2vec for different dimensions and measure the acurracy of a model
     """
-
 
     def __init__(self, sentences, corpus_df, base_path):
         self.sentences = sentences
@@ -36,6 +34,55 @@ class ModelBuilder:
             print(f'Training model with {dimension} dimensions...')
             train_word2vec_model(sentences=self.sentences, size=dimension, save_dir=self.model_path, suffix=f'{dimension}D')
             print('Training finished')
+
+    def train_one_doc2vec_model(self, vector_size, no_overlap=False, track=None):
+        """ Train one doc2vec model."""
+        doc2vec_corpus = TOPCODER.get_doc2vec_training_docs(no_overlap=no_overlap, track=track)
+        d2v_model = Doc2Vec(vector_size=vector_size, min_count=2, epochs=40)
+
+        d2v_model.build_vocab(doc2vec_corpus)
+        d2v_model.train(documents=doc2vec_corpus, total_examples=d2v_model.corpus_count, epochs=d2v_model.epochs)
+        d2v_model.delete_temporary_training_data(keep_doctags_vectors=True, keep_inference=True)
+        d2v_model.save(os.path.join(self.model_path, f'd2v_model_{vector_size}D'))
+
+    def build_one_pricing_models_d2v(self, vec_dimensions, no_overlap=False, track=None):
+        """ Build pricing model from d2v."""
+        challenge_actual_prize = TOPCODER.challenge_prize_avg_score.total_prize
+        challenge_actual_prize = challenge_actual_prize[challenge_actual_prize != 0]
+
+        doc2vec_training_cha_id = [doc.tags[0] for doc in TOPCODER.get_doc2vec_training_docs(no_overlap=no_overlap, track=track)]
+        valid_cha_ids = [cha_id for cha_id in challenge_actual_prize.index if cha_id in doc2vec_training_cha_id]
+
+        len_diff = abs(len(doc2vec_training_cha_id) - len(valid_cha_ids))
+
+        d2v_model = Doc2Vec.load(os.path.join(self.model_path, f'd2v_model_{vec_dimensions}D'))
+
+        challenge_estimated_prize = {}
+        for cha_id in valid_cha_ids:
+            dv = d2v_model.docvecs[cha_id]
+            top_sim_ids = [doc_id for doc_id, sim in d2v_model.docvecs.most_similar([dv], topn=11 + len_diff)]
+            ids = []
+            while len(ids) < 10:
+                curr_id = top_sim_ids.pop(0)
+                if curr_id != cha_id and curr_id in valid_cha_ids:
+                    ids.append(curr_id)
+
+            challenge_estimated_prize[cha_id] = challenge_actual_prize[challenge_actual_prize.index.isin(ids)].mean()
+
+        challenge_estimated_prize = pd.Series(challenge_estimated_prize)
+        challenge_estimated_prize.name = 'estimated_total_prize'
+
+        pricing_model_measure_df = pd.concat([challenge_estimated_prize, challenge_actual_prize[challenge_actual_prize.index.isin(challenge_estimated_prize.index)]], axis=1)
+        pricing_model_measure_df['MRE'] =\
+            (pricing_model_measure_df.total_prize - pricing_model_measure_df.estimated_total_prize).abs() / pricing_model_measure_df.total_prize
+
+        with open(os.path.join(self.measure_path, f'measure_{vec_dimensions}D.json'), 'w') as fwrite:
+            pricing_model_measure_df.reset_index().to_json(fwrite, orient='records', indent=4, index=True)
+
+        mmre = pricing_model_measure_df.MRE.mean()
+        print(f'd2v_ids: {len(doc2vec_training_cha_id)} | valid ids: {len(valid_cha_ids)} | diff: {len_diff}')
+        print(f'The mean MRE of pricing model with {vec_dimensions}-D word2vec is {mmre}')
+        print('-' * 50)
 
     def build_pricing_models(self):
         """ Build pricing models for all wv."""
@@ -117,28 +164,3 @@ class ModelBuilder:
             json.dump({cha_id: vec.tolist() for cha_id, vec in cleaned_challenge_vec.items()}, fwrite, indent=4)
 
         return cleaned_challenge_vec
-
-def main():
-    """ Main entrance."""
-    for track in ('ALL', 'DEVELOP', 'DESIGN'):
-        print('*' * 80)
-        print('*' * 20, f'Training models with {track} challenges', '*' * (20 - (len(track) - 6)))
-        print('*' * 80)
-
-        track_param = track if track != 'ALL' else None
-
-        sentences = TOPCODER.get_word2vec_training_sentences(no_overlap=NO_OVERLAP, track=track_param)
-        corpus_df = TOPCODER.get_challenge_req_remove_overlap(track=track_param)
-        model_builder = ModelBuilder(sentences=sentences, corpus_df=corpus_df, base_path=os.path.join(os.curdir, 'pricing_model_1', f'{track.lower()}_track'))
-        model_builder.iterate_word2vec_training()
-        model_builder.build_document_vectors()
-        model_builder.build_pricing_models()
-        print()
-
-if __name__ == "__main__":
-    start = datetime.now()
-    main()
-    end = datetime.now()
-    time_taken = end - start
-    print(time_taken)
-    print(f'The whole running took {time_taken.days} days {time_taken.seconds // 3600} hours {(time_taken.seconds // 60) % 60} minutes')

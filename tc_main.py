@@ -9,6 +9,8 @@ from collections import defaultdict
 import pandas as pd
 import numpy as np
 
+from gensim.models.doc2vec import TaggedDocument
+
 from tc_corpus import TopCoderCorpus, tokenize_str, remove_stop_words_from_str
 
 class TopCoder:
@@ -111,6 +113,15 @@ class TopCoder:
 
         return df_similarity_score
 
+    def doc_collocation_extraction(self, doc: str):
+        """ Detect the phrases in a doc."""
+        phraser = self.corpus.phraser
+        tokens = tokenize_str(doc)
+        # phrases = [p for p in phraser[tokens] if p not in tokens] # return a list containing phrases and single words
+
+        # return '{} {}'.format(doc, ' '.join(phrases))
+        return ' '.join(phraser[tokens])
+
     def get_corpus_section_similarity_score(self, frequency_threshold=0.5, similarity_threshold=0.5):
         """ Select the wanted similarity score for given frequency and similarity threshold"""
         return self.corpus_section_similarity.loc[(self.corpus_section_similarity.freq > frequency_threshold) & (self.corpus_section_similarity.score > similarity_threshold)]
@@ -144,11 +155,22 @@ class TopCoder:
         challenge_req.columns = ['requirements']
         return challenge_req.loc[challenge_req.index.isin(self.get_challenge_ids_by_track(track))]
 
-    def get_word2vec_training_sentences(self, no_overlap=False, track=None, remove_stop_words=True):
+    def get_word2vec_training_sentences(self, no_overlap=False, track=None, remove_stop_words=True, with_phrases=False):
         """ Return the challenge requirement text in the form of list of lists of tokens (CBOW)"""
         corpus_df = self.get_challenge_req_remove_overlap(track) if no_overlap else self.get_challenge_req(track)
+
+        if with_phrases:
+            corpus_df = corpus_df.apply({'requirements':self.doc_collocation_extraction})
 
         if remove_stop_words:
             corpus_df = corpus_df.apply({'requirements': remove_stop_words_from_str})
 
         return [tokenize_str(req) for cha_id, req in corpus_df.itertuples()]
+
+    def get_doc2vec_training_docs(self, no_overlap=False, track=None, remove_stop_words=True):
+        """ Return the challenges in the form of TaggedDoc for doc2vec training."""
+        corpus_df = self.get_challenge_req_remove_overlap(track) if no_overlap else self.get_challenge_req(track)
+        if remove_stop_words:
+            corpus_df = corpus_df.apply({'requirements': remove_stop_words_from_str})
+
+        return [TaggedDocument(tokenize_str(req), [cha_id]) for cha_id, req in corpus_df.itertuples()]

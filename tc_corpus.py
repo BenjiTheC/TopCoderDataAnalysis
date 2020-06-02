@@ -12,6 +12,8 @@ import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+from gensim.models.phrases import Phrases, Phraser
+
 from sklearn.feature_extraction.text import CountVectorizer
 from gensim.parsing.preprocessing import STOPWORDS as GENSIM_STOP_WORDS
 
@@ -69,9 +71,11 @@ class TopCoderCorpus:
 
     data_path = os.path.join(os.curdir, 'data')
     file_name = 'detail_requirements.json'
+    phraser_name = 'requirement_phraser'
 
     def __init__(self):
         self.titles, self.sectioned_requirements = self.process_detailed_req()
+        self.phraser = self.get_phraser()
 
     def process_detailed_req(self) -> (pd.DataFrame, pd.DataFrame):
         """ Process the detailed requirements from loaded json
@@ -157,6 +161,22 @@ class TopCoderCorpus:
         challenge_req = self.sectioned_requirements.groupby(level=1).aggregate(' '.join)
         challenge_req.columns = ['requirements']
         return challenge_req
+
+    def get_phraser(self):
+        """ Get trained phraser or train a new phraser to extract the phrases"""
+        phraser_path = os.path.join(self.data_path, self.phraser_name)
+
+        if os.path.isfile(phraser_path):
+            return Phraser.load(phraser_path)
+
+        challenge_req = self.get_challenge_req()
+        sentences = [tokenize_str(req) for cha_id, req in challenge_req.itertuples()]
+
+        phrases = Phrases(sentences=sentences, min_count=1, threshold=0.2, common_terms=TC_STOP_WORDS, scoring='npmi')
+        trained_phraser = Phraser(phrases)
+        trained_phraser.save(phraser_path)
+
+        return trained_phraser
 
     # def get_challenge_req_sentences_no_overlap(self, select_overlap=False):
     #     """ Process the sectioned requirements
