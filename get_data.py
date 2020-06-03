@@ -406,7 +406,7 @@ def get_challenge_basic_info(cursor):
         start date, submission start date, submission end date
         of challenges
     """
-    select_query =\
+    select_query_0 =\
         """ SELECT
                 challengeId,
                 totalPrize,
@@ -423,12 +423,12 @@ def get_challenge_basic_info(cursor):
                 FIELD(track, 'DEVELOP', 'DESIGN', 'DATA_SCIENCE'), 
                 subTrack ASC;
     """
-    cursor.execute(select_query)
+    cursor.execute(select_query_0)
 
-    challenge_basic_info = []
+    challenge_basic_info_dct = {}
     for challenge_id, total_prize, track, subtrack, reg_start_dt, reg_end_dt, sub_end_dt, num_of_reg, num_of_submission, num_of_submitters in cursor:
         print(f'Fetching basic info of challenge {challenge_id}')
-        challenge_basic_info.append({
+        challenge_basic_info_dct[challenge_id] = {
             'challenge_id': challenge_id,
             'total_prize': float(total_prize),
             'track': track,
@@ -439,7 +439,18 @@ def get_challenge_basic_info(cursor):
             'number_of_registration': int(num_of_reg),
             'number_of_submission': int(num_of_submission),
             'number_of_submitters': int(num_of_submitters)
+        }
+
+    select_query_1 = 'SELECT challengeId, platforms, technologies FROM Challenge;'
+    cursor.execute(select_query_1)
+
+    for challenge_id, platforms, technologies in cursor:
+        challenge_basic_info_dct[challenge_id].update({
+            'number_of_platforms': 0 if platforms == '' else len(platforms.split(', ')),
+            'number_of_technologies': 0 if technologies == '' else len(technologies.split(', '))
         })
+
+    challenge_basic_info = list(challenge_basic_info_dct.values())
 
     with open(os.path.join(PATH, 'challenge_basic_info.json'), 'w') as fwrite:
         json.dump(challenge_basic_info, fwrite, indent=4)
