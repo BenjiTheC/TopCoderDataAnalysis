@@ -1,6 +1,6 @@
-""" Building Pricing Model 3
-    This model is built by using Doc2Vec model to do word embedding
-    And find the top 10 most similar challenges, use the average of challenge prize as the estimate prize
+""" Building Pricing Model 2
+    Phrase detection, text mining and analogy estimation
+    top 10 most similar - **mean** of prizes
 """
 
 import os

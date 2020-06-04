@@ -30,8 +30,14 @@ def get_challenge_meta_data():
     cha_basic_info = TOPCODER.challenge_basic_info
     challenge_duration = (cha_basic_info.submission_end_date - cha_basic_info.registration_start_date).apply(lambda td: td.days)
 
-    meta_data = cha_basic_info.reindex(['number_of_registration', 'number_of_submission', 'number_of_submitters'], axis=1)
-    meta_data['challenge_duration'] = challenge_duration
+    meta_data = pd.concat(
+        [
+            cha_basic_info.reindex(['track', 'subtrack'], axis=1).apply({col_name: lambda c: c.cat.codes for col_name in ('track', 'subtrack')}),
+            cha_basic_info.reindex(['number_of_platforms', 'number_of_technologies'], axis=1),
+            challenge_duration
+        ],
+        axis=1
+    )
 
     return meta_data
 

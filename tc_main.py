@@ -29,25 +29,29 @@ class TopCoder:
         self.challenge_basic_info = self.create_df_from_json(
             self.cha_basic_info, 
             index_col='challenge_id', 
-            convert_dates=['registration_start_date', 'registration_end_date', 'submission_end_date']
+            convert_dates=['registration_start_date', 'registration_end_date', 'submission_end_date'],
+            convert_cat=['track', 'subtrack']
         )
 
         self.corpus_section_similarity = self.calculate_section_similarity()
 
-    def create_df_from_json(self, fn, orient='records', index_col=None, convert_dates=True):
+    def create_df_from_json(self, fn, orient='records', index_col=None, convert_dates=None, convert_cat=None):
         """ Read the given json file into a pandas dataframe.
             TODO: data tech_by_start_date.json is in the form of {dt: dct_of_tech_count}
                   we should convert it in to [{dt, dct_of_tech_count}] form in get_date.py
                   so that every data file retrieved from the database are in the same format
         """
         with open(os.path.join(self.data_path, fn)) as fread:
-            df = pd.read_json(fread, orient=orient, convert_dates=convert_dates)
+            df = pd.read_json(fread, orient=orient, convert_dates=convert_dates or False)
 
         if index_col:
             df.set_index(index_col, inplace=True)
             if 'date' in index_col: # convert the datetime index to datetime object
                 df.index = pd.to_datetime(df.index)
                 df.sort_index(inplace=True)
+
+        if convert_cat is not None and isinstance(convert_cat, list):
+            df[convert_cat] = df[convert_cat].astype('category')
 
         return df
 

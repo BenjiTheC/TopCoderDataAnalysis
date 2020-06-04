@@ -84,14 +84,14 @@ class ModelBuilder:
         print(f'The mean MRE of pricing model with {vec_dimensions}-D word2vec is {mmre}')
         print('-' * 50)
 
-    def build_pricing_models(self):
+    def build_pricing_models(self, statistic='mean'):
         """ Build pricing models for all wv."""
         for dimension in range(100, 1100, 100):
-            print('-' * 15, f'Pricing model 0 :: {dimension}-D', '-' * 15)
-            self.build_one_pricing_model(wv_dimensions=dimension)
+            print('-' * 15, f'Pricing model :: {dimension}-D - {statistic}', '-' * 15)
+            self.build_one_pricing_model(wv_dimensions=dimension, statistic=statistic)
             print()
 
-    def build_one_pricing_model(self, wv_dimensions):
+    def build_one_pricing_model(self, wv_dimensions, statistic='mean'):
         """ Build one pricing model with given wv."""
         with open(os.path.join(self.doc_vec_path, f'document_vec_{wv_dimensions}D.json')) as fread:
             cleaned_challenge_vec = {int(cha_id): np.array(vec) for cha_id, vec in json.load(fread).items()}
@@ -100,9 +100,6 @@ class ModelBuilder:
         challenge_actual_prize = challenge_actual_prize[challenge_actual_prize != 0] # non-zero prize challenges
         
         non_zero_prize_cha_id = [cha_id for cha_id in cleaned_challenge_vec if cha_id in challenge_actual_prize.index]
-        print(f'number of non zero price challenges {len(non_zero_prize_cha_id)}')
-
-        print(f'{len(challenge_actual_prize)} non-zero prize challenges from actual prize')
 
         # calculate consine similarity of every pair of challenges, stored in DOK
         # build a DataFrame from DOK to take advantage of outstanding performance in pandas
@@ -124,13 +121,13 @@ class ModelBuilder:
             all_challenge_similarities.index = all_challenge_similarities.index.map(lambda ids: ids[0] if ids[0] != cha_id else ids[1])
             top10_most_similar_cha = all_challenge_similarities.similarity.sort_values(ascending=False).iloc[1: 11].index
             
-            challenge_estimated_prize[cha_id] = challenge_actual_prize[challenge_actual_prize.index.isin(top10_most_similar_cha)].mean()
+            challenge_estimated_prize[cha_id] = challenge_actual_prize[challenge_actual_prize.index.isin(top10_most_similar_cha)].apply(statistic)
 
         challenge_estimated_prize = pd.Series(challenge_estimated_prize)
         challenge_estimated_prize.name = 'estimated_total_prize'
 
         # measure the accuracy of the model
-        pricing_model_measure_df = pd.concat([challenge_estimated_prize, challenge_actual_prize], axis=1)
+        pricing_model_measure_df = pd.concat([challenge_estimated_prize, challenge_actual_prize[challenge_actual_prize.index.isin(challenge_estimated_prize.index)]], axis=1)
         pricing_model_measure_df['MRE'] =\
             (pricing_model_measure_df.total_prize - pricing_model_measure_df.estimated_total_prize).abs() / pricing_model_measure_df.total_prize
 
@@ -161,6 +158,6 @@ class ModelBuilder:
         cleaned_challenge_vec = {cha_id: vec for cha_id, vec in challenge_vec.items() if cha_id not in zero_vector}
 
         with open(os.path.join(self.doc_vec_path, f'document_vec_{wv_dimensions}D.json'), 'w') as fwrite:
-            json.dump({cha_id: vec.tolist() for cha_id, vec in cleaned_challenge_vec.items()}, fwrite, indent=4)
+            json.dump({cha_id: vec.tolist() for cha_id, vec in cleaned_challenge_vec.items()}, fwrite)
 
         return cleaned_challenge_vec
