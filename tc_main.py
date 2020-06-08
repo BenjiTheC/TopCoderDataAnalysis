@@ -23,6 +23,22 @@ class TopCoder:
     cha_prz_fn = 'challenge_prz_and_score.json'
     cha_basic_info = 'challenge_basic_info.json'
 
+    develop_challenge_prize_range = {
+        'FIRST_2_FINISH': (0, 600),
+        'CODE': (250, 2500),
+        'ASSEMBLY_COMPETITION': (750, 2750),
+        'BUG_HUNT': (0, 750),
+        'UI_PROTOTYPE_COMPETITION': (1250, 2750),
+        'ARCHITECTURE': (1500, 3000),
+        'DEVELOP_MARATHON_MATCH': (1000, 1750),
+        'COPILOT_POSTING': (150, 300),
+        'TEST_SUITES': (500, 2000),
+        'TEST_SCENARIOS': (500, 2000),
+        'SPECIFICATION': (1500, 3000),
+        'CONTENT_CREATION': (500, 2000),
+        'CONCEPTUALIZATION': (1500, 2000)
+    }
+
     def __init__(self):
         self.corpus = TopCoderCorpus()
         self.challenge_prize_avg_score = self.create_df_from_json(self.cha_prz_fn, index_col='challenge_id')
@@ -51,7 +67,7 @@ class TopCoder:
                 df.sort_index(inplace=True)
 
         if convert_cat is not None and isinstance(convert_cat, list):
-            df[convert_cat] = df[convert_cat].astype('category')
+            df[[f'{col}_category' for col in convert_cat]] = df[convert_cat].astype('category')
 
         return df
 
@@ -137,12 +153,16 @@ class TopCoder:
         else:
             return self.challenge_basic_info.index
 
-    def get_challenge_req(self, track=None):
+    def get_challenge_req(self, track=None, index_filter=None):
         """ Get the challenge requirements, apply track filter if one is given."""
         challenge_req = self.corpus.get_challenge_req()
+
+        if index_filter is not None:
+            challenge_req = challenge_req.loc[challenge_req.index.isin(index_filter)]
+
         return challenge_req.loc[challenge_req.index.isin(self.get_challenge_ids_by_track(track))]
 
-    def get_challenge_req_remove_overlap(self, track=None):
+    def get_challenge_req_remove_overlap(self, track=None, index_filter=None):
         """ Get the challenge requirements with duplicate sections removed."""
         challenge_req_sec = self.corpus.sectioned_requirements
         sec_sim_score = self.get_corpus_section_similarity_score()
@@ -157,11 +177,15 @@ class TopCoder:
 
         challenge_req = challenge_req_sec.loc[~challenge_req_sec.index.isin(dropping_index)].groupby(level=1).aggregate(' '.join)
         challenge_req.columns = ['requirements']
+
+        if index_filter is not None:
+            challenge_req = challenge_req.loc[challenge_req.index.isin(index_filter)]
+
         return challenge_req.loc[challenge_req.index.isin(self.get_challenge_ids_by_track(track))]
 
-    def get_word2vec_training_sentences(self, no_overlap=False, track=None, remove_stop_words=True, with_phrases=False):
+    def get_word2vec_training_sentences(self, no_overlap=False, track=None, remove_stop_words=True, with_phrases=False, index_filter=None):
         """ Return the challenge requirement text in the form of list of lists of tokens (CBOW)"""
-        corpus_df = self.get_challenge_req_remove_overlap(track) if no_overlap else self.get_challenge_req(track)
+        corpus_df = self.get_challenge_req_remove_overlap(track=track, index_filter=index_filter) if no_overlap else self.get_challenge_req(track=track, index_filter=index_filter)
 
         if with_phrases:
             corpus_df = corpus_df.apply({'requirements':self.doc_collocation_extraction})
@@ -178,3 +202,13 @@ class TopCoder:
             corpus_df = corpus_df.apply({'requirements': remove_stop_words_from_str})
 
         return [TaggedDocument(tokenize_str(req), [cha_id]) for cha_id, req in corpus_df.itertuples()]
+
+    def get_handpick_dev_cha_id(self):
+        """ Get the challenge ids based on handpick prize range."""
+        cbi_df = self.challenge_basic_info.loc[self.challenge_basic_info.total_prize > 0] # reduce the length of code each line ;-)
+        return pd.concat([
+            cbi_df.loc[
+                (cbi_df.subtrack == subtrack) & 
+                (low <= cbi_df.total_prize) & 
+                (cbi_df.total_prize <= high)
+            ] for subtrack, (low, high) in self.develop_challenge_prize_range.items()]).index

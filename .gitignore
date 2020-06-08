@@ -3,7 +3,7 @@
 models/
 ml_models/
 document_vec/
-*_bak/
+*_bak*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

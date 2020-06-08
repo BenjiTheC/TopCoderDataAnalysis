@@ -25,6 +25,10 @@ def get_path_by_track_and_dimension(track, dimension):
     """ Get document vector path by track and doc vec dimension."""
     return os.path.join(os.curdir, 'pricing_model_0', f'{track}_track', 'document_vec', f'document_vec_{dimension}D.json')
 
+def get_path_handpick_challenge(no_overlap, with_phrase):
+    """ Get document vector path from pricing model 4"""
+    return os.path.join(os.curdir, 'pricing_model_4', 'document_vec', f'document_vec_{str(no_overlap)[0]}{str(with_phrase)[0]}_100D.json')
+
 def get_challenge_meta_data():
     """ Return challenge meta data in pandas DataFrame."""
     cha_basic_info = TOPCODER.challenge_basic_info
@@ -32,7 +36,7 @@ def get_challenge_meta_data():
 
     meta_data = pd.concat(
         [
-            cha_basic_info.reindex(['track', 'subtrack'], axis=1).apply({col_name: lambda c: c.cat.codes for col_name in ('track', 'subtrack')}),
+            cha_basic_info.reindex(['subtrack_category'], axis=1).apply({'subtrack_category': lambda c: c.cat.codes}),
             cha_basic_info.reindex(['number_of_platforms', 'number_of_technologies'], axis=1),
             challenge_duration
         ],
@@ -43,8 +47,9 @@ def get_challenge_meta_data():
 
 def KNN_10Fold_training(doc_vec_path):
     """ Train KNN with 10-fold cross validation."""
+    handpick_cha_ids = TOPCODER.get_handpick_dev_cha_id()
     with open(doc_vec_path) as fread:
-        doc_vec = {int(cha_id): np.array(vec) for cha_id, vec in json.load(fread).items() if int(cha_id) in ACTUAL_PRIZE.index}
+        doc_vec = {int(cha_id): np.array(vec) for cha_id, vec in json.load(fread).items() if int(cha_id) in ACTUAL_PRIZE.index and int(cha_id) in handpick_cha_ids}
 
     challenge_meta_data = get_challenge_meta_data()
 
@@ -52,14 +57,21 @@ def KNN_10Fold_training(doc_vec_path):
     X = np.stack([np.concatenate([vec, challenge_meta_data.loc[cha_id].to_numpy()]) for cha_id, vec in doc_vec.items()])
     y = np.array([TOPCODER.challenge_basic_info.total_prize[cha_id] for cha_id in doc_vec.keys()]) # float is not suitable for KNN
 
+    print(X.shape, y.shape)
+
+    challenge_id_vec = np.array(list(doc_vec.keys()))
+
     label_encoder = LabelEncoder() # encoder for conversion of the float prize to integer index
     label_encoder.fit(y)
 
     k_fold = KFold(n_splits=10)
-    result = {'mean': [], 'median': []}
+    result = []
+    # result_cha_id = []
     for idx, (train_idx, test_idx) in enumerate(k_fold.split(X)):
         X_train, X_test = X[train_idx], X[test_idx]
         y_train, y_test = y[train_idx], y[test_idx]
+
+        # result_cha_id.extend(challenge_id_vec[test_idx])
 
         knn_classifier = KNeighborsClassifier(n_neighbors=10, weights='distance')
         knn_classifier.fit(X_train, label_encoder.transform(y_train))
@@ -67,16 +79,12 @@ def KNN_10Fold_training(doc_vec_path):
         y_predict = label_encoder.inverse_transform(knn_classifier.predict(X_test)) # the result of prediction is index of prize
 
         mre = np.absolute(y_test - y_predict) / y_test
-        result['mean'].append(mre.mean())
-        result['median'].append(np.median(mre))
+        result.append(mre.mean())
 
-        print('{} :: Mean of MRE: {:.3f} | Median of MRE: {:.3f}'.format(idx, mre.mean(), np.median(mre)))
+    avg_mean_mre = sum(result) / len(result)
+    print(f'\nAverage of Mean MRE: {avg_mean_mre:.3f}\n')
 
-    avg_mean_mre = sum(result['mean']) / len(result['mean'])
-    avg_median_mre = sum(result['median']) / len(result['median'])
-    print(f'\nAverage of Mean MRE: {avg_mean_mre:.3f}\nAverage of Median MRE: {avg_median_mre:.3f}\n')
-
-    return (avg_mean_mre, avg_median_mre)
+    return avg_mean_mre
 
 def main():
     """ Main entrance."""
@@ -86,11 +94,26 @@ def main():
         for dimension in range(100, 1100, 100):
             print('=' * 10, f'Training {dimension} dimension', '=' * 10)
             doc_vec_path = get_path_by_track_and_dimension(track, dimension)
-            mean_mre, median_mre = KNN_10Fold_training(doc_vec_path)
-            pm3_accuraccy[track][dimension] = {'Mean_MRE': mean_mre, 'Median_MRE': median_mre}
+            mean_mre = KNN_10Fold_training(doc_vec_path)
+            pm3_accuraccy[track][dimension] = mean_mre
 
     with open(os.path.join(os.curdir, 'pricing_model_3', 'knn_pricing_model_measure.json'), 'w') as fwrite:
         json.dump(pm3_accuraccy, fwrite, indent=4)
 
+def main_pm4():
+    """ Main entrance for pricing model 4"""
+    pm4_accuraccy = defaultdict(dict)
+    for no_overlap in (False, True):
+        for with_phrase in (False, True):
+            print('=' * 10, f'KNN training | NO_OVERLAP = {no_overlap} | WITH_PHRASE = {with_phrase}', '=' * 10)
+            doc_vec_path = get_path_handpick_challenge(no_overlap, with_phrase)
+            mean_mre = KNN_10Fold_training(doc_vec_path)
+            pm4_accuraccy[f'no_overlap_{no_overlap}'][f'with_phrase_{with_phrase}'] = mean_mre
+
+    
+    with open(os.path.join(os.curdir, 'pricing_model_4', 'measures', 'knn_pricing_model_measure.json'), 'w') as fwrite:
+        json.dump(pm4_accuraccy, fwrite, indent=4)
+
 if __name__ == '__main__':
+    # main_pm4()
     main()
