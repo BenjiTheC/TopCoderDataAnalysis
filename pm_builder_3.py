@@ -27,7 +27,7 @@ def get_path_by_track_and_dimension(track, dimension):
 
 def get_path_handpick_challenge(no_overlap, with_phrase):
     """ Get document vector path from pricing model 4"""
-    return os.path.join(os.curdir, 'pricing_model_4', 'document_vec', f'document_vec_{str(no_overlap)[0]}{str(with_phrase)[0]}_100D.json')
+    return os.path.join(os.curdir, 'pricing_model_4', 'document_vec', f'document_vec_{str(no_overlap)[0]}{str(with_phrase)[0]}_600D.json')
 
 def get_challenge_meta_data():
     """ Return challenge meta data in pandas DataFrame."""
@@ -36,8 +36,9 @@ def get_challenge_meta_data():
 
     meta_data = pd.concat(
         [
-            cha_basic_info.reindex(['subtrack_category'], axis=1).apply({'subtrack_category': lambda c: c.cat.codes}),
-            cha_basic_info.reindex(['number_of_platforms', 'number_of_technologies'], axis=1),
+            # cha_basic_info.reindex(['subtrack_category'], axis=1).apply({'subtrack_category': lambda c: c.cat.codes}),
+            # cha_basic_info.reindex(['number_of_platforms'], axis=1),
+            # cha_basic_info.reindex(['number_of_technologies'], axis=1),
             challenge_duration
         ],
         axis=1
@@ -47,9 +48,8 @@ def get_challenge_meta_data():
 
 def KNN_10Fold_training(doc_vec_path):
     """ Train KNN with 10-fold cross validation."""
-    handpick_cha_ids = TOPCODER.get_handpick_dev_cha_id()
     with open(doc_vec_path) as fread:
-        doc_vec = {int(cha_id): np.array(vec) for cha_id, vec in json.load(fread).items() if int(cha_id) in ACTUAL_PRIZE.index and int(cha_id) in handpick_cha_ids}
+        doc_vec = {int(cha_id): np.array(vec) for cha_id, vec in json.load(fread).items() if int(cha_id) in ACTUAL_PRIZE.index}
 
     challenge_meta_data = get_challenge_meta_data()
 
@@ -80,6 +80,7 @@ def KNN_10Fold_training(doc_vec_path):
 
         mre = np.absolute(y_test - y_predict) / y_test
         result.append(mre.mean())
+        print(f'round {idx} mmre: {mre.mean()}')
 
     avg_mean_mre = sum(result) / len(result)
     print(f'\nAverage of Mean MRE: {avg_mean_mre:.3f}\n')
@@ -89,7 +90,7 @@ def KNN_10Fold_training(doc_vec_path):
 def main():
     """ Main entrance."""
     pm3_accuraccy = defaultdict(dict)
-    for track in ('all', 'develop', 'design'):
+    for track in ('develop', ):#('all', 'develop', 'design'):
         print('=' * 15, f' Training {track} track ', '=' * 15)
         for dimension in range(100, 1100, 100):
             print('=' * 10, f'Training {dimension} dimension', '=' * 10)
@@ -97,7 +98,7 @@ def main():
             mean_mre = KNN_10Fold_training(doc_vec_path)
             pm3_accuraccy[track][dimension] = mean_mre
 
-    with open(os.path.join(os.curdir, 'pricing_model_3', 'knn_pricing_model_measure.json'), 'w') as fwrite:
+    with open(os.path.join(os.curdir, 'pricing_model_3', 'knn_pricing_model_measure_4.json'), 'w') as fwrite:
         json.dump(pm3_accuraccy, fwrite, indent=4)
 
 def main_pm4():
