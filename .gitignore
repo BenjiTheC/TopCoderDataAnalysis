@@ -3,6 +3,7 @@
 models/
 ml_models/
 document_vec/
+training_data/
 *_bak*
 
 # Byte-compiled / optimized / DLL files

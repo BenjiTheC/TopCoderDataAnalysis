@@ -22,6 +22,8 @@ class TopCoder:
     corpus_section_similarity_path = os.path.join(data_path, 'corpus_section_similarity.json')
     cha_prz_fn = 'challenge_prz_and_score.json'
     cha_basic_info = 'challenge_basic_info.json'
+    tech_by_cha = 'tech_by_challenge.json'
+    doc_vec_path = os.path.join(os.curdir, 'pricing_model_0', 'develop_track', 'document_vec', 'document_vec_100D.json')
 
     develop_challenge_prize_range = {
         'FIRST_2_FINISH': (0, 600),
@@ -70,6 +72,39 @@ class TopCoder:
             df[[f'{col}_category' for col in convert_cat]] = df[convert_cat].astype('category')
 
         return df
+
+    def get_filtered_challenge_basic_info(self):
+        """ Return challenge meta data of challenges in handpicked challenges of develop track"""
+        with open(self.doc_vec_path) as f:
+            valid_doc_vec_ids = list(json.load(f).keys())
+
+        handpick_cha_id = self.get_handpick_dev_cha_id()
+        dev_track_challenges = self.get_challenge_req(track='develop')
+        
+        self.challenge_basic_info['challenge_duration'] = (self.challenge_basic_info.submission_end_date - self.challenge_basic_info.registration_start_date).apply(lambda td: td.days)
+        
+        filter_index = dev_track_challenges.loc[dev_track_challenges.index.isin(handpick_cha_id) & dev_track_challenges.index.isin(valid_doc_vec_ids)].index
+        return self.challenge_basic_info.loc[(self.challenge_basic_info.challenge_duration >= 0) & self.challenge_basic_info.index.isin(filter_index)].copy()
+
+    def get_tech_popularity(self):
+        """ Get technology count for filtered challenges"""
+        filtered_cha = self.get_filtered_challenge_basic_info()
+        with open(os.path.join(self.data_path, self.tech_by_cha)) as f:
+            tech_by_cha = json.load(f)
+
+        tech_popularity = defaultdict(int)
+        for cha in tech_by_cha:
+            if cha['challenge_id'] in filtered_cha.index:
+                for tech in cha['tech_lst']:
+                    if 'angular' in tech.lower():
+                        tech_popularity['angularjs'] += 1
+                    else:
+                        tech_popularity[tech.lower()] += 1
+
+        tech_popularity_df = pd.Series(tech_popularity).sort_values(ascending=False).to_frame().reset_index()
+        tech_popularity_df.columns = ['tech_name', 'tech_popularity']
+
+        return tech_popularity_df
 
     def get_similarity_score(self, lst_of_str):
         """ Calculate the simliarity scroe from a list of strings"""
