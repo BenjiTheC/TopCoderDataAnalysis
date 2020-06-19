@@ -3,6 +3,7 @@
 models/
 ml_models/
 document_vec/
+round*/
 training_data/
 *_bak*
 
