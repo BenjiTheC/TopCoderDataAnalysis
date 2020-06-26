@@ -10,54 +10,48 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 from tc_main import TopCoder
+from pair_cha_imbl_learning import PP_DATA
 
 TOPCODER = TopCoder()
 FILT_CHA_INFO = TOPCODER.get_filtered_challenge_basic_info()
-RANDOM_INDEX = pd.Series(FILT_CHA_INFO.index).sample(n=568)
 
-RANDOM_INDEX.to_json('temp_random_index.json')
+def prz_estimation_from_prob(y_prob_path, target_ids: list):
+    """ Estimate challenge prize from top most confident predictions."""
+    prob_df = pd.read_json(y_prob_path, orient='records').set_index(['l0', 'l1'])
 
-def grow_forest():
-    """ Grow random forest."""
-    n_estimators = 100
-    rf_clf = RandomForestClassifier(n_jobs=-1, warm_start=True)
-    X_test, y_test = [], []
+    prz_estimation = []
+    for cha_id in target_ids:
+        cha_pair = prob_df.loc[(prob_df.index.get_level_values(0) == cha_id) | (prob_df.index.get_level_values(1) == cha_id)].copy()
+        cha_pair.index = cha_pair.index.map(lambda cha_ids: cha_ids[0] if cha_ids[0] != cha_id else cha_ids[1])
 
-    for i in range(1, 163):
-        X_df = pd.read_json(f'pricing_model_6/training_data/ridx_process_X_{i}.json').set_index(['level_0', 'level_1'])
-        y_df = pd.read_json(f'pricing_model_6/training_data/ridx_process_y_{i}.json').set_index(['level_0', 'level_1'])
+        top_one_cha_ids = cha_pair['1'].sort_values(ascending=False).head(51).index
+        prz_estimation.append({
+            'challenge_id': cha_id,
+            'actual': FILT_CHA_INFO.total_prize[cha_id],
+            'median': FILT_CHA_INFO.total_prize[FILT_CHA_INFO.index.isin(top_one_cha_ids)].median(),
+            'mean': FILT_CHA_INFO.total_prize[FILT_CHA_INFO.index.isin(top_one_cha_ids)].mean()
+        })
 
-        X = X_df.loc[~X_df.index.get_level_values(0).isin(RANDOM_INDEX) & ~X_df.index.get_level_values(1).isin(RANDOM_INDEX)].copy().to_numpy()
-        y = y_df.loc[~y_df.index.get_level_values(0).isin(RANDOM_INDEX) & ~y_df.index.get_level_values(1).isin(RANDOM_INDEX)].copy().to_numpy().ravel()
+    return prz_estimation
 
-        X_test.append(X_df.loc[X_df.index.get_level_values(0).isin(RANDOM_INDEX) | X_df.index.get_level_values(1).isin(RANDOM_INDEX)].copy())
-        y_test.append(y_df.loc[y_df.index.get_level_values(0).isin(RANDOM_INDEX) | y_df.index.get_level_values(1).isin(RANDOM_INDEX)].copy())
+def estimate_and_measure_prize(res_folder):
+    """ Estimate the prize from prediction result."""
+    with open(PP_DATA['splt_cha']) as f:
+        split_cha_id = json.load(f)
 
-        print(f'Training round #{i}: X shape {X.shape} | y shape {y.shape} | n_estimator {rf_clf.n_estimators}: {n_estimators}', end='\r')
+    whole_prz_estimation = []
+    for idx, target_ids in enumerate(split_cha_id):
+        whole_prz_estimation.extend(prz_estimation_from_prob(os.path.join(res_folder, f'y_prob_{idx}.json'), target_ids))
 
-        rf_clf.set_params(n_estimators=n_estimators)
-        rf_clf.fit(X, y)
-        n_estimators += 10
+    prz_estimation_df = pd.DataFrame.from_records(whole_prz_estimation)
+    prz_estimation_df.to_json(os.path.join(res_folder, 'prz_estimation.json'))
+    mmre_median = ((prz_estimation_df['actual'] - prz_estimation_df['median']).abs() / prz_estimation_df['actual']).mean()
+    mmre_mean = ((prz_estimation_df['actual'] - prz_estimation_df['mean']).abs() / prz_estimation_df['actual']).mean()
 
-    X_test, y_test = pd.concat(X_test), pd.concat(y_test)
-    print(f'\nX_test shape: {X_test.shape} | y_test shape: {y_test.shape}')
-
-    clf_score = rf_clf.score(X_test.to_numpy(), y_test.to_numpy().ravel())
-    print(f'Classifier score: {clf_score}')
-    y_pred = rf_clf.predict(X_test.to_numpy())
-    y_prob = rf_clf.predict_proba(X_test.to_numpy())
-
-    y_test['y_pred'] = y_pred
-    y_test.reset_index().to_json('pricing_model_6/temp_y_pred.json')
-
-    y_prob_df = pd.DataFrame(y_prob, index=y_test.index)
-    y_prob_df.to_json('pricing_model_6/temp_y_prob.json')
-
-    with open('pricing_model_6/rf_clf', 'wb') as fwrite:
-        pickle.dump(rf_clf, fwrite)
+    print(f'MMRE median: {mmre_median}\n MMRE mean: {mmre_mean}')
 
 if __name__ == '__main__':
     start = datetime.now()
-    grow_forest()
+    estimate_and_measure_prize(os.path.join(os.curdir, 'pricing_model_6', 'round1_res', 'rus'))
     end = datetime.now()
     print(end - start)

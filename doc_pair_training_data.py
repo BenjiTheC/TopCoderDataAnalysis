@@ -16,7 +16,8 @@ import pandas as pd
 from tc_main import TopCoder
 from tc_pricing_models import cosine_similarity
 
-DATA_PATH = os.path.join(os.curdir, 'pricing_model_6', 'training_data')
+DATA_PATH = os.path.join(os.curdir, 'pricing_model_6', 'training_data_segments')
+TRAINING_DATA_PATH = os.path.join(os.curdir, 'pricing_model_6', 'round1')
 
 TOPCODER = TopCoder()
 FILTERED_CHALLENGE_INFO = TOPCODER.get_filtered_challenge_basic_info()
@@ -24,8 +25,8 @@ CHALLENGE_ID_COMBINATION = lambda: itertools.combinations(FILTERED_CHALLENGE_INF
 
 SUBTRACK_COMB = [sorted(subtrack_comb) for subtrack_comb in itertools.combinations_with_replacement(FILTERED_CHALLENGE_INFO.subtrack.unique(), 2)]
 TECH_COMB = \
-    [sorted(tech_comb) for tech_comb in itertools.combinations_with_replacement(TOPCODER.get_tech_popularity().head(30).tech_name, 2)] +\
-    TOPCODER.get_tech_popularity().head(30).tech_name.to_list()
+    [sorted(tech_comb) for tech_comb in itertools.combinations_with_replacement(TOPCODER.get_tech_popularity().head(5).tech_name, 2)] +\
+    TOPCODER.get_tech_popularity().head(5).tech_name.to_list()
 
 TOP5_SUBTRACK = list(FILTERED_CHALLENGE_INFO.subtrack.value_counts().sort_values(ascending=False).head(5).index)
 SUBTRACK_DEDUCTED = [*TOP5_SUBTRACK, 'OTHER']
@@ -45,6 +46,7 @@ TECH_CAT_COMB =\
 
 NUM_OF_COMB = int(len(FILTERED_CHALLENGE_INFO) * (len(FILTERED_CHALLENGE_INFO) - 1) * 0.5)
 
+# Round 0
 def calculate_cosine_similarity(doc_vec_path):
     """ Calculate the cosine similarity of every pair of documents."""
     with open(doc_vec_path) as f:
@@ -244,7 +246,7 @@ def validate_challenge_id_pair():
         print(f'Checking files suffix {suffix}')
         cha_dct = {}
 
-        for fn in 'meta_data_diff', 'subtrack_comb', 'tech_comb', 'cos_sim', 'subtrack_comb_dd', 'tech_cat_comb':
+        for fn in 'meta_data_diff', 'cos_sim', 'tech_comb_vec', 'st_comb_vec':
             with open(os.path.join(DATA_PATH, f'{fn}_{suffix}.json')) as f:
                 cha_dct[fn] = [(int(cha['l0']), int(cha['l1'])) for cha in json.load(f)]
 
@@ -310,6 +312,114 @@ def construct_training_data_round_0():
 
     return X, y
 
+# Round 1 
+
+def build_tech_comb_vector():
+    """ Build technology combination vector."""
+    with open(os.path.join(os.curdir, 'data', 'tech_by_challenge_clean.json')) as fread:
+        tech_by_cha = {cha['challenge_id']: cha['tech_lst'] for cha in json.load(fread) if cha['challenge_id'] in FILTERED_CHALLENGE_INFO.index}
+
+    print('Dimension of tech comb: ', TECH_COMB)
+    tech_comb_lst = []
+    file_size = 100000
+    for idx, (cha_id_a, cha_id_b) in enumerate(CHALLENGE_ID_COMBINATION()):
+        tech_comb = {'l0': cha_id_a, 'l1': cha_id_b}
+        tech_lst_a = None if cha_id_a not in tech_by_cha else tech_by_cha[cha_id_a]
+        tech_lst_b = None if cha_id_b not in tech_by_cha else tech_by_cha[cha_id_b]
+
+        if tech_lst_a is None and tech_lst_b is None:
+            tech_comb['tech_comb_vec'] = np.zeros(len(TECH_COMB), dtype=int)
+        elif tech_lst_a is None or tech_lst_b is None:
+            tech_comb['tech_comb_vec'] = render_vector(len(TECH_COMB), [TECH_COMB.index(t) for t in tech_lst_a or tech_lst_b])
+        else:
+            tech_comb['tech_comb_vec'] = render_vector(len(TECH_COMB), [TECH_COMB.index(sorted((ta, tb))) for ta in tech_lst_a for tb in tech_lst_b])
+
+        tech_comb_lst.append(tech_comb)
+
+        if (idx + 1) % file_size == 0:
+            print(f'No.{idx + 1 - file_size} - No.{idx} comb. {idx + 1}/{NUM_OF_COMB}', end=' ')
+            vec_df = pd.DataFrame(tech_comb_lst).set_index(['l0', 'l1'])
+            print(f'Shape of vec_df: {vec_df.shape}', end=' ')
+            expd_vec_df = pd.DataFrame.from_records(vec_df['tech_comb_vec'].to_list(), index=vec_df.index).reset_index()
+            print(f'Shape of expd_vec_df: {expd_vec_df.shape}', end='\r')
+            expd_vec_df.to_json(os.path.join(DATA_PATH, f'tech_comb_vec_{(idx + 1) // file_size}.json'), orient='records')
+            tech_comb_lst = []
+
+    if tech_comb_lst != []:
+        print(f'Save last {len(tech_comb_lst)} records', end=' ')
+        vec_df = pd.DataFrame(tech_comb_lst).set_index(['l0', 'l1'])
+        print(f'Shape of vec_df: {vec_df.shape}', end=' ')
+        expd_vec_df = pd.DataFrame.from_records(vec_df['tech_comb_vec'].to_list(), index=vec_df.index).reset_index()
+        print(f'Shape of expd_vec_df: {expd_vec_df.shape}', end='\r')
+        expd_vec_df.to_json(os.path.join(DATA_PATH, f'tech_comb_vec_{NUM_OF_COMB // file_size + 1}.json'), orient='records')
+
+def build_subtrack_comb_vector():
+    """ Build subtrack combination vector."""
+    subtrack_series = FILTERED_CHALLENGE_INFO['subtrack'].copy()
+    subtrack_series.loc[~subtrack_series.isin(TOP5_SUBTRACK)] = 'OTHER'
+    file_size = 100000
+
+    print('subtrack \'OTHER\' amount: ', len(subtrack_series.loc[subtrack_series == 'OTHER']))
+
+    subtrack_comb_lst = []
+    for idx, (cha_id_a, cha_id_b) in enumerate(CHALLENGE_ID_COMBINATION()):
+        subtrack_comb_lst.append({
+            'l0': cha_id_a,
+            'l1': cha_id_b,
+            'st_comb_vec': render_vector(len(SUBTRACK_DEDUCTED_COMB), SUBTRACK_DEDUCTED_COMB.index(sorted([subtrack_series[cha_id_a], subtrack_series[cha_id_b]])))
+        })
+
+        if (idx + 1) % file_size == 0:
+            print(f'No.{idx + 1 - file_size} - No.{idx} comb. {idx + 1}/{NUM_OF_COMB}', end=' | ')
+            vec_df = pd.DataFrame(subtrack_comb_lst).set_index(['l0', 'l1'])
+            print(f'Shape of vec_df: {vec_df.shape}', end=' | ')
+            expd_vec_df = pd.DataFrame.from_records(vec_df['st_comb_vec'].to_list(), index=vec_df.index).reset_index()
+            print(f'Shape of expd_vec_df: {expd_vec_df.shape}', end='\r')
+            expd_vec_df.to_json(os.path.join(DATA_PATH, f'st_comb_vec_{(idx + 1) // file_size}.json'), orient='records')
+            subtrack_comb_lst = []
+
+    if subtrack_comb_lst != []:
+        print(f'\nSaving one last file: {len(subtrack_comb_lst)} records', end=' | ')
+        vec_df = pd.DataFrame(subtrack_comb_lst).set_index(['l0', 'l1'])
+        print(f'Shape of vec_df: {vec_df.shape}', end=' | ')
+        expd_vec_df = pd.DataFrame.from_records(vec_df['st_comb_vec'].to_list(), index=vec_df.index).reset_index()
+        print(f'Shape of expd_vec_df: {expd_vec_df.shape}           ', end='\r')
+        expd_vec_df.to_json(os.path.join(DATA_PATH, f'st_comb_vec_{NUM_OF_COMB // file_size + 1}.json'), orient='records')
+
+def construct_X(file_idx):
+    """ Construct training data X"""
+    meta_data_optimum = pd.read_json(os.path.join(os.curdir, 'pricing_model_6', 'meta_data_stat.json')).loc[['min', 'max']].drop('prz_diff', axis=1)
+    md_intv_dct = {col: np.linspace(meta_data_optimum.loc['min', col], meta_data_optimum.loc['max', col], 11)[:-1] for col in meta_data_optimum.columns}
+
+    cos_sim_df = pd.read_json(os.path.join(DATA_PATH, f'cos_sim_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
+    md_diff_df = pd.read_json(os.path.join(DATA_PATH, f'meta_data_diff_{file_idx}.json'), orient='records').set_index(['l0', 'l1']).reindex(['pltf_diff', 'techn_diff', 'dura_diff'], axis=1)
+    st_comb_vec_df = pd.read_json(os.path.join(DATA_PATH, f'st_comb_vec_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
+    tech_comb_vec_df = pd.read_json(os.path.join(DATA_PATH, f'tech_comb_vec_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
+
+    md_mapped_df = md_diff_df.apply({col: lambda v: render_vector(10, np.searchsorted(intv, v, side='right') - 1) for col, intv in md_intv_dct.items()})
+    md_vec_df = pd.concat([pd.DataFrame.from_records(md_mapped_df[col], index=md_mapped_df.index) for col in md_mapped_df.columns], axis=1, ignore_index=True) 
+
+    X = pd.concat([cos_sim_df, md_vec_df, st_comb_vec_df, tech_comb_vec_df], axis=1, ignore_index=True)
+    X.reset_index().to_json(os.path.join(TRAINING_DATA_PATH, f'X_{file_idx}.json'), orient='records')
+    print(f'#{file_idx}: X shape: {X.shape}', end='\r')
+
+def construct_y(file_idx, threshold):
+    """ Construct training data y"""
+    prz_diff = pd.read_json(os.path.join(DATA_PATH, f'meta_data_diff_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])['prz_diff']
+    y = (prz_diff <= threshold).astype(int)
+    y.reset_index().to_json(os.path.join(TRAINING_DATA_PATH, f'y_{file_idx}.json'), orient='records')
+    print(f'#{file_idx}: y shape: {y.shape}', end='\r')
+
+def construct_Xy():
+    """ Construct training data X and y"""
+    print('\nConstructing X')
+    for i in range(1, 163):
+        construct_X(i)
+
+    print('\nConstructing y')
+    for i in range(1, 163):
+        construct_y(i, 50)
+
 def reindex_training_data():
     """ When storing multiindex dataframe/series, don't forget to reset_index before to_json
         Or you will need this function
@@ -347,6 +457,9 @@ if __name__ == '__main__':
     # validate_challenge_id_pair()
     # construct_training_data()
     # reindex_training_data()
-    concat_training_data()
+    # concat_training_data()
+    # build_tech_comb_vector()
+    # build_subtrack_comb_vector()
+    construct_Xy()
     end = datetime.now()
     print(end - start)
