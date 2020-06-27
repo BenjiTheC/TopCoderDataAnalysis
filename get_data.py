@@ -409,6 +409,7 @@ def get_challenge_basic_info(cursor):
     select_query_0 =\
         """ SELECT
                 challengeId,
+                projectId,
                 totalPrize,
                 track,
                 subTrack,
