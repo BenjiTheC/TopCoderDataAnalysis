@@ -67,6 +67,8 @@ def get_train_test_Xy(X: pd.DataFrame, y: pd.DataFrame, chunk_idx: int):
 
 def main():
     """ Main entrance."""
+    print('Spliting challenges')
+    split_challenges()
     print('Reading X...')
     X = pd.concat([pd.read_json(XY_PATH['X'].format(i), orient='records') for i in range(1, 163)]).set_index(['l0', 'l1'])
     print('Reading y...')

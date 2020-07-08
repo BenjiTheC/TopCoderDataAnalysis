@@ -15,6 +15,8 @@ from pair_cha_imbl_learning import PP_DATA
 TOPCODER = TopCoder()
 FILT_CHA_INFO = TOPCODER.get_filtered_challenge_basic_info()
 
+# Round 1
+
 def prz_estimation_from_prob(y_prob_path, target_ids: list):
     """ Estimate challenge prize from top most confident predictions."""
     prob_df = pd.read_json(y_prob_path, orient='records').set_index(['l0', 'l1'])
@@ -50,8 +52,22 @@ def estimate_and_measure_prize(res_folder):
 
     print(f'MMRE median: {mmre_median}\n MMRE mean: {mmre_mean}')
 
+# Round 2
+
+def extract_abs_metadata():
+    """ Extract challenges metadata."""
+    subtrack_code = FILT_CHA_INFO['subtrack_category'].cat.codes
+    subtrack_code.name = 'subtrack_code'
+
+    return pd.concat([FILT_CHA_INFO.reindex(['number_of_platforms', 'number_of_technologies', 'project_id'], axis=1), subtrack_code], axis=1)
+
+def get_Xy():
+    """ Return the dataset of X and y for model training"""
+    return extract_abs_metadata(), FILT_CHA_INFO['total_prize']
+
 if __name__ == '__main__':
     start = datetime.now()
+    estimate_and_measure_prize(os.path.join(os.curdir, 'pricing_model_6', 'round1_res', 'brf'))
     estimate_and_measure_prize(os.path.join(os.curdir, 'pricing_model_6', 'round1_res', 'rus'))
     end = datetime.now()
     print(end - start)

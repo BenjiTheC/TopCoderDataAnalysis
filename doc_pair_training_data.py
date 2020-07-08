@@ -246,7 +246,7 @@ def validate_challenge_id_pair():
         print(f'Checking files suffix {suffix}')
         cha_dct = {}
 
-        for fn in 'meta_data_diff', 'cos_sim', 'tech_comb_vec', 'st_comb_vec':
+        for fn in 'meta_data_diff', 'cos_sim', 'tech_comb_vec', 'st_comb_vec', 'proj_ind':
             with open(os.path.join(DATA_PATH, f'{fn}_{suffix}.json')) as f:
                 cha_dct[fn] = [(int(cha['l0']), int(cha['l1'])) for cha in json.load(f)]
 
@@ -386,12 +386,37 @@ def build_subtrack_comb_vector():
         print(f'Shape of expd_vec_df: {expd_vec_df.shape}           ', end='\r')
         expd_vec_df.to_json(os.path.join(DATA_PATH, f'st_comb_vec_{NUM_OF_COMB // file_size + 1}.json'), orient='records')
 
+def build_same_project_challenge_indicator():
+    """ For a challenges pair, check if two challenges are from same project. 1 for True, 0 for False."""
+    file_size = 100000
+    same_proj_indicator = []
+    for idx, (cha_id_a, cha_id_b) in enumerate(CHALLENGE_ID_COMBINATION()):
+        same_proj_indicator.append({
+            'l0': cha_id_a,
+            'l1': cha_id_b,
+            'same_proj': int(FILTERED_CHALLENGE_INFO.loc[cha_id_a, 'project_id'] == FILTERED_CHALLENGE_INFO.loc[cha_id_b, 'project_id'])
+        })
+
+        if (idx + 1) % file_size == 0:
+            print(f'No.{idx + 1 - file_size} - No.{idx} comb. {idx + 1}/{NUM_OF_COMB}', end=' | ')
+            proj_ind_df = pd.DataFrame.from_records(same_proj_indicator)
+            print(f'Shape of df: {proj_ind_df.shape}', end='\r')
+            proj_ind_df.to_json(os.path.join(DATA_PATH, f'proj_ind_{(idx + 1) // file_size}.json'), orient='records')
+            same_proj_indicator = []
+
+    if same_proj_indicator != []:
+        print(f'\nSaving one last file: {len(same_proj_indicator)} records.', end=' | ')
+        proj_ind_df = pd.DataFrame.from_records(same_proj_indicator)
+        print(f'Shape of df: {proj_ind_df.shape}')
+        proj_ind_df.to_json(os.path.join(DATA_PATH, f'proj_ind_{NUM_OF_COMB // file_size + 1}.json'), orient='records')
+
 def construct_X(file_idx):
     """ Construct training data X"""
     meta_data_optimum = pd.read_json(os.path.join(os.curdir, 'pricing_model_6', 'meta_data_stat.json')).loc[['min', 'max']].drop('prz_diff', axis=1)
     md_intv_dct = {col: np.linspace(meta_data_optimum.loc['min', col], meta_data_optimum.loc['max', col], 11)[:-1] for col in meta_data_optimum.columns}
 
     cos_sim_df = pd.read_json(os.path.join(DATA_PATH, f'cos_sim_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
+    same_proj_df = pd.read_json(os.path.join(DATA_PATH, f'proj_ind_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
     md_diff_df = pd.read_json(os.path.join(DATA_PATH, f'meta_data_diff_{file_idx}.json'), orient='records').set_index(['l0', 'l1']).reindex(['pltf_diff', 'techn_diff', 'dura_diff'], axis=1)
     st_comb_vec_df = pd.read_json(os.path.join(DATA_PATH, f'st_comb_vec_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
     tech_comb_vec_df = pd.read_json(os.path.join(DATA_PATH, f'tech_comb_vec_{file_idx}.json'), orient='records').set_index(['l0', 'l1'])
@@ -399,7 +424,7 @@ def construct_X(file_idx):
     md_mapped_df = md_diff_df.apply({col: lambda v: render_vector(10, np.searchsorted(intv, v, side='right') - 1) for col, intv in md_intv_dct.items()})
     md_vec_df = pd.concat([pd.DataFrame.from_records(md_mapped_df[col], index=md_mapped_df.index) for col in md_mapped_df.columns], axis=1, ignore_index=True) 
 
-    X = pd.concat([cos_sim_df, md_vec_df, st_comb_vec_df, tech_comb_vec_df], axis=1, ignore_index=True)
+    X = pd.concat([cos_sim_df, same_proj_df, md_vec_df, st_comb_vec_df, tech_comb_vec_df], axis=1, ignore_index=True)
     X.reset_index().to_json(os.path.join(TRAINING_DATA_PATH, f'X_{file_idx}.json'), orient='records')
     print(f'#{file_idx}: X shape: {X.shape}', end='\r')
 
@@ -448,18 +473,12 @@ def concat_training_data():
 
 if __name__ == '__main__':
     start = datetime.now()
-    # calculate_cosine_similarity(TOPCODER.doc_vec_path)
-    # get_tech_combination()
-    # get_tech_comb_deducted()
-    # calculate_metadata_difference()
-    # get_subtrack_combination()
-    # get_subtrack_comb_deducted()
-    # validate_challenge_id_pair()
-    # construct_training_data()
-    # reindex_training_data()
-    # concat_training_data()
-    # build_tech_comb_vector()
-    # build_subtrack_comb_vector()
+    calculate_cosine_similarity(TOPCODER.doc_vec_path)
+    calculate_metadata_difference()
+    build_tech_comb_vector()
+    build_subtrack_comb_vector()
+    build_same_project_challenge_indicator()
+    validate_challenge_id_pair()
     construct_Xy()
     end = datetime.now()
     print(end - start)
