@@ -59,7 +59,7 @@ def extract_abs_metadata():
     subtrack_code = FILT_CHA_INFO['subtrack_category'].cat.codes
     subtrack_code.name = 'subtrack_code'
 
-    return pd.concat([FILT_CHA_INFO.reindex(['number_of_platforms', 'number_of_technologies', 'project_id'], axis=1), subtrack_code], axis=1)
+    return pd.concat([FILT_CHA_INFO.reindex(['number_of_platforms', 'number_of_technologies', 'project_id', 'challenge_duration'], axis=1), subtrack_code], axis=1)
 
 def get_Xy():
     """ Return the dataset of X and y for model training"""
