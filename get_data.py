@@ -459,6 +459,40 @@ def get_challenge_basic_info(cursor):
 
     cursor.close()
 
+def get_challenge_score_stat(cursor):
+    """ Retrieve challenge winners' max/min/avg/std score."""
+    select_query =\
+        """ SELECT
+                challengeId,
+                ROUND(MAX(points), 2) AS maxScore,
+                ROUND(MIN(points), 2) AS minScore,
+                ROUND(AVG(points), 2) AS avgScore,
+                ROUND(STD(points), 2) AS stdScore,
+                COUNT(*) AS numOfWinner
+            FROM Challenge_Winner
+            GROUP BY challengeId
+        """
+    cursor.execute(select_query)
+
+    cha_score_stat = []
+    for challenge_id, max_score, min_score, avg_score, std_score, num_of_winners in cursor:
+        print('{}\t{}\t{}\t{}\t{}\t{}'.format(challenge_id, max_score, min_score, avg_score, std_score, num_of_winners))
+        cha_score_stat.append({
+            'challenge_id': challenge_id,
+            'max_score': max_score,
+            'min_score': min_score,
+            'avg_score': avg_score,
+            'std_score': std_score,
+            'num_of_winners': num_of_winners
+        })
+    print(f'Fetched {len(cha_score_stat)} records.')
+
+    with open(os.path.join(PATH, 'challenge_score_stat.json'), 'w') as fwrite:
+        json.dump(cha_score_stat, fwrite, indent=4)
+
+    cursor.close()
+    
+
 def main():
     """ Main entrance"""
     create_data_folder()
@@ -472,7 +506,8 @@ def main():
     # get_dev_track_info(cnx.cursor())
     # get_detailed_requirements(cnx.cursor())
     # get_challenge_prz_and_avg_score(cnx.cursor())
-    get_challenge_basic_info(cnx.cursor())
+    # get_challenge_basic_info(cnx.cursor())
+    get_challenge_score_stat(cnx.cursor())
     cnx.close()
 
 if __name__ == '__main__':
